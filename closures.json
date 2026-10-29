@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-10-30T04:36:42+10:00",
- "generated_at_text": "Fri 30 Oct 2026 04:36 AM AEST",
+ "generated_at": "2026-10-30T08:58:07+10:00",
+ "generated_at_text": "Fri 30 Oct 2026 08:58 AM AEST",
  "stale": false,
  "sources": {
   "QLD": {
    "used": "fallback",
    "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
-   "feed_published": "2026-10-30T04:13:53+10:00",
+   "feed_published": "2026-10-30T08:56:15+10:00",
    "errors": [
     "api: HTTP 429"
    ],
@@ -22,7 +22,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 130
+     "features": 125
     }
    ],
    "ok": true,
@@ -117,8 +117,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-27T07:04:00+10:00",
-   "last_updated": "2026-10-29T06:08:12+10:00",
-   "last_updated_text": "Thu 29 Oct 2026 06:08 AM AEST",
+   "last_updated": "2026-10-30T06:06:30+10:00",
+   "last_updated_text": "Fri 30 Oct 2026 06:06 AM AEST",
    "provided_by": "Toowoomba Regional",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/837508",
@@ -689,8 +689,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-23T16:55:00+10:00",
-   "last_updated": "2026-10-29T06:06:02+10:00",
-   "last_updated_text": "Thu 29 Oct 2026 06:06 AM AEST",
+   "last_updated": "2026-10-30T06:08:03+10:00",
+   "last_updated_text": "Fri 30 Oct 2026 06:08 AM AEST",
    "provided_by": "Toowoomba Regional",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/836587",
@@ -855,8 +855,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-28T05:58:00+10:00",
-   "last_updated": "2026-10-29T06:06:11+10:00",
-   "last_updated_text": "Thu 29 Oct 2026 06:06 AM AEST",
+   "last_updated": "2026-10-30T06:06:35+10:00",
+   "last_updated_text": "Fri 30 Oct 2026 06:06 AM AEST",
    "provided_by": "Toowoomba Regional",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/837769",
@@ -879,22 +879,22 @@
     "lines": [
      [
       [
-       -27.89272,
-       151.42448
-      ],
-      [
-       -27.90025,
-       151.42139
-      ]
-     ],
-     [
-      [
        -27.86404,
        151.42974
       ],
       [
        -27.89241,
        151.42461
+      ]
+     ],
+     [
+      [
+       -27.89272,
+       151.42448
+      ],
+      [
+       -27.90025,
+       151.42139
       ]
      ],
      [
@@ -927,8 +927,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-26T19:50:00+10:00",
-   "last_updated": "2026-10-29T06:08:09+10:00",
-   "last_updated_text": "Thu 29 Oct 2026 06:08 AM AEST",
+   "last_updated": "2026-10-30T06:06:26+10:00",
+   "last_updated_text": "Fri 30 Oct 2026 06:06 AM AEST",
    "provided_by": "Toowoomba Regional",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/837446",
@@ -1123,8 +1123,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-26T09:03:00+10:00",
-   "last_updated": "2026-10-29T18:15:59+10:00",
-   "last_updated_text": "Thu 29 Oct 2026 06:15 PM AEST",
+   "last_updated": "2026-10-30T07:16:40+10:00",
+   "last_updated_text": "Fri 30 Oct 2026 07:16 AM AEST",
    "provided_by": "Department of Transport and Main Roads",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/837194",
@@ -2999,8 +2999,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-28T05:59:00+10:00",
-   "last_updated": "2026-10-29T06:06:13+10:00",
-   "last_updated_text": "Thu 29 Oct 2026 06:06 AM AEST",
+   "last_updated": "2026-10-30T06:04:01+10:00",
+   "last_updated_text": "Fri 30 Oct 2026 06:04 AM AEST",
    "provided_by": "Toowoomba Regional",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/837770",
@@ -5345,8 +5345,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-26T14:28:00+10:00",
-   "last_updated": "2026-10-29T15:54:02+10:00",
-   "last_updated_text": "Thu 29 Oct 2026 03:54 PM AEST",
+   "last_updated": "2026-10-30T08:06:01+10:00",
+   "last_updated_text": "Fri 30 Oct 2026 08:06 AM AEST",
    "provided_by": "City of Gold Coast LDCC",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/837354",
@@ -5421,8 +5421,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-23T06:15:00+10:00",
-   "last_updated": "2026-10-29T07:52:07+10:00",
-   "last_updated_text": "Thu 29 Oct 2026 07:52 AM AEST",
+   "last_updated": "2026-10-30T07:44:03+10:00",
+   "last_updated_text": "Fri 30 Oct 2026 07:44 AM AEST",
    "provided_by": "Lockyer Valley Regional Council",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/836344",
