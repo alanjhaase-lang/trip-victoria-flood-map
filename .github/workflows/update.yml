@@ -1,0 +1,50 @@
+name: Update gauge and road data
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # route.json is built by hand (python build_route.py) when the My Map changes; this job only reads it.
+      - name: Fetch BOM bulletins (QLD/NSW/VIC) and build data.json
+        run: python update_data.py
+
+      # Independent of the gauge step: runs (and commits) even if BOM failed.
+      - name: Fetch flood road closures (QLDTraffic, Live Traffic NSW, optional VIC) and QLD cameras
+        if: ${{ !cancelled() }}
+        env:
+          # Optional. Leave unset and VIC closures are simply reported as "not checked".
+          VIC_OPENDATA_KEY: ${{ secrets.VIC_OPENDATA_KEY }}
+        run: python update_roads.py
+
+      - name: Commit data files if they changed
+        if: ${{ !cancelled() }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.json stations.json flood_levels.json closures.json cameras.json
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Update trip gauge and road data $(TZ=Australia/Brisbane date '+%Y-%m-%d %H:%M AEST')"
+            git pull --rebase || { git rebase --abort; exit 1; }
+            git push
+          fi

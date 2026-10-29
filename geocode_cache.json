@@ -1,0 +1,68 @@
+{
+ "-27.60235,151.86675": {
+  "postcode": "4350",
+  "state": "QLD",
+  "street": "Keding Road",
+  "town": "Westbrook"
+ },
+ "-28.63623,153.59322": {
+  "postcode": "2481",
+  "state": "NSW",
+  "street": "399 Ewingsdale Road",
+  "town": "Byron Bay"
+ },
+ "-30.28272,153.12926": {
+  "postcode": "2450",
+  "state": "NSW",
+  "street": "Park Beach Road",
+  "town": "Coffs Harbour"
+ },
+ "-33.41854,151.27831": {
+  "postcode": "2250",
+  "state": "NSW",
+  "street": "Sergent Major's Row",
+  "town": "Somersby"
+ },
+ "-33.42582,151.32047": {
+  "postcode": "2250",
+  "state": "NSW",
+  "street": "Riverside Drive",
+  "town": "West Gosford"
+ },
+ "-33.42685,151.34123": {
+  "postcode": "2250",
+  "state": "NSW",
+  "street": "Donnison Street",
+  "town": "Gosford"
+ },
+ "-35.00128,148.11098": {
+  "postcode": "2722",
+  "state": "NSW",
+  "street": "Annie Pyers Drive",
+  "town": "Gundagai"
+ },
+ "-35.06440,148.09786": {
+  "postcode": "2722",
+  "state": "NSW",
+  "street": "1 Nangus Road",
+  "town": "Gundagai"
+ },
+ "-36.36628,146.68475": {
+  "postcode": "3747",
+  "state": "VIC",
+  "street": "19 John Street",
+  "town": "Beechworth"
+ },
+ "-37.84659,145.28673": {
+  "postcode": "3155",
+  "state": "VIC",
+  "street": "Dorset Road Service Road",
+  "town": "Boronia"
+ },
+ "-38.14068,144.35591": {
+  "postcode": "3220",
+  "state": "VIC",
+  "street": "53 Mercer Street",
+  "town": "Geelong"
+ }
+}

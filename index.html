@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="icon" href="data:,">
+<title>Trip to Victoria: flood &amp; road closure corridor map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<style>
+  html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+  #map { position: absolute; inset: 0; }
+  .panel { background: rgba(255,255,255,.93); padding: 8px 10px; border-radius: 6px;
+           box-shadow: 0 1px 5px rgba(0,0,0,.35); font-size: 13px; line-height: 1.35; }
+  .title b { font-size: 15px; }
+  .legend i { display: inline-block; width: 14px; height: 14px; border-radius: 50%;
+              margin-right: 6px; vertical-align: -2px; border: 1px solid #333; }
+  .gauge { width: 24px; height: 24px; border-radius: 50%; border: 2px solid #222;
+           display: flex; align-items: center; justify-content: center;
+           font: bold 15px/1 system-ui, sans-serif; color: #111; box-shadow: 0 1px 3px rgba(0,0,0,.5); }
+  .gauge.stale { opacity: .55; border-style: dashed; }
+  /* Within 0.2 m of the next flood class: pulse toward that class colour */
+  .gauge.flash-minor { animation: flashMinor 1.1s ease-in-out infinite; }
+  .gauge.flash-moderate { animation: flashModerate 1.1s ease-in-out infinite; }
+  .gauge.flash-major { animation: flashMajor 1.1s ease-in-out infinite; }
+  @keyframes flashMinor {
+    0%, 100% { background: #2ecc40; }
+    50% { background: #ffdc00; }
+  }
+  @keyframes flashModerate {
+    0%, 100% { background: #ffdc00; }
+    50% { background: #ff851b; }
+  }
+  @keyframes flashMajor {
+    0%, 100% { background: #ff851b; }
+    50% { background: #e3261c; }
+  }
+  .wb-label { display: inline-block; transform: translate(-50%, -50%); white-space: nowrap; font: 600 12px/1.2 system-ui, sans-serif;
+              color: #222; background: rgba(255,255,255,.85); border: 1px solid #888; border-radius: 3px; padding: 1px 5px; }
+  .disc { font-size: 11.5px; color: #555; margin-top: 3px; }
+  .disc a { color: #555; }
+  #notice { position: absolute; z-index: 1100; left: 50%; bottom: 28px; transform: translateX(-50%);
+            width: min(460px, calc(100% - 24px)); box-sizing: border-box; background: #fff; border-left: 4px solid #a15c00;
+            border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,.4); padding: 10px 12px; font: 13px/1.4 system-ui, sans-serif; }
+  #notice p { margin: 0 0 8px; }
+  #notice button { font: inherit; padding: 4px 12px; border: 1px solid #888; border-radius: 4px; background: #f3f3f3; cursor: pointer; }
+  .popup table { border-collapse: collapse; font-size: 12.5px; }
+  .popup td { padding: 1px 6px 1px 0; vertical-align: top; }
+  .popup td:first-child { color: #555; white-space: nowrap; }
+  .warn { color: #a15c00; }
+  .fl-lv { display: inline-block; padding: 0 4px; margin: 1px 0; border: 1px solid #ccc; border-radius: 3px;
+           font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .fl-lv.on { border-color: #222; font-weight: bold; color: #111; }
+  #err { color: #b00; }
+  #live { font-size: 11.5px; color: #555; margin-top: 2px; }
+  #live.ok { color: #2e7d32; }
+  #live.off { color: #a15c00; }
+  .title { max-width: 300px; }
+  .title .hdr { display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+  .title .hdr b { flex: 1; }
+  .title .chev { font-size: 12px; opacity: .7; }
+  .regions { margin-top: 6px; border-top: 1px solid #ddd; padding-top: 5px; }
+  .regions label { display: flex; align-items: center; gap: 6px; padding: 3px 0; cursor: pointer; }
+  .regions input { width: 17px; height: 17px; margin: 0; flex: none; }
+  .regions .sw { width: 12px; height: 12px; border: 2px dashed; border-radius: 50%; flex: none; }
+  .regions .nm { flex: 1; }
+  .regions .ct { color: #555; font-variant-numeric: tabular-nums; }
+  .regions .fl { color: #c62828; font-weight: bold; }
+  .regions button { font: inherit; font-size: 11.5px; padding: 2px 7px; border: 1px solid #aaa;
+                    border-radius: 4px; background: #f6f6f6; cursor: pointer; flex: none; }
+  .regions .row2 { display: flex; align-items: center; gap: 6px; margin-top: 4px; padding-top: 4px; border-top: 1px solid #eee; }
+  .regions .row2 label { flex: 1; }
+  .radar { margin-top: 6px; border-top: 1px solid #ddd; padding-top: 5px; }
+  .radar label { display: flex; align-items: center; gap: 6px; padding: 3px 0; cursor: pointer; }
+  .radar input[type=checkbox] { width: 17px; height: 17px; margin: 0; flex: none; }
+  .radar .rc { display: flex; align-items: center; gap: 6px; margin-top: 3px; flex-wrap: wrap; }
+  .radar button { font: inherit; font-size: 12px; padding: 2px 8px; border: 1px solid #aaa; border-radius: 4px;
+                  background: #f6f6f6; cursor: pointer; min-width: 34px; }
+  .radar .ts { flex: 1; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .radar input[type=range] { flex: 1; min-width: 90px; margin: 0; }
+  .radar .scale { height: 8px; border-radius: 4px; margin: 4px 0 1px; border: 1px solid #bbb;
+    background: linear-gradient(to right, #88ddee, #00a3e0, #005588, #ffee00, #ffaa00, #ff4400, #c10000, #ffaaff); }
+  .radar .sl { display: flex; justify-content: space-between; font-size: 11px; color: #555; }
+  .radar .note { font-size: 11px; color: #555; }
+  .leaflet-radar-pane img { pointer-events: none; }
+  .roads { margin-top: 6px; border-top: 1px solid #ddd; padding-top: 5px; }
+  .roads label { display: flex; align-items: center; gap: 6px; padding: 3px 0; cursor: pointer; }
+  .roads input { width: 17px; height: 17px; margin: 0; flex: none; }
+  .roads .ct { color: #555; font-variant-numeric: tabular-nums; }
+  .roads .note { font-size: 11px; color: #555; }
+  .roads.gg { margin-top: 0; border-top: 0; padding-top: 0; }
+  .roads.gg + .roads { margin-top: 2px; border-top: 0; padding-top: 0; }
+  .roads .sub { padding-left: 23px; }
+  .roads .sub.off { opacity: .45; }
+  .roads .sub.off label { cursor: default; }
+  .roads .fl { color: #c62828; font-weight: bold; }
+  .gico { width: 14px; height: 14px; border-radius: 50%; border: 2px solid #222; background: #4caf50; box-sizing: border-box; flex: none; }
+  .sec { margin-top: 7px; padding-top: 4px; border-top: 1px solid #ddd; font-size: 10.5px; font-weight: 600;
+         letter-spacing: .06em; text-transform: uppercase; color: #777; }
+  .sec + .regions, .sec + .roads { margin-top: 0; border-top: 0; padding-top: 0; }
+  .roads .stale { color: #a15c00; font-size: 11.5px; }
+  .ne { width: 18px; height: 18px; border-radius: 50%; background: #d50000; border: 2px solid #fff; box-sizing: border-box;
+        box-shadow: 0 0 0 1px #7f0000, 0 1px 3px rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; }
+  .ne::after { content: ""; width: 9px; height: 3px; background: #fff; border-radius: 1px; }
+  .ne.part { background: #ffab00; box-shadow: 0 0 0 1px #8a5a00, 0 1px 3px rgba(0,0,0,.5); border-radius: 3px; transform: rotate(45deg); width: 15px; height: 15px; }
+  .ne.part::after { width: 3px; height: 8px; background: #222; transform: rotate(-45deg); }
+  .cam { width: 22px; height: 22px; border-radius: 50%; background: #263238; border: 2px solid #fff; box-sizing: border-box;
+         box-shadow: 0 1px 3px rgba(0,0,0,.6); display: flex; align-items: center; justify-content: center; }
+  .cam.old { background: #78909c; }
+  .cam svg { width: 13px; height: 13px; fill: #fff; }
+  .legend .sym { display: inline-flex; width: 20px; justify-content: center; margin-right: 4px; vertical-align: -4px; }
+  .legend .ln { display: inline-block; width: 18px; height: 0; border-top: 3px solid #d50000; margin: 0 5px 0 1px; vertical-align: 3px; }
+  .legend .ln.part { border-top: 3px dashed #ffab00; }
+  .campop { width: min(280px, calc(100vw - 80px)); }
+  .campop img { display: block; width: 100%; height: auto; min-height: 60px; background: #eee; border-radius: 3px; margin: 4px 0; }
+  .ctr { width: 10px; height: 10px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 2px #000; }
+  #body { max-height: calc(100vh - 150px); overflow-y: auto; }
+  @media (max-width: 600px) { .panel { font-size: 12px; } .title b { font-size: 13px; }
+                              .title { max-width: 230px; } .regions label, .roads label { padding: 5px 0; } .sec { margin-top: 5px; } }
+  .views select { width: 100%; font: inherit; padding: 3px; margin: 2px 0 4px; }
+  .views .btns { display: flex; gap: 4px; flex-wrap: wrap; }
+  .views button, .states button { font: inherit; font-size: 11.5px; padding: 2px 7px; border: 1px solid #aaa;
+                  border-radius: 4px; background: #f6f6f6; cursor: pointer; }
+  .views button.on { background: #1565c0; color: #fff; border-color: #0d47a1; }
+  .views .vsum { font-size: 11.5px; color: #555; margin-top: 3px; }
+  .states { display: flex; gap: 10px; flex-wrap: wrap; padding: 2px 0; }
+  .states label { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+  .states input { width: 16px; height: 16px; margin: 0; }
+  .stop { width: 22px; height: 22px; border-radius: 50%; border: 2px solid #fff; box-sizing: border-box;
+          box-shadow: 0 0 0 1px #333, 0 1px 3px rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center;
+          font: bold 12px/1 system-ui, sans-serif; color: #fff; }
+  .stop.t-home { background: #2e7d32; } .stop.t-overnight { background: #5d4037; }
+  .stop.t-supercharger { background: #c62828; } .stop.t-stop { background: #0277bd; }
+  .stop.dim { opacity: .45; }
+  .srcs { font-size: 11.5px; color: #555; }
+  .srcs .bad { color: #a15c00; }
+  .states .ct, .views .ct { color: #555; } .states .fl, .roads .fl { color: #c62828; font-weight: bold; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+const COLORS = {
+  "below flood level": "#2ecc40",
+  "minor": "#ffdc00",
+  "moderate": "#ff851b",
+  "major": "#e3261c",
+  "none": "#9e9e9e"
+};
+const LABELS = [["below flood level","Below Flood Level"],["minor","Minor"],
+                ["moderate","Moderate"],["major","Major"],["none","None / unknown"]];
+const Z = { "major": 800, "moderate": 700, "minor": 600, "below flood level": 300, "none": 0 };
+const CAM_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 7.2 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3.2L15 4H9zm3 4.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z"/></svg>';
+const ARROWS = { rising: "\u2191", falling: "\u2193", steady: "\u2013" };
+const STOP_ICON = { home: "\u2302", overnight: "\u263E", supercharger: "\u26A1", stop: "\u2022" };
+const STOP_LABEL = { home: "Home", overnight: "Overnight", supercharger: "Tesla Supercharger", stop: "Stop" };
+const STATE_LINKS = {
+  QLD: ["QLDTraffic", "https://qldtraffic.qld.gov.au/"],
+  NSW: ["Live Traffic NSW", "https://www.livetraffic.com/"],
+  VIC: ["VicTraffic", "https://traffic.vicroads.vic.gov.au/"],
+};
+const TZ_ABBR = { "Australia/Brisbane": "QLD time, AEST", "Australia/Sydney": "NSW local time", "Australia/Melbourne": "VIC local time" };
+
+function classKey(fc) {
+  const k = (fc || "").trim().toLowerCase();
+  if (k.startsWith("below")) return "below flood level";
+  if (k.startsWith("minor")) return "minor";
+  if (k.startsWith("moderate")) return "moderate";
+  if (k.startsWith("major")) return "major";
+  return "none";
+}
+function effectiveClass(s) { return s.computed_class || s.flood_class; }
+function nearNextFlash(s) {
+  const d = s.delta_m;
+  if (d == null || !(d > 0) || d > 0.2) return "";
+  const nxt = (s.next_class || "").toLowerCase();
+  if (nxt === "minor") return " flash-minor";
+  if (nxt === "moderate") return " flash-moderate";
+  if (nxt === "major") return " flash-major";
+  return "";
+}
+function esc(s) { return String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+const map = L.map("map", { zoomControl: true }).setView([-32.5, 149.5], 6);
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 18,
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Gauges: <a href="https://www.bom.gov.au/australia/flood/">Bureau of Meteorology</a>'
+}).addTo(map);
+map.attributionControl.addAttribution('Roads: <a href="https://qldtraffic.qld.gov.au/" target="_blank" rel="noopener">QLDTraffic</a> &copy; State of Queensland, ' +
+  '<a href="https://www.livetraffic.com/" target="_blank" rel="noopener">Live Traffic NSW</a> &copy; Transport for NSW, ' +
+  'Transport Victoria open data &copy; State of Victoria (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>)');
+
+const LS = "tripmap.";
+const LS_VIEW = LS + "view.v1", LS_FLOOD = LS + "floodOnly.v1", LS_OPEN = LS + "panelOpen.v1",
+      LS_RADAR = LS + "radar.v1", LS_CLOSURES = LS + "closures.v1", LS_CAMERAS = LS + "cameras.v1",
+      LS_GAUGES = LS + "gauges.v1", LS_STATES = LS + "states.v1", LS_STOPS = LS + "stops.v1", LS_NOTICE = LS + "disclaimer.v1";
+function lsGet(k, dflt) { try { const v = localStorage.getItem(k); return v == null ? dflt : JSON.parse(v); } catch (e) { return dflt; } }
+function lsSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+
+let gaugesOn = lsGet(LS_GAUGES, true) !== false;
+let floodOnly = !!lsGet(LS_FLOOD, false);
+let stopsOn = lsGet(LS_STOPS, true) !== false;
+// "all" | "out" | "ret" | day id (out1, ret2, ...); a link like index.html#view=out2 opens on that day
+let view = (/[#&]view=([a-z0-9]+)/i.exec(location.hash) || [])[1] || lsGet(LS_VIEW, "all");
+const states = Object.assign({ QLD: true, NSW: true, VIC: true }, lsGet(LS_STATES, {}));
+let route = null, lastData = null, fitted = false, uiBuilt = false;
+const gaugeLayer = L.layerGroup().addTo(map);
+
+function inFlood(s) { return ["minor", "moderate", "major"].includes(classKey(effectiveClass(s))); }
+// does an item (gauge / closure / camera with days[] + legs[]) belong to the selected leg/day?
+function inView(x) {
+  if (view === "all") return true;
+  if (view === "out" || view === "ret") return (x.legs || []).includes(view);
+  return (x.days || []).includes(view);
+}
+function visible(x) { return inView(x) && states[x.state || "QLD"] !== false; }
+function dayById(id) { return route && route.days.find(d => d.id === id); }
+function legName(id) { return id === "out" ? "outbound" : id === "ret" ? "return" : id; }
+
+const DISCLAIMER = 'Unofficial map made for one road trip. Gauge and road data may be delayed, incomplete or wrong, and ' +
+  'some closures (local council roads, VIC without an API key) are not shown. <b>Do not rely on it for safety decisions.</b> ' +
+  'Never drive through floodwater &mdash; a low car like a Model Y can float in shallow water. Before and during each day check ' +
+  '<a href="https://www.bom.gov.au/australia/warnings/" target="_blank" rel="noopener">BOM warnings</a>, ' +
+  '<a href="https://qldtraffic.qld.gov.au/" target="_blank" rel="noopener">QLDTraffic</a>, ' +
+  '<a href="https://www.livetraffic.com/" target="_blank" rel="noopener">Live Traffic NSW</a> and ' +
+  '<a href="https://traffic.vicroads.vic.gov.au/" target="_blank" rel="noopener">VicTraffic</a>. ' +
+  'Call SES <a href="tel:132500">132 500</a> for flood help, or <a href="tel:000">000</a> in an emergency.';
+function showNotice() {
+  if (document.getElementById("notice")) return;
+  const n = document.createElement("div");
+  n.id = "notice"; n.setAttribute("role", "dialog"); n.setAttribute("aria-label", "Disclaimer");
+  n.innerHTML = `<p><b>Please note:</b> ${DISCLAIMER}</p><button type="button">OK, got it</button>`;
+  L.DomEvent.disableClickPropagation(n); L.DomEvent.disableScrollPropagation(n);
+  n.querySelector("button").onclick = () => { lsSet(LS_NOTICE, true); n.remove(); };
+  document.getElementById("map").appendChild(n);
+}
+if (!lsGet(LS_NOTICE, false)) showNotice();
+
+const info = L.control({ position: "topright" });
+info.onAdd = () => {
+  const d = L.DomUtil.create("div", "panel title");
+  d.innerHTML = '<div class="hdr" id="hdr"><b>Trip to Victoria: floods &amp; road closures</b>' +
+    '<span class="chev" id="chev"></span></div>' +
+    '<div class="disc">Unofficial \u2014 not for safety decisions. ' +
+    '<a href="https://www.bom.gov.au/australia/warnings/" target="_blank" rel="noopener">BOM warnings</a> &middot; ' +
+    'SES <a href="tel:132500">132 500</a> &middot; <a href="#" id="discmore">more</a></div>' +
+    '<div id="body"><div id="upd">Loading\u2026</div><div id="live"></div><div id="err"></div>' +
+    '<div class="sec">Trip leg</div><div class="views" id="views"></div>' +
+    '<div class="sec">States</div><div class="states" id="states"></div>' +
+    '<div class="sec">Layers</div><div class="roads gg" id="gauges"></div><div class="roads" id="roads"></div><div class="radar" id="radar"></div></div>';
+  L.DomEvent.disableClickPropagation(d);
+  L.DomEvent.disableScrollPropagation(d);
+  d.querySelector("#discmore").onclick = (e) => { e.preventDefault(); showNotice(); };
+  const body = d.querySelector("#body"), chev = d.querySelector("#chev");
+  let open = lsGet(LS_OPEN, window.innerWidth >= 600);
+  const apply = () => { body.style.display = open ? "" : "none"; chev.textContent = open ? "\u25B4 hide" : "\u25BE layers"; };
+  d.querySelector("#hdr").onclick = () => { open = !open; lsSet(LS_OPEN, open); apply(); };
+  apply();
+  return d;
+};
+info.addTo(map);
+
+const legend = L.control({ position: "bottomright" });
+legend.onAdd = () => {
+  const d = L.DomUtil.create("div", "panel legend");
+  d.innerHTML = "<b id='lgt' style='cursor:pointer'>Legend \u25BE</b><div id='lgb'><b>Gauge flood class</b><br>" +
+    LABELS.map(([k, t]) => `<i style="background:${COLORS[k]}"></i>${t}`).join("<br>") +
+    "<br><b>Tendency</b><br>\u2191 rising &nbsp; \u2193 falling &nbsp; \u2013 steady &nbsp; ? unknown" +
+    "<br><span style='opacity:.7'>Dashed = no current reading</span>" +
+    "<br><b>Route</b> <span style='color:#1565c0'>\u2501</span> outbound <span style='color:#7b1fa2'>\u2501</span> return" +
+    "<br><span style='color:#7b1fa2'>\u2505</span> auto-filled (not in My Map)" +
+    "<br>" + Object.keys(STOP_ICON).map(k => `<span class='sym'><span class='stop t-${k}' style='width:16px;height:16px;font-size:10px'>${STOP_ICON[k]}</span></span>${STOP_LABEL[k]}`).join("<br>") +
+    "<br><b>Roads (flooding)</b>" +
+    "<br><span class='sym'><span class='ne'></span></span>Road closed <span class='ln'></span>" +
+    "<br><span class='sym'><span class='ne part'></span></span>Lanes affected / restricted <span class='ln part'></span>" +
+    "<br><span class='sym'><span class='cam'>" + CAM_SVG + "</span></span>QLD flood camera</div>";
+  L.DomEvent.disableClickPropagation(d);
+  const body = d.querySelector("#lgb");
+  if (window.innerWidth < 600) body.style.display = "none";
+  d.querySelector("#lgt").onclick = () => { body.style.display = body.style.display === "none" ? "" : "none"; };
+  return d;
+};
+legend.addTo(map);
+
+// ---- Route (route.json, built from the Google My Map by build_route.py) ----
+map.createPane("route");
+map.getPane("route").style.zIndex = 420;
+const routeLayer = L.layerGroup().addTo(map), stopLayer = L.layerGroup();
+const dayLines = {};    // day id -> [casing, line]
+function viewBounds() {
+  if (!route) return null;
+  let b = null;
+  for (const d of route.days) {
+    if (!(view === "all" || view === d.id || view === d.leg)) continue;
+    const lb = L.latLngBounds(d.coords);
+    b = b ? b.extend(lb) : lb;
+  }
+  return b;
+}
+function fitView() { const b = viewBounds(); if (b) map.fitBounds(b, { padding: [20, 20] }); }
+function styleRoute() {
+  if (!route) return;
+  for (const d of route.days) {
+    const sel = view === "all" || view === d.id || view === d.leg;
+    const [casing, line] = dayLines[d.id];
+    line.setStyle({ opacity: sel ? 0.9 : 0.25, weight: sel ? 5 : 3 });
+    casing.setStyle({ opacity: sel ? 0.8 : 0 });
+    if (sel) line.bringToFront();
+  }
+  stopLayer.eachLayer(m => {
+    const st = m.options.stopData, el = m.getElement && m.getElement();
+    const sel = view === "all" || st.legId === view || st.days.includes(view);
+    if (el) el.firstChild.classList.toggle("dim", !sel);
+  });
+}
+function drawRoute(r) {
+  route = r;
+  const color = Object.fromEntries(r.legs.map(l => [l.id, l.color]));
+  for (const d of r.days) {
+    const casing = L.polyline(d.coords, { pane: "route", color: "#fff", weight: 8, opacity: .8, interactive: false }).addTo(routeLayer);
+    const line = L.polyline(d.coords, { pane: "route", color: color[d.leg], weight: 5, opacity: .9 })
+      .bindTooltip(`${esc(d.name)} (${d.km} km)`, { sticky: true })
+      .on("click", () => setView(d.id, true)).addTo(routeLayer);
+    dayLines[d.id] = [casing, line];
+  }
+  if (r.gap_coords) {
+    L.polyline(r.gap_coords, { pane: "route", color: "#fff", weight: 6, opacity: .9, dashArray: "2 8", interactive: false }).addTo(routeLayer);
+    L.polyline(r.gap_coords, { pane: "route", color: color.ret, weight: 3, opacity: 1, dashArray: "8 8" })
+      .bindTooltip(`Auto-filled by ${esc((r.filled_gap || {}).source || "a router")}: ${esc((r.filled_gap || {}).from || "")} \u2192 386 Dorset Rd is not drawn in the My Map`, { sticky: true })
+      .addTo(routeLayer);
+  }
+  // which day legs each stop belongs to (end of one day = start of the next)
+  for (const s of r.stops) {
+    const legId = s.leg === "outbound" ? "out" : "ret";
+    const days = r.days.filter(d => d.leg === legId && s.leg_km >= d.km_start - 1 && s.leg_km <= d.km_start + d.km + 1).map(d => d.id);
+    const icon = L.divIcon({ className: "", iconSize: [22, 22], iconAnchor: [11, 11], popupAnchor: [0, -10],
+                             html: `<div class="stop t-${esc(s.type)}">${STOP_ICON[s.type] || "\u2022"}</div>` });
+    const gm = `https://www.google.com/maps/search/?api=1&query=${s.lat},${s.lon}`;
+    L.marker([s.lat, s.lon], { icon, title: `${s.seq}. ${s.name}`, zIndexOffset: 500, stopData: { legId, days } })
+      .bindPopup(`<div class="popup"><b>${s.seq}. ${esc(s.name)}</b><table>
+        <tr><td>Type</td><td>${esc(STOP_LABEL[s.type] || s.type)}</td></tr>
+        <tr><td>Address</td><td>${esc(s.address || "\u2014")}</td></tr>
+        <tr><td>Leg</td><td>${esc(s.leg)}, ~${s.leg_km} km from the start</td></tr>
+        ${s.note ? `<tr><td>Note</td><td>${esc(s.note)}</td></tr>` : ""}</table>
+        <p style="margin:6px 0 0"><a href="${gm}" target="_blank" rel="noopener">Google Maps \u2192</a> &middot;
+        <a href="${esc(r.source.viewer)}" target="_blank" rel="noopener">Trip My Map \u2192</a></p></div>`, popOpts({ maxWidth: 300 }))
+      .addTo(stopLayer);
+  }
+  if (stopsOn) stopLayer.addTo(map);
+  stopLayer.eachLayer(m => m.on("add", styleRoute));
+}
+
+function buildViewUi() {
+  const el = document.getElementById("views");
+  const opts = [["all", "Whole trip (both ways)"], ...route.legs.map(l => [l.id, `${l.name} (${l.km} km)`]),
+                ...route.days.map(d => [d.id, `\u00a0\u00a0${d.name} (${d.km} km)`])];
+  if (!opts.some(o => o[0] === view)) view = "all";
+  el.innerHTML = `<select id="viewsel" aria-label="Trip leg">${opts.map(([v, t]) => `<option value="${esc(v)}" ${v === view ? "selected" : ""}>${esc(t)}</option>`).join("")}</select>
+    <div class="btns"><button type="button" data-v="all">All</button><button type="button" data-v="out">Outbound</button>
+      <button type="button" data-v="ret">Return</button><button type="button" id="prevday" title="Previous day">\u25C0 day</button>
+      <button type="button" id="nextday" title="Next day">day \u25B6</button><button type="button" id="fitview">Fit</button></div>
+    <label style="display:flex;gap:6px;align-items:center;padding:3px 0;cursor:pointer"><input type="checkbox" id="stopson" ${stopsOn ? "checked" : ""} style="width:16px;height:16px;margin:0">
+      <span>Stops, overnights &amp; Superchargers (${route.stops.length})</span></label>
+    <div class="vsum" id="vsum"></div>`;
+  el.querySelector("#viewsel").onchange = (e) => setView(e.target.value, true);
+  el.querySelectorAll("button[data-v]").forEach(b => b.onclick = () => setView(b.dataset.v, true));
+  const step = (k) => {
+    const ids = route.days.map(d => d.id), i = ids.indexOf(view);
+    setView(ids[i < 0 ? (k > 0 ? 0 : ids.length - 1) : (i + k + ids.length) % ids.length], true);
+  };
+  el.querySelector("#prevday").onclick = () => step(-1);
+  el.querySelector("#nextday").onclick = () => step(1);
+  el.querySelector("#fitview").onclick = fitView;
+  el.querySelector("#stopson").onchange = (e) => { stopsOn = e.target.checked; lsSet(LS_STOPS, stopsOn);
+    if (stopsOn) stopLayer.addTo(map); else map.removeLayer(stopLayer); };
+  const st = document.getElementById("states");
+  st.innerHTML = ["QLD", "NSW", "VIC"].map(s => `<label><input type="checkbox" data-s="${s}" ${states[s] ? "checked" : ""}>${s}
+      <span class="ct" id="ct-st-${s}"></span></label>`).join("");
+  st.querySelectorAll("input[data-s]").forEach(cb => cb.onchange = () => { states[cb.dataset.s] = cb.checked; lsSet(LS_STATES, states); redraw(); });
+}
+function setView(v, fit) {
+  view = v; lsSet(LS_VIEW, v);
+  const sel = document.getElementById("viewsel"); if (sel) sel.value = v;
+  document.querySelectorAll(".views button[data-v]").forEach(b => b.classList.toggle("on", b.dataset.v === v));
+  styleRoute(); redraw();
+  if (fit) fitView();
+}
+function redraw() {
+  if (lastData) drawMarkers(lastData);
+  drawRoads();
+  updateSummary();
+}
+function updateSummary() {
+  const el = document.getElementById("vsum"); if (!el || !route) return;
+  const d = dayById(view), leg = route.legs.find(l => l.id === view);
+  const g = lastData ? lastData.stations.filter(visible) : [];
+  const fl = g.filter(inFlood).length;
+  const cl = roads.closures ? (roads.closures.closures || []).filter(visible) : [];
+  const closed = cl.filter(c => c.severity === "closed").length;
+  const what = d ? `${d.name}: ${d.km} km` : leg ? `${leg.name}: ${leg.km} km` : "Whole trip";
+  el.innerHTML = `${esc(what)} \u2014 <b style="color:${fl ? "#c62828" : "#2e7d32"}">${fl} gauge${fl === 1 ? "" : "s"} in flood</b>, ` +
+    `<b style="color:${closed ? "#c62828" : "#2e7d32"}">${closed} road${closed === 1 ? "" : "s"} closed</b>` +
+    (cl.length - closed ? `, ${cl.length - closed} restricted` : "") + ` within the corridor.`;
+  for (const s of ["QLD", "NSW", "VIC"]) {
+    const c = document.getElementById("ct-st-" + s); if (!c || !lastData) continue;
+    const n = lastData.stations.filter(x => x.state === s && inView(x)), f = n.filter(inFlood).length;
+    c.innerHTML = `(${n.length}${f ? `, <span class="fl">\u26A0 ${f}</span>` : ""})`;
+  }
+}
+
+const CLS = [["minor", "Minor"], ["moderate", "Moderate"], ["major", "Major"]];
+function m2(v) { return `${Number(v).toFixed(2)} m`; }
+function floodNext(s) {            // short text: next class + metres to go
+  if (!s.flood_levels || s.height_m == null) return "";
+  if (s.next_class) return `Next: ${s.next_class} at ${m2(s.next_level_m)}, ${m2(s.delta_m)} to go`;
+  if (s.above_major_m != null) return `Above Major by ${m2(s.above_major_m)}`;
+  return "";
+}
+function floodRows(s) {
+  const lv = s.flood_levels;
+  if (!lv) {
+    const why = (s.flood_levels_note || "").startsWith("datum mismatch")
+      ? `<span class="warn">Flood levels not compared (${esc(s.flood_levels_note)})</span>`
+      : '<span style="color:#777">No official flood levels for this gauge</span>';
+    return [["Flood levels", why]];
+  }
+  const cur = classKey(s.computed_class);
+  const list = CLS.filter(([k]) => lv[k] != null).map(([k, t]) => {
+    const on = cur === k;
+    return `<span class="fl-lv${on ? " on" : ""}" style="${on ? `background:${COLORS[k]}` : ""}">${t} ${Number(lv[k]).toFixed(2)}</span>`;
+  }).join(" ");
+  const rows = [];
+  if (s.height_m == null) rows.push(["Next", "\u2014 (no current reading)"]);
+  else if (s.next_class) rows.push(["Next", `<b>${esc(s.next_class)} at ${m2(s.next_level_m)}, ${m2(s.delta_m)} to go</b>`]);
+  else if (s.above_major_m != null) rows.push(["Next", `<b>None \u2014 above Major by ${m2(s.above_major_m)}</b>`]);
+  rows.push(["Flood levels", `${list} <span style="color:#777">m ${esc(lv.datum)}</span>`]);
+  if (lv.source === "user")
+    rows.push(["", `<span style="color:#777">Community estimate (not official BOM)</span>`]);
+  if (s.class_check && s.class_check.startsWith("differs"))
+    rows.push(["", `<span class="warn">Computed ${esc(s.computed_class)}; ${esc(s.class_check)}</span>`]);
+  return rows;
+}
+
+function popupHtml(s) {
+  const geo = s.geocoded ? '<span class="warn">approximate (geocoded from name)</span>' : esc(s.coord_source);
+  const rows = [
+    ["Station", esc(s.name)],
+    ["Height", s.height_m == null ? "\u2014" : `${s.height_m.toFixed(2)} m ${esc(s.datum)}`],
+    ["Time", (esc(s.time) || "\u2014") + (s.tz ? ` <span style="color:#777">${esc(TZ_ABBR[s.tz] || s.tz)}</span>` : "") + obsAge(s) + (s.live ? ' <span style="color:#2e7d32">(live from BOM)</span>' : ' <span style="color:#777">(GitHub snapshot)</span>')],
+    ["Tendency", esc(s.tendency) || "\u2014"],
+    ["Flood class", esc(s.flood_class) || (s.computed_class ? esc(s.computed_class) + ' <span style="color:#777">(from levels)</span>' : "\u2014")],
+    ...floodRows(s),
+    ["Trip", whereOnRoute(s) + (s.state ? ` &middot; ${esc(s.state)}` : "")],
+    ["Location", `${s.lat.toFixed(4)}, ${s.lon.toFixed(4)} (${geo})`],
+    ["Bulletin", `<a href="https://www.bom.gov.au/fwo/${esc(s.bulletin)}.html" target="_blank" rel="noopener">${esc(s.bulletin)}</a>`]
+  ];
+  return `<div class="popup"><table>${rows.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("")}</table>
+    <p style="margin:6px 0 0"><a href="${esc(s.plot_url)}" target="_blank" rel="noopener"><b>BOM plot \u2192</b></a>
+    ${s.table_url ? ` | <a href="${esc(s.table_url)}" target="_blank" rel="noopener">table</a>` : ""}</p></div>`;
+}
+
+function syncGauges() {
+  if (gaugesOn) gaugeLayer.addTo(map); else map.removeLayer(gaugeLayer);
+  const sub = document.getElementById("fosub"), fo = document.getElementById("fo");
+  if (sub) { sub.classList.toggle("off", !gaugesOn); fo.disabled = !gaugesOn; }
+}
+function buildGaugesUi() {
+  const el = document.getElementById("gauges");
+  el.innerHTML = `<label><input type="checkbox" id="gon" ${gaugesOn ? "checked" : ""}>
+      <span class="gico"></span>
+      <span>River gauges within ${lastData ? lastData.buffer_km : 25} km <span class="ct" id="ct-gauges"></span></span></label>
+    <div class="sub" id="fosub"><label><input type="checkbox" id="fo" ${floodOnly ? "checked" : ""}> <span title="Gauges only; road closures and cameras stay visible">In flood only</span></label></div>`;
+  el.querySelector("#gon").onchange = (e) => { gaugesOn = e.target.checked; lsSet(LS_GAUGES, gaugesOn); syncGauges(); };
+  el.querySelector("#fo").onchange = (e) => { floodOnly = e.target.checked; lsSet(LS_FLOOD, floodOnly); if (lastData) drawMarkers(lastData); };
+  syncGauges();
+}
+function drawMarkers(data) {
+  gaugeLayer.clearLayers();
+  let n = 0, f = 0;
+  for (const s of data.stations) {
+    if (!visible(s)) continue;
+    n++; if (inFlood(s)) f++;
+    if (floodOnly && !inFlood(s)) continue;
+    const key = classKey(effectiveClass(s));
+    const arrow = ARROWS[(s.tendency || "").toLowerCase()] || "?";
+    const stale = s.height_m == null ? " stale" : "";
+    const flash = nearNextFlash(s);
+    const bg = flash ? "" : `background:${COLORS[key]};`;
+    const icon = L.divIcon({ className: "", iconSize: [28, 28], iconAnchor: [14, 14], popupAnchor: [0, -12],
+      html: `<div class="gauge${stale}${flash}" style="${bg}">${arrow}</div>` });
+    L.marker([s.lat, s.lon], { icon, title: s.name + (floodNext(s) ? ` \u2014 ${floodNext(s)}` : ""), zIndexOffset: Z[key] })
+      .bindPopup(() => popupHtml(s), popOpts({ maxWidth: 320 }))
+      .addTo(gaugeLayer);
+  }
+  const c = document.getElementById("ct-gauges");
+  if (c) c.innerHTML = `(${n})` + (f ? ` <span class="fl" title="in flood">\u26A0 ${f} in flood</span>` : "");
+  updateSummary();
+}
+
+function render(data) {
+  lastData = data;
+  if (!uiBuilt && route) { buildViewUi(); buildGaugesUi(); setView(view, false); uiBuilt = true; }
+  applyLive(data);
+  drawMarkers(data);
+  const bl = (data.bulletins || []).map(b => b.id + (b.stale ? " (stale)" : "")).join(", ");
+  document.getElementById("upd").innerHTML =
+    `Snapshot: ${esc(data.generated_at_text || data.generated_at)}<br><span style="font-size:11.5px;color:#555">${data.count} gauges within ${data.buffer_km} km of the route &middot; BOM bulletins ${esc(bl)}</span>`;
+  document.getElementById("err").textContent = "";
+  if (!fitted) { fitView(); fitted = true; }
+  drawRoads();
+}
+
+// ---- Road layers: flood closures (QLD/NSW/VIC) and QLD flood cameras; built by update_roads.py ----
+const roads = {
+  closuresOn: lsGet(LS_CLOSURES, true) !== false, camerasOn: lsGet(LS_CAMERAS, false) === true,
+  closures: null, cameras: null, cErr: "", kErr: "",
+  cLayer: L.layerGroup(), kLayer: L.layerGroup()
+};
+map.createPane("closureLines");
+map.getPane("closureLines").style.zIndex = 450;
+const fmtBneFull = new Intl.DateTimeFormat("en-AU", { timeZone: "Australia/Brisbane", weekday: "short", day: "numeric",
+  month: "short", hour: "numeric", minute: "2-digit", hour12: true });
+function bneText(iso) { if (!iso) return ""; const d = new Date(iso); return isNaN(d) ? esc(iso) : fmtBneFull.format(d) + " AEST (QLD time)"; }
+function popOpts(o) {
+  return Object.assign({ autoPanPaddingTopLeft: L.point(10, window.innerWidth < 600 ? 90 : 10), autoPanPaddingBottomRight: L.point(10, 10) }, o);
+}
+function syncRoadLayers() {
+  for (const [lyr, on] of [[roads.cLayer, roads.closuresOn], [roads.kLayer, roads.camerasOn]]) {
+    if (on && !map.hasLayer(lyr)) lyr.addTo(map);
+    if (!on && map.hasLayer(lyr)) map.removeLayer(lyr);
+  }
+}
+function whereOnRoute(x) {
+  const d = dayById(x.nearest_day);
+  return `${x.distance_km} km from the route` + (d ? ` (${esc(d.name)})` : "");
+}
+function closurePopup(c) {
+  const sev = c.severity === "closed" ? '<b style="color:#c62828">Road closed</b>' : '<b style="color:#a15c00">Lanes affected / restricted</b>';
+  const rows = [
+    ["Road", `<b>${esc(c.road)}</b> (${esc(c.state)})`],
+    ["Locality", esc([c.locality, c.lga].filter(Boolean).join(", ")) || "\u2014"],
+    ["Impact", `${sev}<br>${esc(c.impact || "")}${c.direction && c.direction !== "Unknown" ? ` (${esc(c.direction)})` : ""}`],
+    ["Cause", esc([c.event_subtype, c.due_to].filter(x => x && x !== "None").join(" \u2014 ")) || "\u2014"],
+    ["Trip", whereOnRoute(c)],
+  ];
+  if (c.description) rows.push(["Details", esc(c.description)]);
+  if (c.advice) rows.push(["Advice", esc(c.advice)]);
+  if (c.information) rows.push(["Info", esc(c.information)]);
+  rows.push(["Since", bneText(c.start) || "\u2014"]);
+  rows.push(["Updated", bneText(c.last_updated) || "\u2014"]);
+  if (c.provided_by) rows.push(["Reported by", esc(c.provided_by)]);
+  const src = (roads.closures && roads.closures.sources || {})[c.state] || {};
+  const stale = src.stale ? `<p class="warn" style="margin:4px 0 0">${esc(c.state)} closure feed unavailable since ${bneText(src.stale_since)}; this may be out of date.</p>` : "";
+  const [nm, url] = STATE_LINKS[c.state] || STATE_LINKS.QLD;
+  return `<div class="popup"><table>${rows.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("")}</table>${stale}
+    <p style="margin:6px 0 0"><a href="${esc(c.source_link || url)}" target="_blank" rel="noopener"><b>${esc(nm)} \u2192</b></a></p></div>`;
+}
+function drawClosures() {
+  roads.cLayer.clearLayers();
+  const d = roads.closures; if (!d) return;
+  for (const c of d.closures || []) {
+    if (!c.marker || !visible(c)) continue;
+    const g = roads.cLayer, closed = c.severity === "closed";
+    const color = closed ? "#d50000" : "#ffab00", title = `${c.road} \u2014 ${c.impact || ""}`;
+    const pop = () => closurePopup(c);
+    for (const line of (c.geometry && c.geometry.lines) || []) {
+      L.polyline(line, { pane: "closureLines", color: "#fff", weight: 8, opacity: .8, interactive: false }).addTo(g);
+      L.polyline(line, { pane: "closureLines", color, weight: 5, opacity: .95, dashArray: closed ? null : "8 6" })
+        .bindPopup(pop, popOpts({ maxWidth: 320 })).bindTooltip(title, { sticky: true }).addTo(g);
+    }
+    const icon = L.divIcon({ className: "", iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10],
+                             html: `<div class="ne${closed ? "" : " part"}"></div>` });
+    L.marker(c.marker, { icon, title, zIndexOffset: closed ? 900 : 850, keyboard: true }).bindPopup(pop, popOpts({ maxWidth: 320 })).addTo(g);
+  }
+}
+function cameraPopup(k) {
+  const src = k.image_url + (k.image_url.includes("?") ? "&" : "?") + "t=" + Date.now();   // cache-buster on every open
+  const when = k.image_stale && k.image_time
+    ? `<span class="warn">Image from ${bneText(k.image_time)} (older than 3 h at last check; camera may be offline or only update 6am\u20136pm)</span>`
+    : `Live image, loaded ${fmtBneFull.format(new Date())} AEST`;
+  return `<div class="popup campop"><b>${esc(k.name)}</b>
+    <a href="${esc(src)}" target="_blank" rel="noopener" title="Open full image">
+      <img src="${esc(src)}" alt="Flood camera: ${esc(k.name)}" loading="eager"
+           onerror="this.outerHTML='<p class=&quot;warn&quot;>Image could not be loaded \u2014 tap to open it.</p>'"></a>
+    <div style="font-size:12px">${when}</div>
+    ${k.info ? `<div style="font-size:11.5px;color:#555;margin-top:2px">${esc(k.info)}</div>` : ""}
+    <div style="font-size:11.5px;color:#555;margin-top:2px">${esc([k.direction && `Facing ${k.direction}`, k.image_sourced_from].filter(Boolean).join(" \u00b7 "))}</div>
+    <p style="margin:5px 0 0"><a href="${esc(src)}" target="_blank" rel="noopener">Open image</a> &middot;
+      <a href="https://qldtraffic.qld.gov.au/" target="_blank" rel="noopener">QLDTraffic \u2192</a></p></div>`;
+}
+function drawCameras() {
+  roads.kLayer.clearLayers();
+  const d = roads.cameras; if (!d) return;
+  for (const k of d.cameras || []) {
+    if (k.lat == null || !visible(Object.assign({ state: "QLD" }, k)) || !/^https:\/\//.test(k.image_url || "")) continue;
+    const icon = L.divIcon({ className: "", iconSize: [22, 22], iconAnchor: [11, 11], popupAnchor: [0, -10],
+                             html: `<div class="cam${k.image_stale ? " old" : ""}">${CAM_SVG}</div>` });
+    L.marker([k.lat, k.lon], { icon, title: "Flood camera: " + k.name, zIndexOffset: 700 })
+      .bindPopup(() => cameraPopup(k), popOpts({ maxWidth: 300, minWidth: 200 }))
+      .addTo(roads.kLayer);
+  }
+}
+function updateRoadCounts() {
+  const cc = document.getElementById("ct-closures"), kc = document.getElementById("ct-cameras"), st = document.getElementById("roadstale"),
+        sr = document.getElementById("roadsrcs");
+  if (!cc) return;
+  if (roads.closures) {
+    const list = (roads.closures.closures || []).filter(visible);
+    const closed = list.filter(c => c.severity === "closed").length;
+    cc.innerHTML = `(${closed} closed, ${list.length - closed} partial)`;
+    const srcs = roads.closures.sources || {};
+    sr.innerHTML = ["QLD", "NSW", "VIC"].map(s => {
+      const x = srcs[s] || {}, [nm, url] = STATE_LINKS[s];
+      const ok = x.ok ? "checked" : x.not_configured ? '<span class="bad">not checked (no API key)</span>' : `<span class="bad">feed failed${x.stale ? ", showing last known" : ""}</span>`;
+      return `${s}: ${ok} &middot; <a href="${url}" target="_blank" rel="noopener">${nm}</a>`;
+    }).join("<br>");
+  } else cc.textContent = roads.cErr ? "(unavailable)" : "";
+  if (roads.cameras) kc.textContent = `(${(roads.cameras.cameras || []).filter(k => visible(Object.assign({ state: "QLD" }, k))).length})`;
+  else kc.textContent = roads.kErr ? "(unavailable)" : "";
+  const msgs = [];
+  const age = (d) => d && d.generated_at ? (Date.now() - new Date(d.generated_at)) / 3600e3 : 0;
+  if (roads.closures && age(roads.closures) > 3) msgs.push(`Closure data last changed ${bneText(roads.closures.generated_at)}.`);
+  if (roads.cErr) msgs.push("Could not load closures: " + roads.cErr);
+  if (roads.kErr) msgs.push("Could not load cameras: " + roads.kErr);
+  st.textContent = msgs.join(" ");
+}
+function buildRoadsUi() {
+  const el = document.getElementById("roads");
+  el.innerHTML = `<label><input type="checkbox" id="rdon" ${roads.closuresOn ? "checked" : ""}>
+      <span class="ne" style="width:14px;height:14px;flex:none"></span>
+      <span>Flood road closures within 10 km <span class="ct" id="ct-closures"></span></span></label>
+    <label><input type="checkbox" id="camon" ${roads.camerasOn ? "checked" : ""}>
+      <span class="cam" style="width:16px;height:16px;flex:none">${CAM_SVG}</span>
+      <span>QLD flood cameras <span class="ct" id="ct-cameras"></span></span></label>
+    <div class="stale" id="roadstale"></div>
+    <div class="srcs" id="roadsrcs"></div>
+    <div class="note">State traffic sites are the source of truth; council roads may be missing.</div>`;
+  el.querySelector("#rdon").onchange = (e) => { roads.closuresOn = e.target.checked; lsSet(LS_CLOSURES, roads.closuresOn); syncRoadLayers(); };
+  el.querySelector("#camon").onchange = (e) => { roads.camerasOn = e.target.checked; lsSet(LS_CAMERAS, roads.camerasOn); syncRoadLayers(); };
+}
+buildRoadsUi();
+async function loadJson(name) {
+  const r = await fetch(name + "?t=" + Date.now(), { cache: "no-store" });
+  if (!r.ok) throw new Error("HTTP " + r.status);
+  return r.json();
+}
+async function loadRoads() {
+  const [c, k] = await Promise.allSettled([loadJson("closures.json"), loadJson("cameras.json")]);
+  if (c.status === "fulfilled" && Array.isArray(c.value.closures)) { roads.closures = c.value; roads.cErr = ""; }
+  else roads.cErr = c.status === "rejected" ? c.reason.message : "bad format";
+  if (k.status === "fulfilled" && Array.isArray(k.value.cameras)) { roads.cameras = k.value; roads.kErr = ""; }
+  else roads.kErr = k.status === "rejected" ? k.reason.message : "bad format";
+  if (route) { drawRoads(); updateSummary(); }
+}
+function drawRoads() {
+  if (!route) return;
+  try { drawClosures(); } catch (e) { roads.cErr = "draw failed: " + e.message; }
+  try { drawCameras(); } catch (e) { roads.kErr = "draw failed: " + e.message; }
+  syncRoadLayers(); updateRoadCounts();
+}
+
+// ---- Rain radar (RainViewer public Weather Maps API: past 2 h, 10-min frames, max zoom 7, Universal Blue) ----
+const RV_API = "https://api.rainviewer.com/public/weather-maps.json";
+const RV_ATTR = 'Radar &copy; <a href="https://www.rainviewer.com/" target="_blank" rel="noopener">RainViewer</a>';
+const RV_COLOR = 2, RV_OPTS = "1_0";            // 2 = Universal Blue (only free scheme); smoothed, no snow colours
+map.createPane("radar");
+map.getPane("radar").style.zIndex = 350;         // above base tiles (200), below the route (420) and gauges (600)
+map.getPane("radar").style.pointerEvents = "none";
+const radarSaved = lsGet(LS_RADAR, {});
+const radar = { on: radarSaved.on === true, opacity: typeof radarSaved.opacity === "number" ? radarSaved.opacity : 0.6,
+                host: "", frames: [], layers: {}, idx: -1, playing: false, timer: null, err: "" };
+function saveRadar() { lsSet(LS_RADAR, { on: radar.on, opacity: radar.opacity }); }
+const fmtBne = new Intl.DateTimeFormat("en-AU", { timeZone: "Australia/Brisbane", hour: "2-digit", minute: "2-digit",
+                                                   hour12: false, weekday: "short" });
+function radarLayer(f) {
+  if (!radar.layers[f.path]) {
+    // 512 px tiles with zoomOffset -1: map zoom z requests tile zoom z-1. Tile zoom is capped at 7 by RainViewer,
+    // so maxNativeZoom 8 (= tile zoom 7); beyond that Leaflet upscales the z7 tiles instead of dropping them.
+    radar.layers[f.path] = L.tileLayer(`${radar.host}${f.path}/512/{z}/{x}/{y}/${RV_COLOR}/${RV_OPTS}.png`, {
+      pane: "radar", tileSize: 512, zoomOffset: -1, minNativeZoom: 1, maxNativeZoom: 8, maxZoom: 18,
+      opacity: 0, attribution: RV_ATTR, keepBuffer: 1, updateWhenIdle: true });
+  }
+  return radar.layers[f.path];
+}
+function showFrame(i) {
+  if (!radar.frames.length) return;
+  radar.idx = (i + radar.frames.length) % radar.frames.length;
+  const cur = radar.frames[radar.idx];
+  for (const f of radar.frames) {
+    const lyr = radar.layers[f.path];
+    if (f === cur) { const l = radarLayer(f); if (!map.hasLayer(l)) l.addTo(map); l.setOpacity(radar.opacity); }
+    else if (lyr) { if (radar.playing) lyr.setOpacity(0); else map.removeLayer(lyr); }
+  }
+  updateRadarUi();
+}
+function preloadFrames() { for (const f of radar.frames) { const l = radarLayer(f); if (!map.hasLayer(l)) l.addTo(map); } }
+function stopAnim() { radar.playing = false; clearTimeout(radar.timer); radar.timer = null; }
+function tick() {   // loops oldest -> latest, holding a little longer on the latest frame
+  showFrame(radar.idx + 1);
+  radar.timer = setTimeout(tick, radar.idx === radar.frames.length - 1 ? 1800 : 600);
+}
+function togglePlay() {
+  if (radar.playing) { stopAnim(); showFrame(radar.idx); return; }
+  radar.playing = true; preloadFrames(); showFrame(0);
+  radar.timer = setTimeout(tick, 600);
+}
+function clearRadarLayers() { for (const k in radar.layers) map.removeLayer(radar.layers[k]); }
+async function refreshRadar() {
+  if (!radar.on) return;
+  try {
+    const r = await fetch(RV_API, { cache: "no-store" });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const d = await r.json();
+    const past = (d.radar && d.radar.past) || [];
+    if (!past.length) throw new Error("no radar frames listed");
+    const atLatest = radar.idx < 0 || radar.idx === radar.frames.length - 1;
+    radar.host = d.host;
+    const keep = new Set(past.map(f => f.path));
+    for (const k in radar.layers) if (!keep.has(k)) { map.removeLayer(radar.layers[k]); delete radar.layers[k]; }
+    const curPath = radar.frames[radar.idx] && radar.frames[radar.idx].path;
+    radar.frames = past;
+    radar.err = "";
+    if (!radar.on) return;
+    if (radar.playing) preloadFrames();
+    let i = past.length - 1;
+    if (!atLatest && curPath) { const j = past.findIndex(f => f.path === curPath); if (j >= 0) i = j; }
+    showFrame(i);
+  } catch (e) {
+    radar.err = "Radar unavailable: " + e.message;
+    updateRadarUi();
+  }
+}
+function setRadarOn(on) {
+  radar.on = on; saveRadar();
+  if (!on) { stopAnim(); clearRadarLayers(); radar.idx = -1; updateRadarUi(); return; }
+  updateRadarUi(); refreshRadar();
+}
+function updateRadarUi() {
+  const ctl = document.getElementById("rvctl"); if (!ctl) return;
+  ctl.style.display = radar.on ? "" : "none";
+  const f = radar.frames[radar.idx];
+  const ts = document.getElementById("rvts"), btn = document.getElementById("rvplay");
+  if (radar.err) ts.textContent = radar.err;
+  else if (!f) ts.textContent = "Loading radar\u2026";
+  else {
+    const mins = Math.round((Date.now() / 1000 - f.time) / 60);
+    const latest = radar.idx === radar.frames.length - 1;
+    ts.textContent = `${fmtBne.format(new Date(f.time * 1000))} AEST (${latest ? "latest, " : ""}${mins} min ago)`;
+  }
+  btn.textContent = radar.playing ? "\u23F8" : "\u25B6";
+  btn.title = radar.playing ? "Pause" : "Play the last 2 hours";
+}
+function buildRadarUi() {
+  const el = document.getElementById("radar");
+  el.innerHTML = `<label><input type="checkbox" id="rvon" ${radar.on ? "checked" : ""}> <span>Rain radar</span></label>
+    <div id="rvctl">
+      <div class="rc"><button type="button" id="rvplay">\u25B6</button><span class="ts" id="rvts"></span></div>
+      <div class="rc"><span>Opacity</span><input type="range" id="rvop" min="0.1" max="1" step="0.05" value="${radar.opacity}"></div>
+      <div class="scale"></div><div class="sl"><span>light</span><span>moderate</span><span>heavy</span><span>intense</span></div>
+      <div class="note">Past 2 h, 10-min frames. Coarse resolution (max zoom 7), so blocky when zoomed in.</div>
+    </div>`;
+  el.querySelector("#rvon").onchange = (e) => setRadarOn(e.target.checked);
+  el.querySelector("#rvplay").onclick = togglePlay;
+  el.querySelector("#rvop").oninput = (e) => {
+    radar.opacity = +e.target.value; saveRadar();
+    const f = radar.frames[radar.idx]; if (f && radar.layers[f.path]) radar.layers[f.path].setOpacity(radar.opacity);
+  };
+  updateRadarUi();
+}
+document.addEventListener("visibilitychange", () => { if (document.hidden && radar.playing) { stopAnim(); showFrame(radar.idx); } });
+buildRadarUi();
+if (radar.on) refreshRadar();
+
+async function load() {
+  try {
+    if (!route) drawRoute(await loadJson("route.json"));
+  } catch (e) {
+    document.getElementById("err").textContent = "Could not load route.json: " + e.message;
+    return;
+  }
+  await loadRoads();
+  try {
+    render(await loadJson("data.json"));
+  } catch (e) {
+    document.getElementById("err").textContent = "Could not load data.json: " + e.message;
+  }
+}
+// ---- Live BOM gauge readings, fetched in the browser ----
+// GitHub Actions (update_data.py, every 15 min) commits data.json; between runs the page also asks the shared
+// Cloudflare Worker relay for the BOM river height bulletins and overlays any newer readings. The Worker
+// (github.com/alanjhaase-lang/sunshine-coast-flood-map, bom-proxy/) only relays an allowlist of bulletin IDs;
+// IDs it does not allow (e.g. NSW IDN*/VIC IDV* until the allowlist is extended - see README) simply fail and
+// those gauges keep the GitHub snapshot. "" = try BOM directly (normally blocked by CORS).
+const LIVE_PROXY = "https://qld-flood-bom-proxy.alanjhaase.workers.dev";
+const LIVE_EVERY_MS = 5 * 60 * 1000, LIVE_TIMEOUT_MS = 10000;
+const live = { readings: {}, checked: null, ok: false, err: "", busy: false, lastTry: 0 };
+const WD = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+function tzOffsetMs(tz, ms) {   // offset of IANA zone tz from UTC at instant ms (handles NSW/VIC daylight saving)
+  try {
+    const p = Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: tz || "Australia/Brisbane", hourCycle: "h23",
+      year: "numeric", month: "numeric", day: "numeric", hour: "numeric", minute: "numeric" }).formatToParts(new Date(ms)).map(x => [x.type, x.value]));
+    return Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour % 24, +p.minute) - Math.floor(ms / 60e3) * 60e3;
+  } catch (e) { return 10 * 3600e3; }
+}
+function bomTimeMs(t, tz, nowMs = Date.now()) {   // "07.20AM Sun" in the bulletin's state local time -> epoch ms
+  const m = /^(\d{1,2})\.(\d{2})\s*(AM|PM)\s+([A-Za-z]{3})/i.exec((t || "").trim());
+  if (!m) return null;
+  const h = (+m[1] % 12) + (m[3].toUpperCase() === "PM" ? 12 : 0), wd = WD.indexOf(m[4].toLowerCase());
+  if (wd < 0) return null;
+  const off = tzOffsetMs(tz, nowMs);
+  const b = new Date(nowMs + off);            // UTC fields of b = local wall clock in tz
+  for (let back = 0; back < 8; back++) {
+    const day = new Date(Date.UTC(b.getUTCFullYear(), b.getUTCMonth(), b.getUTCDate() - back));
+    if (day.getUTCDay() !== wd) continue;
+    const ms = Date.UTC(day.getUTCFullYear(), day.getUTCMonth(), day.getUTCDate(), h, +m[2]) - off;
+    if (ms <= nowMs + 30 * 60e3) return ms;
+  }
+  return null;
+}
+function cellText(td) { return (td.textContent || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim(); }
+function parseBulletinHtml(html, bid) {        // same table layout update_data.py parses
+  const doc = new DOMParser().parseFromString(html, "text/html"), out = {};
+  for (const tr of doc.querySelectorAll("tr")) {
+    const tds = tr.querySelectorAll("td");
+    if (tds.length < 9) continue;
+    const a = [...tr.querySelectorAll("a[href]")].map(x => /\.(\d{6})\.plt\.shtml/.exec(x.getAttribute("href"))).find(Boolean);
+    if (!a) continue;
+    const raw = cellText(tds[3]), h = parseFloat(raw);
+    out[a[1]] = { time: cellText(tds[2]), height_raw: raw, height_m: /^-?\d+(\.\d+)?$/.test(raw) ? h : null,
+                  datum: cellText(tds[4]), tendency: cellText(tds[5]).toLowerCase(), crossing: cellText(tds[6]),
+                  flood_class: cellText(tds[7]), bulletin: bid };
+  }
+  return out;
+}
+async function fetchText(url) {   // url = https://www.bom.gov.au/fwo/IDQxxxxx.html
+  const ctl = new AbortController(), t = setTimeout(() => ctl.abort(), LIVE_TIMEOUT_MS);
+  try {
+    const r = await fetch(LIVE_PROXY ? LIVE_PROXY.replace(/\/+$/, "") + new URL(url).pathname : url, { cache: "no-store", signal: ctl.signal, credentials: "omit" });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    return await r.text();
+  } finally { clearTimeout(t); }
+}
+async function refreshLive() {
+  if (live.busy || !lastData) return;
+  if (Date.now() - live.lastTry < LIVE_EVERY_MS - 5000) return;
+  live.busy = true; live.lastTry = Date.now();
+  const ids = [...new Set((lastData.bulletins || []).map(b => b.id))];
+  const res = await Promise.allSettled(ids.map(async id => parseBulletinHtml(await fetchText(`https://www.bom.gov.au/fwo/${id}.html`), id)));
+  let got = 0, errs = [];
+  res.forEach((r, i) => {
+    if (r.status === "fulfilled" && Object.keys(r.value).length) { Object.assign(live.readings, r.value); got++; }
+    else errs.push(ids[i] + ": " + (r.status === "rejected" ? (r.reason && r.reason.name === "TypeError" ? "blocked by browser (CORS)" : (r.reason && r.reason.message) || "failed") : "no rows"));
+  });
+  live.checked = Date.now(); live.ok = got > 0; live.got = got; live.total = ids.length; live.err = errs.join("; ");
+  live.busy = false;
+  if (lastData) { applyLive(lastData); drawMarkers(lastData); }
+}
+function liveStatus(s, lv) {   // mirrors flood_status() in update_data.py for an updated reading
+  if (!s.flood_levels) return;
+  const keys = ["minor", "moderate", "major"], known = keys.filter(k => s.flood_levels[k] != null).map(k => [k, s.flood_levels[k]]);
+  Object.assign(s, { computed_class: null, next_class: null, next_level_m: null, delta_m: null, above_major_m: null });
+  const h = s.height_m; if (h == null || !known.length) return;
+  const cap = k => k[0].toUpperCase() + k.slice(1), r3 = v => Math.round(v * 1000) / 1000, r2 = v => Math.round(v * 100) / 100;
+  let cur = "Below Flood Level";
+  for (const [k, v] of known) if (r3(h - v) >= 0) cur = cap(k);
+  s.computed_class = cur;
+  const nxt = known.find(([, v]) => r3(h - v) < 0);
+  if (nxt) { s.next_class = cap(nxt[0]); s.next_level_m = nxt[1]; s.delta_m = r2(nxt[1] - h); }
+  else if (s.flood_levels.major != null) s.above_major_m = r2(h - s.flood_levels.major);
+  const bk = classKey(s.flood_class);
+  s.class_check = bk === "none" ? "no bulletin class" : (classKey(cur) === bk ? "agrees" : `differs (bulletin: ${s.flood_class})`);
+}
+function obsAge(s) {   // per-gauge "BOM reading N min/h ago"
+  const t = bomTimeMs(s.time, s.tz); if (t == null) return "";
+  const m = Math.max(0, Math.round((Date.now() - t) / 60e3));
+  const txt = m < 60 ? `${m} min ago` : `${Math.floor(m / 60)} h ${m % 60} min ago`;
+  return ` <span style="color:${m > 180 ? "#a15c00" : "#555"}">(BOM reading ${txt})</span>`;
+}
+function liveWhy() {   // one short reason; full per-bulletin detail in the tooltip
+  const why = [...new Set((live.err || "failed").split("; ").map(x => x.replace(/^[^:]+: /, "")))];
+  return why.length === 1 ? why[0] : why.join(", ");
+}
+function applyLive(data) {
+  let merged = 0, newest = null;
+  for (const s of data.stations || []) {
+    const r = live.readings[s.station_no];
+    const tOld = bomTimeMs(s.time, s.tz), tNew = r && bomTimeMs(r.time, s.tz);
+    if (r && tNew != null && r.height_m != null && r.datum === s.datum && (tOld == null || tNew > tOld)) {
+      Object.assign(s, { time: r.time, height_m: r.height_m, height_raw: r.height_raw, tendency: r.tendency,
+                         crossing: r.crossing, flood_class: r.flood_class, live: true });
+      liveStatus(s);
+    }
+    if (s.live) merged++;
+    const t = bomTimeMs(s.time, s.tz);
+    if (t != null && (newest == null || t > newest)) newest = t;
+  }
+  const el = document.getElementById("live"); if (!el) return;
+  const obs = newest ? `latest BOM observation ${fmtBneFull.format(new Date(newest))} AEST` : "no BOM observation time";
+  const chk = live.checked ? fmtBne.format(new Date(live.checked)) + " AEST" : "";
+  if (live.ok) {
+    el.className = "ok";
+    el.textContent = `Gauges: live from BOM${LIVE_PROXY ? " via map relay" : " in your browser"} (checked ${chk}; ${merged} newer than snapshot${live.got < live.total ? `; ${live.got} of ${live.total} bulletins live, the rest from the snapshot` : ""}) \u00b7 ${obs}`;
+    el.title = live.err || "";
+  } else {
+    el.className = live.checked ? "off" : ""; el.title = live.err || "";
+    el.textContent = live.checked
+      ? `Gauges: GitHub snapshot (GitHub Actions, scheduled every 15 min; ${LIVE_PROXY ? "live BOM relay unavailable: " + liveWhy() : "BOM does not allow direct browser reads" + (liveWhy().includes("CORS") ? "" : ": " + liveWhy())}) \u00b7 ${obs}`
+      : `Gauges: GitHub snapshot \u00b7 ${obs} \u00b7 checking BOM\u2026`;
+  }
+}
+
+load().then(refreshLive);
+setInterval(() => { load().then(refreshLive); refreshRadar(); }, LIVE_EVERY_MS);
+let lastVisLoad = Date.now();
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden || Date.now() - lastVisLoad < 60e3) return;
+  lastVisLoad = Date.now(); load().then(refreshLive); refreshRadar();
+});
+</script>
+</body>
+</html>

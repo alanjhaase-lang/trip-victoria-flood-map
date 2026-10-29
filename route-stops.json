@@ -1,0 +1,211 @@
+[
+ {
+  "seq": 1,
+  "name": "Home",
+  "address": "18 Westfield Dr, Westbrook QLD 4350",
+  "lat": -27.602244,
+  "lon": 151.867033,
+  "type": "home",
+  "leg": "outbound",
+  "leg_km": 0,
+  "note": null
+ },
+ {
+  "seq": 2,
+  "name": "Tesla Supercharger – Narrabri",
+  "address": "103 Tibbereena St, Narrabri NSW 2390",
+  "lat": -30.323719,
+  "lon": 149.780756,
+  "type": "supercharger",
+  "leg": "outbound",
+  "leg_km": 439,
+  "note": null
+ },
+ {
+  "seq": 3,
+  "name": "Orana Motel",
+  "address": "95 Cobra St, Dubbo NSW 2830",
+  "lat": -32.254616,
+  "lon": 148.608719,
+  "type": "overnight",
+  "leg": "outbound",
+  "leg_km": 703,
+  "note": null
+ },
+ {
+  "seq": 4,
+  "name": "Tesla Supercharger – Coolac",
+  "address": "477 Coolac Rd, Coolac NSW 2727",
+  "lat": -34.924434,
+  "lon": 148.165423,
+  "type": "supercharger",
+  "leg": "outbound",
+  "leg_km": 1052,
+  "note": null
+ },
+ {
+  "seq": 5,
+  "name": "Commercial Golf Resort",
+  "address": "530 North St, Albury NSW 2640",
+  "lat": -36.06669,
+  "lon": 146.91885,
+  "type": "overnight",
+  "leg": "outbound",
+  "leg_km": 1249,
+  "note": null
+ },
+ {
+  "seq": 6,
+  "name": "Tesla Supercharger – Albury",
+  "address": "618 Dean St, Albury NSW 2640",
+  "lat": -36.080025,
+  "lon": 146.912918,
+  "type": "supercharger",
+  "leg": "outbound",
+  "leg_km": 1251,
+  "note": null
+ },
+ {
+  "seq": 7,
+  "name": "Bay View Apartments",
+  "address": "6 Malone St, Geelong VIC 3220",
+  "lat": -38.140684,
+  "lon": 144.355913,
+  "type": "overnight",
+  "leg": "outbound",
+  "leg_km": 1637,
+  "note": "Unit 610"
+ },
+ {
+  "seq": 8,
+  "name": "Bay View Apartments",
+  "address": "6 Malone St, Geelong VIC 3220",
+  "lat": -38.140684,
+  "lon": 144.355913,
+  "type": "overnight",
+  "leg": "return",
+  "leg_km": 0,
+  "note": null
+ },
+ {
+  "seq": 9,
+  "name": "386 Dorset Rd",
+  "address": "386 Dorset Rd, Boronia VIC 3155",
+  "lat": -37.84659,
+  "lon": 145.286727,
+  "type": "stop",
+  "leg": "return",
+  "leg_km": 103,
+  "note": null
+ },
+ {
+  "seq": 10,
+  "name": "16 John St",
+  "address": "16 John St, Beechworth VIC 3747",
+  "lat": -36.366279,
+  "lon": 146.684746,
+  "type": "stop",
+  "leg": "return",
+  "leg_km": 383,
+  "note": null
+ },
+ {
+  "seq": 11,
+  "name": "Gundagai Cabins & Tourist Park",
+  "address": "1 Nangus Road, Gundagai NSW 2722",
+  "lat": -35.064396,
+  "lon": 148.097863,
+  "type": "overnight",
+  "leg": "return",
+  "leg_km": 609,
+  "note": null
+ },
+ {
+  "seq": 12,
+  "name": "Tesla Supercharger – Gundagai",
+  "address": "Annie Pyers Drive, Gundagai NSW 2722",
+  "lat": -35.001278,
+  "lon": 148.110975,
+  "type": "supercharger",
+  "leg": "return",
+  "leg_km": 617,
+  "note": null
+ },
+ {
+  "seq": 13,
+  "name": "Australian Reptile Park",
+  "address": "Sergent Major's Row, Somersby NSW 2250",
+  "lat": -33.41854,
+  "lon": 151.278315,
+  "type": "stop",
+  "leg": "return",
+  "leg_km": 1047,
+  "note": null
+ },
+ {
+  "seq": 14,
+  "name": "Tesla Supercharger – West Gosford",
+  "address": "Riverside Drive, West Gosford NSW 2250",
+  "lat": -33.425823,
+  "lon": 151.320474,
+  "type": "supercharger",
+  "leg": "return",
+  "leg_km": 1055,
+  "note": null
+ },
+ {
+  "seq": 15,
+  "name": "Voco Gosford",
+  "address": "Donnison Street, Gosford NSW 2250",
+  "lat": -33.426847,
+  "lon": 151.341229,
+  "type": "overnight",
+  "leg": "return",
+  "leg_km": 1057,
+  "note": null
+ },
+ {
+  "seq": 16,
+  "name": "Tesla Supercharger – Coffs Harbour",
+  "address": "Park Beach Road, Coffs Harbour NSW 2450",
+  "lat": -30.282725,
+  "lon": 153.129262,
+  "type": "supercharger",
+  "leg": "return",
+  "leg_km": 1516,
+  "note": null
+ },
+ {
+  "seq": 17,
+  "name": "Discovery Parks - Byron Bay",
+  "address": "399 Ewingsdale Road, Byron Bay NSW 2481",
+  "lat": -28.636232,
+  "lon": 153.593221,
+  "type": "overnight",
+  "leg": "return",
+  "leg_km": 1747,
+  "note": null
+ },
+ {
+  "seq": 18,
+  "name": "Tesla Supercharger – Coffs Harbour",
+  "address": "Park Beach Road, Coffs Harbour NSW 2450",
+  "lat": -30.282725,
+  "lon": 153.129262,
+  "type": "supercharger",
+  "leg": "return",
+  "leg_km": 1977,
+  "note": null
+ },
+ {
+  "seq": 19,
+  "name": "Home",
+  "address": "18 Westfield Dr, Westbrook QLD 4350",
+  "lat": -27.602355,
+  "lon": 151.866748,
+  "type": "home",
+  "leg": "return",
+  "leg_km": 2479,
+  "note": null
+ }
+]

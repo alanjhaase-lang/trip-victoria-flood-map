@@ -1,0 +1,21 @@
+--- a/bom-proxy/worker.js
++++ b/bom-proxy/worker.js
+@@ -22,6 +22,18 @@
+   "/fwo/IDQ60286.html", // Stanley, Brisbane, Bremer, Lockyer, Pine/Caboolture      (both maps)
+   "/fwo/IDQ60287.html", // Mooloolah, Maroochy, Noosa, Mary                         (both maps)
+   "/fwo/IDQ60293.html", // Condamine, Myall Creek, Balonne, Maranoa                 (Westbrook)
++  // Trip to Victoria corridor map (alanjhaase-lang.github.io/trip-victoria-flood-map), additive only:
++  "/fwo/IDQ60292.html", // QLD: Macintyre, Dumaresq, Weir, Moonie                   (Trip)
++  "/fwo/IDN60140.html", // NSW: Tweed, Brunswick, Richmond, Wilsons, Clarence       (Trip)
++  "/fwo/IDN60141.html", // NSW: Bellinger, Nambucca, Macleay, Hastings, Manning, Hunter (Trip)
++  "/fwo/IDN60143.html", // NSW: Wyong, Hawkesbury-Nepean, Parramatta, Georges       (Trip)
++  "/fwo/IDN60145.html", // NSW: Macintyre, Gwydir, Namoi, Peel, Castlereagh         (Trip)
++  "/fwo/IDN60146.html", // NSW: Macquarie, Bogan, Lachlan                           (Trip)
++  "/fwo/IDN60147.html", // NSW: Murrumbidgee, Murray                                (Trip)
++  "/fwo/IDV60147.html", // VIC: Barwon, Moorabool, Leigh, Glenelg                   (Trip)
++  "/fwo/IDV60150.html", // VIC: Goulburn, Broken                                    (Trip)
++  "/fwo/IDV60151.html", // VIC: Upper Murray, Mitta Mitta, Kiewa, Ovens, King       (Trip)
++  "/fwo/IDV60201.html", // VIC: Werribee, Maribyrnong, Yarra, Dandenong, Bunyip     (Trip)
+ ]);
+ 
+ const ALLOWED_ORIGINS = new Set([

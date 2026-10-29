@@ -1,0 +1,98 @@
+{
+ "generated_at": "2026-10-29T22:23:37+10:00",
+ "generated_at_text": "Thu 29 Oct 2026 10:23 PM AEST",
+ "stale": false,
+ "source": {
+  "url": "https://data.qldtraffic.qld.gov.au/floodcameras.geojson"
+ },
+ "attribution": "Road data © State of Queensland (QLDTraffic), CC BY 4.0",
+ "licence": "https://creativecommons.org/licenses/by/4.0/",
+ "note": "Images load live from image_url. image_time is only recorded when the image is older than 3 h at the last check (image_stale=true); image_ok = image URL answered HTTP 200.",
+ "buffer_km": 5.0,
+ "days": [
+  {
+   "id": "out1",
+   "name": "Out day 1: Westbrook → Dubbo",
+   "count": 1
+  },
+  {
+   "id": "out2",
+   "name": "Out day 2: Dubbo → Albury",
+   "count": 0
+  },
+  {
+   "id": "out3",
+   "name": "Out day 3: Albury → Geelong",
+   "count": 0
+  },
+  {
+   "id": "ret1",
+   "name": "Return day 1: Geelong → Gundagai",
+   "count": 0
+  },
+  {
+   "id": "ret2",
+   "name": "Return day 2: Gundagai → Gosford",
+   "count": 0
+  },
+  {
+   "id": "ret3",
+   "name": "Return day 3: Gosford → Byron Bay",
+   "count": 0
+  },
+  {
+   "id": "ret4",
+   "name": "Return day 4: Byron Bay → Westbrook",
+   "count": 1
+  }
+ ],
+ "count": 2,
+ "cameras": [
+  {
+   "id": 200,
+   "name": "Pampas - Gore Highway at Centenary bridge",
+   "direction": "West",
+   "locality": "Pampas",
+   "district": "Darling Downs",
+   "image_url": "https://cameras.qldtraffic.qld.gov.au/Darling_Downs/gore-centenary-darling-downs.jpg",
+   "image_sourced_from": null,
+   "info": "New images available every 30 minutes. Images between 6pm and 6am may be of reduced quality",
+   "distance_km": 0.0,
+   "days": [
+    "out1"
+   ],
+   "legs": [
+    "out"
+   ],
+   "nearest_day": "out1",
+   "leg_km": 59.0,
+   "lat": -27.80862,
+   "lon": 151.36325,
+   "image_ok": true,
+   "image_stale": false
+  },
+  {
+   "id": 326,
+   "name": "Karana Downs - Mt Crosby Rd near Colleges Crossing",
+   "direction": "West",
+   "locality": "Karana Downs",
+   "district": "Metropolitan",
+   "image_url": "https://cameras.qldtraffic.qld.gov.au/Flood_Cameras/Metropolitan/Karana-Downs-Mt-Crosby-Rd-near-Colleges-Crossing.jpg",
+   "image_sourced_from": null,
+   "info": "New images available every 30 minutes. Images between 6pm and 6am may be of reduced quality",
+   "distance_km": 2.3,
+   "days": [
+    "ret4"
+   ],
+   "legs": [
+    "ret"
+   ],
+   "nearest_day": "ret4",
+   "leg_km": 2372.0,
+   "lat": -27.556,
+   "lon": 152.80614,
+   "image_ok": true,
+   "image_stale": false
+  }
+ ]
+}

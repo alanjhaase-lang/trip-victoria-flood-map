@@ -1,0 +1,1 @@
+# No third-party packages: every script uses the Python 3.10+ standard library only.
