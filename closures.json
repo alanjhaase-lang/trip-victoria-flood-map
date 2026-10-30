@@ -1,15 +1,13 @@
 {
- "generated_at": "2026-10-30T08:58:07+10:00",
- "generated_at_text": "Fri 30 Oct 2026 08:58 AM AEST",
+ "generated_at": "2026-10-30T12:23:43+10:00",
+ "generated_at_text": "Fri 30 Oct 2026 12:23 PM AEST",
  "stale": false,
  "sources": {
   "QLD": {
-   "used": "fallback",
-   "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
-   "feed_published": "2026-10-30T08:56:15+10:00",
-   "errors": [
-    "api: HTTP 429"
-   ],
+   "used": "api",
+   "url": "https://api.qldtraffic.qld.gov.au/v2/events",
+   "feed_published": "2026-10-30T12:22:37+10:00",
+   "errors": [],
    "ok": true,
    "stale": false,
    "count": 10
@@ -22,7 +20,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 125
+     "features": 127
     }
    ],
    "ok": true,
@@ -879,12 +877,12 @@
     "lines": [
      [
       [
-       -27.86404,
-       151.42974
+       -27.90038,
+       151.42134
       ],
       [
-       -27.89241,
-       151.42461
+       -27.90514,
+       151.41969
       ]
      ],
      [
@@ -899,12 +897,12 @@
      ],
      [
       [
-       -27.90038,
-       151.42134
+       -27.86404,
+       151.42974
       ],
       [
-       -27.90514,
-       151.41969
+       -27.89241,
+       151.42461
       ]
      ]
     ]
@@ -3287,8 +3285,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-28T08:17:00+10:00",
-   "last_updated": "2026-10-29T23:13:59+10:00",
-   "last_updated_text": "Thu 29 Oct 2026 11:13 PM AEST",
+   "last_updated": "2026-10-30T11:13:58+10:00",
+   "last_updated_text": "Fri 30 Oct 2026 11:13 AM AEST",
    "provided_by": "Department of Transport and Main Roads",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/837806",
@@ -5299,8 +5297,8 @@
    "information": "300mm of still water over road",
    "status": "Published",
    "start": "2026-10-26T21:30:00+10:00",
-   "last_updated": "2026-10-29T23:14:00+10:00",
-   "last_updated_text": "Thu 29 Oct 2026 11:14 PM AEST",
+   "last_updated": "2026-10-30T11:13:59+10:00",
+   "last_updated_text": "Fri 30 Oct 2026 11:13 AM AEST",
    "provided_by": "Department of Transport and Main Roads",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/837459",
