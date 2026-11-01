@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-02T05:00:33+10:00",
- "generated_at_text": "Mon 02 Nov 2026 05:00 AM AEST",
+ "generated_at": "2026-11-02T08:46:27+10:00",
+ "generated_at_text": "Mon 02 Nov 2026 08:46 AM AEST",
  "stale": false,
  "sources": {
   "QLD": {
    "used": "fallback",
    "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
-   "feed_published": "2026-11-02T04:56:34+10:00",
+   "feed_published": "2026-11-02T08:45:09+10:00",
    "errors": [
     "api: HTTP 429"
    ],
@@ -22,7 +22,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 85
+     "features": 93
     }
    ],
    "ok": true,
@@ -117,8 +117,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-27T07:04:00+10:00",
-   "last_updated": "2026-10-30T06:06:30+10:00",
-   "last_updated_text": "Fri 30 Oct 2026 06:06 AM AEST",
+   "last_updated": "2026-11-02T06:04:27+10:00",
+   "last_updated_text": "Mon 02 Nov 2026 06:04 AM AEST",
    "provided_by": "Toowoomba Regional",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/837508",
@@ -689,8 +689,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-23T16:55:00+10:00",
-   "last_updated": "2026-10-30T06:08:03+10:00",
-   "last_updated_text": "Fri 30 Oct 2026 06:08 AM AEST",
+   "last_updated": "2026-11-02T06:04:04+10:00",
+   "last_updated_text": "Mon 02 Nov 2026 06:04 AM AEST",
    "provided_by": "Toowoomba Regional",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/836587",
@@ -845,7 +845,7 @@
    "locality": "Tummaville / Yandilla",
    "lga": "Toowoomba Regional",
    "event_type": "Flooding",
-   "event_subtype": "Flash flooding",
+   "event_subtype": "Long-term flooding",
    "due_to": "Heavy rain",
    "impact": "Road closed to all traffic",
    "impact_type": "Closures",
@@ -855,8 +855,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-28T05:58:00+10:00",
-   "last_updated": "2026-10-30T06:06:35+10:00",
-   "last_updated_text": "Fri 30 Oct 2026 06:06 AM AEST",
+   "last_updated": "2026-11-02T06:02:06+10:00",
+   "last_updated_text": "Mon 02 Nov 2026 06:02 AM AEST",
    "provided_by": "Toowoomba Regional",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/837769",
@@ -879,12 +879,12 @@
     "lines": [
      [
       [
-       -27.89272,
-       151.42448
+       -27.90038,
+       151.42134
       ],
       [
-       -27.90025,
-       151.42139
+       -27.90514,
+       151.41969
       ]
      ],
      [
@@ -899,12 +899,12 @@
      ],
      [
       [
-       -27.90038,
-       151.42134
+       -27.89272,
+       151.42448
       ],
       [
-       -27.90514,
-       151.41969
+       -27.90025,
+       151.42139
       ]
      ]
     ]
@@ -927,8 +927,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-26T19:50:00+10:00",
-   "last_updated": "2026-10-30T06:06:26+10:00",
-   "last_updated_text": "Fri 30 Oct 2026 06:06 AM AEST",
+   "last_updated": "2026-11-02T06:04:16+10:00",
+   "last_updated_text": "Mon 02 Nov 2026 06:04 AM AEST",
    "provided_by": "Toowoomba Regional",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/837446",
@@ -1159,8 +1159,8 @@
    "locality": "Punchs Creek / Tummaville",
    "lga": "Toowoomba Regional",
    "event_type": "Flooding",
-   "event_subtype": "Flash flooding",
-   "due_to": "Heavy rain",
+   "event_subtype": "Long-term flooding",
+   "due_to": "Flooding of river",
    "impact": "Road closed to all traffic",
    "impact_type": "Closures",
    "severity": "closed",
@@ -1169,8 +1169,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-28T05:59:00+10:00",
-   "last_updated": "2026-10-30T06:04:01+10:00",
-   "last_updated_text": "Fri 30 Oct 2026 06:04 AM AEST",
+   "last_updated": "2026-11-02T06:02:12+10:00",
+   "last_updated_text": "Mon 02 Nov 2026 06:02 AM AEST",
    "provided_by": "Toowoomba Regional",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/837770",
@@ -1533,8 +1533,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-23T06:15:00+10:00",
-   "last_updated": "2026-10-30T07:44:03+10:00",
-   "last_updated_text": "Fri 30 Oct 2026 07:44 AM AEST",
+   "last_updated": "2026-11-02T06:34:09+10:00",
+   "last_updated_text": "Mon 02 Nov 2026 06:34 AM AEST",
    "provided_by": "Lockyer Valley Regional Council",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/836344",
@@ -1555,36 +1555,6 @@
    "geometry": {
     "points": [],
     "lines": [
-     [
-      [
-       -27.55078,
-       152.12132
-      ],
-      [
-       -27.55085,
-       152.12131
-      ],
-      [
-       -27.55095,
-       152.1213
-      ],
-      [
-       -27.55103,
-       152.12128
-      ],
-      [
-       -27.55109,
-       152.12126
-      ],
-      [
-       -27.55116,
-       152.12123
-      ],
-      [
-       -27.55117,
-       152.12122
-      ]
-     ],
      [
       [
        -27.54881,
@@ -1629,6 +1599,36 @@
       [
        -27.54854,
        152.12272
+      ]
+     ],
+     [
+      [
+       -27.55078,
+       152.12132
+      ],
+      [
+       -27.55085,
+       152.12131
+      ],
+      [
+       -27.55095,
+       152.1213
+      ],
+      [
+       -27.55103,
+       152.12128
+      ],
+      [
+       -27.55109,
+       152.12126
+      ],
+      [
+       -27.55116,
+       152.12123
+      ],
+      [
+       -27.55117,
+       152.12122
       ]
      ]
     ]
