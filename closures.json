@@ -1,15 +1,13 @@
 {
- "generated_at": "2026-11-02T08:46:27+10:00",
- "generated_at_text": "Mon 02 Nov 2026 08:46 AM AEST",
+ "generated_at": "2026-11-02T11:58:05+10:00",
+ "generated_at_text": "Mon 02 Nov 2026 11:58 AM AEST",
  "stale": false,
  "sources": {
   "QLD": {
-   "used": "fallback",
-   "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
-   "feed_published": "2026-11-02T08:45:09+10:00",
-   "errors": [
-    "api: HTTP 429"
-   ],
+   "used": "api",
+   "url": "https://api.qldtraffic.qld.gov.au/v2/events",
+   "feed_published": "2026-11-02T11:55:06+10:00",
+   "errors": [],
    "ok": true,
    "stale": false,
    "count": 8
@@ -22,7 +20,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 93
+     "features": 90
     }
    ],
    "ok": true,
@@ -139,6 +137,20 @@
    "geometry": {
     "points": [],
     "lines": [
+     [
+      [
+       -27.82419,
+       151.57586
+      ],
+      [
+       -27.84053,
+       151.57289
+      ],
+      [
+       -27.8455,
+       151.57199
+      ]
+     ],
      [
       [
        -27.84559,
@@ -351,20 +363,6 @@
       [
        -27.86265,
        151.549
-      ]
-     ],
-     [
-      [
-       -27.82419,
-       151.57586
-      ],
-      [
-       -27.84053,
-       151.57289
-      ],
-      [
-       -27.8455,
-       151.57199
       ]
      ],
      [
@@ -713,6 +711,16 @@
     "lines": [
      [
       [
+       -27.83878,
+       151.45014
+      ],
+      [
+       -27.86253,
+       151.44641
+      ]
+     ],
+     [
+      [
        -27.81511,
        151.45375
       ],
@@ -823,16 +831,6 @@
       [
        -27.83878,
        151.45012
-      ]
-     ],
-     [
-      [
-       -27.83878,
-       151.45014
-      ],
-      [
-       -27.86253,
-       151.44641
       ]
      ]
     ]
@@ -1115,16 +1113,16 @@
    "event_type": "Hazard",
    "event_subtype": "Road damage",
    "due_to": "Earlier flooding",
-   "impact": "Partial lane closures",
-   "impact_type": "Closures",
+   "impact": "All lanes affected",
+   "impact_type": "Lanes affected",
    "severity": "partial",
    "direction": "Both directions",
-   "advice": "Changed traffic conditions",
+   "advice": "Reduced speed limit (80km/h)",
    "information": null,
    "status": "Published",
    "start": "2026-10-30T17:17:00+10:00",
-   "last_updated": "2026-11-01T18:48:50+10:00",
-   "last_updated_text": "Sun 01 Nov 2026 06:48 PM AEST",
+   "last_updated": "2026-11-02T10:02:59+10:00",
+   "last_updated_text": "Mon 02 Nov 2026 10:02 AM AEST",
    "provided_by": "Department of Transport and Main Roads",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/838487",
