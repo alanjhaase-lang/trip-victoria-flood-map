@@ -1,33 +1,33 @@
 {
- "generated_at": "2026-11-03T18:07:45+10:00",
- "generated_at_text": "Tue 03 Nov 2026 06:07 PM AEST",
+ "generated_at": "2026-11-04T02:11:01+10:00",
+ "generated_at_text": "Wed 04 Nov 2026 02:11 AM AEST",
  "stale": false,
  "sources": {
   "QLD": {
    "used": "fallback",
    "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
-   "feed_published": "2026-11-03T18:06:07+10:00",
+   "feed_published": "2026-11-04T02:02:17+10:00",
    "errors": [
     "api: HTTP 429"
    ],
    "ok": true,
    "stale": false,
-   "count": 4
+   "count": 5
   },
   "NSW": {
    "feeds": [
     {
      "url": "https://www.livetraffic.com/traffic/hazards/flood.json",
-     "features": 11
+     "features": 12
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 139
+     "features": 141
     }
    ],
    "ok": true,
    "stale": false,
-   "count": 2
+   "count": 0
   },
   "VIC": {
    "ok": false,
@@ -50,8 +50,8 @@
   {
    "id": "out1",
    "name": "Out day 1: Westbrook → Dubbo",
-   "count": 3,
-   "closed": 2,
+   "count": 4,
+   "closed": 3,
    "partial": 1
   },
   {
@@ -78,9 +78,9 @@
   {
    "id": "ret2",
    "name": "Return day 2: Gundagai → Gosford",
-   "count": 2,
-   "closed": 1,
-   "partial": 1
+   "count": 0,
+   "closed": 0,
+   "partial": 0
   },
   {
    "id": "ret3",
@@ -92,28 +92,13 @@
   {
    "id": "ret4",
    "name": "Return day 4: Byron Bay → Westbrook",
-   "count": 1,
-   "closed": 1,
+   "count": 2,
+   "closed": 2,
    "partial": 0
   }
  ],
- "count": 6,
- "excluded": [
-  {
-   "id": 839244,
-   "road": "Yvonne Street",
-   "locality": "Greystanes",
-   "lga": "Nsw",
-   "reason": "geometry outside Queensland"
-  },
-  {
-   "id": 839258,
-   "road": "Jersey Road",
-   "locality": "Greystanes",
-   "lga": "Nsw",
-   "reason": "geometry outside Queensland"
-  }
- ],
+ "count": 5,
+ "excluded": [],
  "closures": [
   {
    "id": 837508,
@@ -728,16 +713,6 @@
     "lines": [
      [
       [
-       -27.83878,
-       151.45014
-      ],
-      [
-       -27.86253,
-       151.44641
-      ]
-     ],
-     [
-      [
        -27.81511,
        151.45375
       ],
@@ -849,6 +824,16 @@
        -27.83878,
        151.45012
       ]
+     ],
+     [
+      [
+       -27.83878,
+       151.45014
+      ],
+      [
+       -27.86253,
+       151.44641
+      ]
      ]
     ]
    }
@@ -870,8 +855,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-30T17:17:00+10:00",
-   "last_updated": "2026-11-02T10:02:59+10:00",
-   "last_updated_text": "Mon 02 Nov 2026 10:02 AM AEST",
+   "last_updated": "2026-11-04T01:07:19+10:00",
+   "last_updated_text": "Wed 04 Nov 2026 01:07 AM AEST",
    "provided_by": "Department of Transport and Main Roads",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/838487",
@@ -897,189 +882,6 @@
      ]
     ],
     "lines": []
-   }
-  },
-  {
-   "id": "nsw-293202",
-   "road": "Cumberland Highway",
-   "description": "FLOODING approaching M4 Motorway",
-   "locality": "Greystanes",
-   "lga": "Sydney",
-   "event_type": "Flooding",
-   "event_subtype": null,
-   "due_to": "Flooding",
-   "impact": "Affected",
-   "severity": "partial",
-   "advice": "Never drive through floodwater Allow extra travel time",
-   "information": "Road closure lines provided by Google Maps may not be up to date.",
-   "start": "2026-11-03T17:49:10+10:00",
-   "last_updated": "2026-11-03T18:05:08+10:00",
-   "last_updated_text": "Tue 03 Nov 2026 06:05 PM AEST",
-   "provided_by": "Transport for NSW",
-   "source_link": "https://www.livetraffic.com/",
-   "state": "NSW",
-   "distance_km": 6.1,
-   "days": [
-    "ret2"
-   ],
-   "legs": [
-    "ret"
-   ],
-   "nearest_day": "ret2",
-   "leg_km": 982.0,
-   "marker": [
-    -33.82645,
-    150.96237
-   ],
-   "geometry": {
-    "points": [
-     [
-      -33.82645,
-      150.96237
-     ]
-    ],
-    "lines": []
-   }
-  },
-  {
-   "id": "nsw-293191",
-   "road": "M4 Motorway westbound on-ramp",
-   "description": "FLOODING from Cumberland Highway",
-   "locality": "South Wentworthville",
-   "lga": "Sydney",
-   "event_type": "Flooding",
-   "event_subtype": null,
-   "due_to": "Flooding",
-   "impact": "Closed",
-   "severity": "closed",
-   "advice": "Never drive through floodwater Use an alternative route",
-   "information": null,
-   "start": "2026-11-03T17:18:08+10:00",
-   "last_updated": "2026-11-03T18:05:41+10:00",
-   "last_updated_text": "Tue 03 Nov 2026 06:05 PM AEST",
-   "provided_by": "Transport for NSW",
-   "source_link": "https://www.livetraffic.com/",
-   "state": "NSW",
-   "distance_km": 5.0,
-   "days": [
-    "ret2"
-   ],
-   "legs": [
-    "ret"
-   ],
-   "nearest_day": "ret2",
-   "leg_km": 982.0,
-   "marker": [
-    -33.81594,
-    150.96127
-   ],
-   "geometry": {
-    "points": [
-     [
-      -33.81594,
-      150.96127
-     ]
-    ],
-    "lines": [
-     [
-      [
-       -33.81669,
-       150.96276
-      ],
-      [
-       -33.81665,
-       150.96276
-      ],
-      [
-       -33.8166,
-       150.96277
-      ],
-      [
-       -33.81654,
-       150.96275
-      ],
-      [
-       -33.81653,
-       150.96274
-      ],
-      [
-       -33.81646,
-       150.9627
-      ],
-      [
-       -33.81638,
-       150.96261
-      ],
-      [
-       -33.81632,
-       150.9625
-      ],
-      [
-       -33.81628,
-       150.96239
-      ],
-      [
-       -33.81625,
-       150.96231
-      ],
-      [
-       -33.81623,
-       150.96224
-      ],
-      [
-       -33.81616,
-       150.96201
-      ],
-      [
-       -33.81603,
-       150.96159
-      ],
-      [
-       -33.81586,
-       150.96103
-      ],
-      [
-       -33.81584,
-       150.96097
-      ],
-      [
-       -33.81579,
-       150.96081
-      ],
-      [
-       -33.81574,
-       150.96063
-      ],
-      [
-       -33.81559,
-       150.96014
-      ],
-      [
-       -33.81556,
-       150.95999
-      ],
-      [
-       -33.81547,
-       150.95966
-      ],
-      [
-       -33.81544,
-       150.95956
-      ],
-      [
-       -33.81533,
-       150.95914
-      ],
-      [
-       -33.81531,
-       150.95908
-      ],
-      [
-       -33.81512,
-       150.95845
-      ]
-     ]
-    ]
    }
   },
   {
@@ -1153,6 +955,104 @@
       [
        -27.77509,
        153.18767
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "id": 839276,
+   "road": "McDougall Street / South Street",
+   "description": null,
+   "locality": "Glenvale",
+   "lga": "Toowoomba Regional",
+   "event_type": "Flooding",
+   "event_subtype": "Flash flooding",
+   "due_to": "Water over road",
+   "impact": "Road closed to all traffic",
+   "impact_type": "Closures",
+   "severity": "closed",
+   "direction": "All directions",
+   "advice": "Observe signage",
+   "information": null,
+   "status": "Published",
+   "start": "2026-11-03T18:47:00+10:00",
+   "last_updated": "2026-11-03T18:52:03+10:00",
+   "last_updated_text": "Tue 03 Nov 2026 06:52 PM AEST",
+   "provided_by": "Toowoomba Regional",
+   "source_link": "https://qldtraffic.qld.gov.au/",
+   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/839276",
+   "state": "QLD",
+   "distance_km": 1.7,
+   "days": [
+    "out1",
+    "ret4"
+   ],
+   "legs": [
+    "out",
+    "ret"
+   ],
+   "nearest_day": "ret4",
+   "leg_km": 2464.0,
+   "marker": [
+    -27.57042,
+    151.90551
+   ],
+   "geometry": {
+    "points": [],
+    "lines": [
+     [
+      [
+       -27.56875,
+       151.90569
+      ],
+      [
+       -27.56933,
+       151.90567
+      ],
+      [
+       -27.5695,
+       151.90565
+      ],
+      [
+       -27.56988,
+       151.90561
+      ],
+      [
+       -27.57042,
+       151.90551
+      ],
+      [
+       -27.5712,
+       151.90537
+      ],
+      [
+       -27.5714,
+       151.90532
+      ],
+      [
+       -27.57145,
+       151.90531
+      ],
+      [
+       -27.57149,
+       151.90531
+      ],
+      [
+       -27.57153,
+       151.90531
+      ],
+      [
+       -27.57156,
+       151.90532
+      ],
+      [
+       -27.57159,
+       151.90533
+      ],
+      [
+       -27.5716,
+       151.90534
       ]
      ]
     ]
