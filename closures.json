@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-04T02:11:01+10:00",
- "generated_at_text": "Wed 04 Nov 2026 02:11 AM AEST",
+ "generated_at": "2026-11-04T07:45:26+10:00",
+ "generated_at_text": "Wed 04 Nov 2026 07:45 AM AEST",
  "stale": false,
  "sources": {
   "QLD": {
    "used": "fallback",
    "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
-   "feed_published": "2026-11-04T02:02:17+10:00",
+   "feed_published": "2026-11-04T07:42:24+10:00",
    "errors": [
     "api: HTTP 429"
    ],
@@ -22,7 +22,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 141
+     "features": 152
     }
    ],
    "ok": true,
@@ -117,8 +117,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-27T07:04:00+10:00",
-   "last_updated": "2026-11-03T05:58:20+10:00",
-   "last_updated_text": "Tue 03 Nov 2026 05:58 AM AEST",
+   "last_updated": "2026-11-04T06:18:11+10:00",
+   "last_updated_text": "Wed 04 Nov 2026 06:18 AM AEST",
    "provided_by": "Toowoomba Regional",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/837508",
@@ -139,6 +139,20 @@
    "geometry": {
     "points": [],
     "lines": [
+     [
+      [
+       -27.82419,
+       151.57586
+      ],
+      [
+       -27.84053,
+       151.57289
+      ],
+      [
+       -27.8455,
+       151.57199
+      ]
+     ],
      [
       [
        -27.87299,
@@ -443,20 +457,6 @@
      ],
      [
       [
-       -27.82419,
-       151.57586
-      ],
-      [
-       -27.84053,
-       151.57289
-      ],
-      [
-       -27.8455,
-       151.57199
-      ]
-     ],
-     [
-      [
        -27.84559,
        151.57197
       ],
@@ -689,8 +689,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-23T16:55:00+10:00",
-   "last_updated": "2026-11-03T05:58:03+10:00",
-   "last_updated_text": "Tue 03 Nov 2026 05:58 AM AEST",
+   "last_updated": "2026-11-04T06:20:02+10:00",
+   "last_updated_text": "Wed 04 Nov 2026 06:20 AM AEST",
    "provided_by": "Toowoomba Regional",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/836587",
