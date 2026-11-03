@@ -1,31 +1,33 @@
 {
- "generated_at": "2026-11-03T11:25:52+10:00",
- "generated_at_text": "Tue 03 Nov 2026 11:25 AM AEST",
+ "generated_at": "2026-11-03T18:07:45+10:00",
+ "generated_at_text": "Tue 03 Nov 2026 06:07 PM AEST",
  "stale": false,
  "sources": {
   "QLD": {
-   "used": "api",
-   "url": "https://api.qldtraffic.qld.gov.au/v2/events",
-   "feed_published": "2026-11-03T11:23:05+10:00",
-   "errors": [],
+   "used": "fallback",
+   "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
+   "feed_published": "2026-11-03T18:06:07+10:00",
+   "errors": [
+    "api: HTTP 429"
+   ],
    "ok": true,
    "stale": false,
-   "count": 6
+   "count": 4
   },
   "NSW": {
    "feeds": [
     {
      "url": "https://www.livetraffic.com/traffic/hazards/flood.json",
-     "features": 8
+     "features": 11
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 127
+     "features": 139
     }
    ],
    "ok": true,
    "stale": false,
-   "count": 0
+   "count": 2
   },
   "VIC": {
    "ok": false,
@@ -48,8 +50,8 @@
   {
    "id": "out1",
    "name": "Out day 1: Westbrook → Dubbo",
-   "count": 4,
-   "closed": 3,
+   "count": 3,
+   "closed": 2,
    "partial": 1
   },
   {
@@ -76,9 +78,9 @@
   {
    "id": "ret2",
    "name": "Return day 2: Gundagai → Gosford",
-   "count": 0,
-   "closed": 0,
-   "partial": 0
+   "count": 2,
+   "closed": 1,
+   "partial": 1
   },
   {
    "id": "ret3",
@@ -90,13 +92,28 @@
   {
    "id": "ret4",
    "name": "Return day 4: Byron Bay → Westbrook",
-   "count": 2,
-   "closed": 2,
+   "count": 1,
+   "closed": 1,
    "partial": 0
   }
  ],
  "count": 6,
- "excluded": [],
+ "excluded": [
+  {
+   "id": 839244,
+   "road": "Yvonne Street",
+   "locality": "Greystanes",
+   "lga": "Nsw",
+   "reason": "geometry outside Queensland"
+  },
+  {
+   "id": 839258,
+   "road": "Jersey Road",
+   "locality": "Greystanes",
+   "lga": "Nsw",
+   "reason": "geometry outside Queensland"
+  }
+ ],
  "closures": [
   {
    "id": 837508,
@@ -711,6 +728,16 @@
     "lines": [
      [
       [
+       -27.83878,
+       151.45014
+      ],
+      [
+       -27.86253,
+       151.44641
+      ]
+     ],
+     [
+      [
        -27.81511,
        151.45375
       ],
@@ -822,212 +849,6 @@
        -27.83878,
        151.45012
       ]
-     ],
-     [
-      [
-       -27.83878,
-       151.45014
-      ],
-      [
-       -27.86253,
-       151.44641
-      ]
-     ]
-    ]
-   }
-  },
-  {
-   "id": 837446,
-   "road": "Bostock Road",
-   "description": "Between Pampas Horrane and Lemontree Roads",
-   "locality": "Condamine Plains / Pampas",
-   "lga": "Toowoomba Regional",
-   "event_type": "Flooding",
-   "event_subtype": "Long-term flooding",
-   "due_to": "Flooding of river",
-   "impact": "Road closed to all traffic",
-   "impact_type": "Closures",
-   "severity": "closed",
-   "direction": "All directions",
-   "advice": "Do not drive in flood waters",
-   "information": null,
-   "status": "Published",
-   "start": "2026-10-26T19:50:00+10:00",
-   "last_updated": "2026-11-03T05:58:14+10:00",
-   "last_updated_text": "Tue 03 Nov 2026 05:58 AM AEST",
-   "provided_by": "Toowoomba Regional",
-   "source_link": "https://qldtraffic.qld.gov.au/",
-   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/837446",
-   "state": "QLD",
-   "distance_km": 5.9,
-   "days": [
-    "out1"
-   ],
-   "legs": [
-    "out"
-   ],
-   "nearest_day": "out1",
-   "leg_km": 59.0,
-   "marker": [
-    -27.76206,
-    151.32553
-   ],
-   "geometry": {
-    "points": [],
-    "lines": [
-     [
-      [
-       -27.7527,
-       151.34974
-      ],
-      [
-       -27.75283,
-       151.34931
-      ],
-      [
-       -27.75316,
-       151.34828
-      ],
-      [
-       -27.75381,
-       151.3462
-      ],
-      [
-       -27.75418,
-       151.34503
-      ],
-      [
-       -27.75452,
-       151.34396
-      ],
-      [
-       -27.75491,
-       151.34269
-      ],
-      [
-       -27.75631,
-       151.33819
-      ],
-      [
-       -27.75663,
-       151.33713
-      ],
-      [
-       -27.75694,
-       151.33617
-      ],
-      [
-       -27.7572,
-       151.33532
-      ],
-      [
-       -27.75744,
-       151.33454
-      ],
-      [
-       -27.75758,
-       151.33415
-      ],
-      [
-       -27.75772,
-       151.33377
-      ],
-      [
-       -27.75784,
-       151.33348
-      ],
-      [
-       -27.75811,
-       151.33292
-      ],
-      [
-       -27.75839,
-       151.33238
-      ],
-      [
-       -27.75868,
-       151.33183
-      ],
-      [
-       -27.75925,
-       151.33075
-      ],
-      [
-       -27.75968,
-       151.32994
-      ],
-      [
-       -27.75976,
-       151.32978
-      ],
-      [
-       -27.76206,
-       151.32553
-      ],
-      [
-       -27.76874,
-       151.32018
-      ],
-      [
-       -27.77125,
-       151.31841
-      ],
-      [
-       -27.77336,
-       151.31693
-      ],
-      [
-       -27.77544,
-       151.31545
-      ],
-      [
-       -27.77573,
-       151.31525
-      ],
-      [
-       -27.77613,
-       151.31492
-      ],
-      [
-       -27.77616,
-       151.3149
-      ],
-      [
-       -27.77634,
-       151.31476
-      ],
-      [
-       -27.77648,
-       151.3146
-      ],
-      [
-       -27.77671,
-       151.31433
-      ],
-      [
-       -27.77706,
-       151.31388
-      ],
-      [
-       -27.77742,
-       151.31338
-      ],
-      [
-       -27.77913,
-       151.311
-      ],
-      [
-       -27.78102,
-       151.30843
-      ],
-      [
-       -27.78135,
-       151.30799
-      ],
-      [
-       -27.78276,
-       151.306
-      ]
      ]
     ]
    }
@@ -1076,6 +897,189 @@
      ]
     ],
     "lines": []
+   }
+  },
+  {
+   "id": "nsw-293202",
+   "road": "Cumberland Highway",
+   "description": "FLOODING approaching M4 Motorway",
+   "locality": "Greystanes",
+   "lga": "Sydney",
+   "event_type": "Flooding",
+   "event_subtype": null,
+   "due_to": "Flooding",
+   "impact": "Affected",
+   "severity": "partial",
+   "advice": "Never drive through floodwater Allow extra travel time",
+   "information": "Road closure lines provided by Google Maps may not be up to date.",
+   "start": "2026-11-03T17:49:10+10:00",
+   "last_updated": "2026-11-03T18:05:08+10:00",
+   "last_updated_text": "Tue 03 Nov 2026 06:05 PM AEST",
+   "provided_by": "Transport for NSW",
+   "source_link": "https://www.livetraffic.com/",
+   "state": "NSW",
+   "distance_km": 6.1,
+   "days": [
+    "ret2"
+   ],
+   "legs": [
+    "ret"
+   ],
+   "nearest_day": "ret2",
+   "leg_km": 982.0,
+   "marker": [
+    -33.82645,
+    150.96237
+   ],
+   "geometry": {
+    "points": [
+     [
+      -33.82645,
+      150.96237
+     ]
+    ],
+    "lines": []
+   }
+  },
+  {
+   "id": "nsw-293191",
+   "road": "M4 Motorway westbound on-ramp",
+   "description": "FLOODING from Cumberland Highway",
+   "locality": "South Wentworthville",
+   "lga": "Sydney",
+   "event_type": "Flooding",
+   "event_subtype": null,
+   "due_to": "Flooding",
+   "impact": "Closed",
+   "severity": "closed",
+   "advice": "Never drive through floodwater Use an alternative route",
+   "information": null,
+   "start": "2026-11-03T17:18:08+10:00",
+   "last_updated": "2026-11-03T18:05:41+10:00",
+   "last_updated_text": "Tue 03 Nov 2026 06:05 PM AEST",
+   "provided_by": "Transport for NSW",
+   "source_link": "https://www.livetraffic.com/",
+   "state": "NSW",
+   "distance_km": 5.0,
+   "days": [
+    "ret2"
+   ],
+   "legs": [
+    "ret"
+   ],
+   "nearest_day": "ret2",
+   "leg_km": 982.0,
+   "marker": [
+    -33.81594,
+    150.96127
+   ],
+   "geometry": {
+    "points": [
+     [
+      -33.81594,
+      150.96127
+     ]
+    ],
+    "lines": [
+     [
+      [
+       -33.81669,
+       150.96276
+      ],
+      [
+       -33.81665,
+       150.96276
+      ],
+      [
+       -33.8166,
+       150.96277
+      ],
+      [
+       -33.81654,
+       150.96275
+      ],
+      [
+       -33.81653,
+       150.96274
+      ],
+      [
+       -33.81646,
+       150.9627
+      ],
+      [
+       -33.81638,
+       150.96261
+      ],
+      [
+       -33.81632,
+       150.9625
+      ],
+      [
+       -33.81628,
+       150.96239
+      ],
+      [
+       -33.81625,
+       150.96231
+      ],
+      [
+       -33.81623,
+       150.96224
+      ],
+      [
+       -33.81616,
+       150.96201
+      ],
+      [
+       -33.81603,
+       150.96159
+      ],
+      [
+       -33.81586,
+       150.96103
+      ],
+      [
+       -33.81584,
+       150.96097
+      ],
+      [
+       -33.81579,
+       150.96081
+      ],
+      [
+       -33.81574,
+       150.96063
+      ],
+      [
+       -33.81559,
+       150.96014
+      ],
+      [
+       -33.81556,
+       150.95999
+      ],
+      [
+       -33.81547,
+       150.95966
+      ],
+      [
+       -33.81544,
+       150.95956
+      ],
+      [
+       -33.81533,
+       150.95914
+      ],
+      [
+       -33.81531,
+       150.95908
+      ],
+      [
+       -33.81512,
+       150.95845
+      ]
+     ]
+    ]
    }
   },
   {
@@ -1149,124 +1153,6 @@
       [
        -27.77509,
        153.18767
-      ]
-     ]
-    ]
-   }
-  },
-  {
-   "id": 836344,
-   "road": "Turner Street",
-   "description": "Water over Road - Road Closed",
-   "locality": "Helidon",
-   "lga": "Lockyer Valley Regional",
-   "event_type": "Flooding",
-   "event_subtype": "Long-term flooding",
-   "due_to": "Heavy rain",
-   "impact": "Road closed to all traffic",
-   "impact_type": "Closures",
-   "severity": "closed",
-   "direction": "All directions",
-   "advice": "Do not drive in flood waters",
-   "information": null,
-   "status": "Published",
-   "start": "2026-10-23T06:15:00+10:00",
-   "last_updated": "2026-11-02T06:34:09+10:00",
-   "last_updated_text": "Mon 02 Nov 2026 06:34 AM AEST",
-   "provided_by": "Lockyer Valley Regional Council",
-   "source_link": "https://qldtraffic.qld.gov.au/",
-   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/836344",
-   "state": "QLD",
-   "distance_km": 0.1,
-   "days": [
-    "ret4"
-   ],
-   "legs": [
-    "ret"
-   ],
-   "nearest_day": "ret4",
-   "leg_km": 2442.0,
-   "marker": [
-    -27.54881,
-    152.12208
-   ],
-   "geometry": {
-    "points": [],
-    "lines": [
-     [
-      [
-       -27.55078,
-       152.12132
-      ],
-      [
-       -27.55085,
-       152.12131
-      ],
-      [
-       -27.55095,
-       152.1213
-      ],
-      [
-       -27.55103,
-       152.12128
-      ],
-      [
-       -27.55109,
-       152.12126
-      ],
-      [
-       -27.55116,
-       152.12123
-      ],
-      [
-       -27.55117,
-       152.12122
-      ]
-     ],
-     [
-      [
-       -27.54881,
-       152.12208
-      ],
-      [
-       -27.54875,
-       152.12212
-      ],
-      [
-       -27.54871,
-       152.12215
-      ],
-      [
-       -27.54867,
-       152.12221
-      ],
-      [
-       -27.54865,
-       152.12225
-      ],
-      [
-       -27.5486,
-       152.12238
-      ],
-      [
-       -27.54858,
-       152.12246
-      ],
-      [
-       -27.54856,
-       152.12254
-      ],
-      [
-       -27.54855,
-       152.12263
-      ],
-      [
-       -27.54854,
-       152.12271
-      ],
-      [
-       -27.54854,
-       152.12272
       ]
      ]
     ]
