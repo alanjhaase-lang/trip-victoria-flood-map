@@ -1,28 +1,26 @@
 {
- "generated_at": "2026-11-04T07:45:26+10:00",
- "generated_at_text": "Wed 04 Nov 2026 07:45 AM AEST",
+ "generated_at": "2026-11-04T11:45:04+10:00",
+ "generated_at_text": "Wed 04 Nov 2026 11:45 AM AEST",
  "stale": false,
  "sources": {
   "QLD": {
-   "used": "fallback",
-   "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
-   "feed_published": "2026-11-04T07:42:24+10:00",
-   "errors": [
-    "api: HTTP 429"
-   ],
+   "used": "api",
+   "url": "https://api.qldtraffic.qld.gov.au/v2/events",
+   "feed_published": "2026-11-04T11:44:01+10:00",
+   "errors": [],
    "ok": true,
    "stale": false,
-   "count": 5
+   "count": 3
   },
   "NSW": {
    "feeds": [
     {
      "url": "https://www.livetraffic.com/traffic/hazards/flood.json",
-     "features": 12
+     "features": 10
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 152
+     "features": 154
     }
    ],
    "ok": true,
@@ -50,8 +48,8 @@
   {
    "id": "out1",
    "name": "Out day 1: Westbrook → Dubbo",
-   "count": 4,
-   "closed": 3,
+   "count": 3,
+   "closed": 2,
    "partial": 1
   },
   {
@@ -92,12 +90,12 @@
   {
    "id": "ret4",
    "name": "Return day 4: Byron Bay → Westbrook",
-   "count": 2,
-   "closed": 2,
+   "count": 0,
+   "closed": 0,
    "partial": 0
   }
  ],
- "count": 5,
+ "count": 3,
  "excluded": [],
  "closures": [
   {
@@ -882,180 +880,6 @@
      ]
     ],
     "lines": []
-   }
-  },
-  {
-   "id": 837354,
-   "road": "State Route 92 / Stanmore Road",
-   "description": null,
-   "locality": "Wolffdene / Yatala",
-   "lga": "Gold Coast City / Logan City",
-   "event_type": "Flooding",
-   "event_subtype": "Long-term flooding",
-   "due_to": "Heavy rain",
-   "impact": "Road closed to all traffic",
-   "impact_type": "Closures",
-   "severity": "closed",
-   "direction": "All directions",
-   "advice": "Do not drive in flood waters",
-   "information": null,
-   "status": "Published",
-   "start": "2026-10-26T14:28:00+10:00",
-   "last_updated": "2026-10-30T08:06:01+10:00",
-   "last_updated_text": "Fri 30 Oct 2026 08:06 AM AEST",
-   "provided_by": "City of Gold Coast LDCC",
-   "source_link": "https://qldtraffic.qld.gov.au/",
-   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/837354",
-   "state": "QLD",
-   "distance_km": 5.4,
-   "days": [
-    "ret4"
-   ],
-   "legs": [
-    "ret"
-   ],
-   "nearest_day": "ret4",
-   "leg_km": 2320.0,
-   "marker": [
-    -27.77447,
-    153.1863
-   ],
-   "geometry": {
-    "points": [],
-    "lines": [
-     [
-      [
-       -27.77433,
-       153.18606
-      ],
-      [
-       -27.77435,
-       153.1861
-      ],
-      [
-       -27.77439,
-       153.18615
-      ],
-      [
-       -27.7744,
-       153.18617
-      ],
-      [
-       -27.77447,
-       153.1863
-      ],
-      [
-       -27.77498,
-       153.18735
-      ],
-      [
-       -27.77499,
-       153.18738
-      ],
-      [
-       -27.77509,
-       153.18767
-      ]
-     ]
-    ]
-   }
-  },
-  {
-   "id": 839276,
-   "road": "McDougall Street / South Street",
-   "description": null,
-   "locality": "Glenvale",
-   "lga": "Toowoomba Regional",
-   "event_type": "Flooding",
-   "event_subtype": "Flash flooding",
-   "due_to": "Water over road",
-   "impact": "Road closed to all traffic",
-   "impact_type": "Closures",
-   "severity": "closed",
-   "direction": "All directions",
-   "advice": "Observe signage",
-   "information": null,
-   "status": "Published",
-   "start": "2026-11-03T18:47:00+10:00",
-   "last_updated": "2026-11-03T18:52:03+10:00",
-   "last_updated_text": "Tue 03 Nov 2026 06:52 PM AEST",
-   "provided_by": "Toowoomba Regional",
-   "source_link": "https://qldtraffic.qld.gov.au/",
-   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/839276",
-   "state": "QLD",
-   "distance_km": 1.7,
-   "days": [
-    "out1",
-    "ret4"
-   ],
-   "legs": [
-    "out",
-    "ret"
-   ],
-   "nearest_day": "ret4",
-   "leg_km": 2464.0,
-   "marker": [
-    -27.57042,
-    151.90551
-   ],
-   "geometry": {
-    "points": [],
-    "lines": [
-     [
-      [
-       -27.56875,
-       151.90569
-      ],
-      [
-       -27.56933,
-       151.90567
-      ],
-      [
-       -27.5695,
-       151.90565
-      ],
-      [
-       -27.56988,
-       151.90561
-      ],
-      [
-       -27.57042,
-       151.90551
-      ],
-      [
-       -27.5712,
-       151.90537
-      ],
-      [
-       -27.5714,
-       151.90532
-      ],
-      [
-       -27.57145,
-       151.90531
-      ],
-      [
-       -27.57149,
-       151.90531
-      ],
-      [
-       -27.57153,
-       151.90531
-      ],
-      [
-       -27.57156,
-       151.90532
-      ],
-      [
-       -27.57159,
-       151.90533
-      ],
-      [
-       -27.5716,
-       151.90534
-      ]
-     ]
-    ]
    }
   }
  ]
