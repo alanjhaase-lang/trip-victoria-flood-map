@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-06T02:50:27+10:00",
- "generated_at_text": "Fri 06 Nov 2026 02:50 AM AEST",
+ "generated_at": "2026-11-06T08:26:19+10:00",
+ "generated_at_text": "Fri 06 Nov 2026 08:26 AM AEST",
  "stale": false,
  "sources": {
   "QLD": {
    "used": "fallback",
    "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
-   "feed_published": "2026-11-06T02:30:01+10:00",
+   "feed_published": "2026-11-06T08:26:08+10:00",
    "errors": [
     "api: HTTP 429"
    ],
@@ -22,7 +22,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 128
+     "features": 119
     }
    ],
    "ok": true,
@@ -117,8 +117,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-23T16:55:00+10:00",
-   "last_updated": "2026-11-05T07:38:09+10:00",
-   "last_updated_text": "Thu 05 Nov 2026 07:38 AM AEST",
+   "last_updated": "2026-11-06T06:14:02+10:00",
+   "last_updated_text": "Fri 06 Nov 2026 06:14 AM AEST",
    "provided_by": "Toowoomba Regional",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/836587",
@@ -139,16 +139,6 @@
    "geometry": {
     "points": [],
     "lines": [
-     [
-      [
-       -27.83878,
-       151.45014
-      ],
-      [
-       -27.86253,
-       151.44641
-      ]
-     ],
      [
       [
        -27.81511,
@@ -261,6 +251,16 @@
       [
        -27.83878,
        151.45012
+      ]
+     ],
+     [
+      [
+       -27.83878,
+       151.45014
+      ],
+      [
+       -27.86253,
+       151.44641
       ]
      ]
     ]
