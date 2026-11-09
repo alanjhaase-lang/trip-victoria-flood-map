@@ -1,16 +1,18 @@
 {
- "generated_at": "2026-11-09T12:12:10+10:00",
- "generated_at_text": "Mon 09 Nov 2026 12:12 PM AEST",
+ "generated_at": "2026-11-09T19:45:30+10:00",
+ "generated_at_text": "Mon 09 Nov 2026 07:45 PM AEST",
  "stale": false,
  "sources": {
   "QLD": {
-   "used": "api",
-   "url": "https://api.qldtraffic.qld.gov.au/v2/events",
-   "feed_published": "2026-11-09T12:11:05+10:00",
-   "errors": [],
+   "used": "fallback",
+   "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
+   "feed_published": "2026-11-09T19:41:13+10:00",
+   "errors": [
+    "api: HTTP 429"
+   ],
    "ok": true,
    "stale": false,
-   "count": 2
+   "count": 1
   },
   "NSW": {
    "feeds": [
@@ -20,7 +22,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 111
+     "features": 130
     }
    ],
    "ok": true,
@@ -48,8 +50,8 @@
   {
    "id": "out1",
    "name": "Out day 1: Westbrook → Dubbo",
-   "count": 2,
-   "closed": 1,
+   "count": 1,
+   "closed": 0,
    "partial": 1
   },
   {
@@ -95,175 +97,9 @@
    "partial": 0
   }
  ],
- "count": 2,
+ "count": 1,
  "excluded": [],
  "closures": [
-  {
-   "id": 836587,
-   "road": "Fysh Road / Yarramalong Road / Yarramalong Road",
-   "description": "Between Millmerran Leyburn and Fysh Roads",
-   "locality": "Tummaville",
-   "lga": "Toowoomba Regional",
-   "event_type": "Flooding",
-   "event_subtype": "Long-term flooding",
-   "due_to": "Flooding of river",
-   "impact": "Road closed to all traffic",
-   "impact_type": "Closures",
-   "severity": "closed",
-   "direction": "All directions",
-   "advice": "Do not drive in flood waters",
-   "information": null,
-   "status": "Published",
-   "start": "2026-10-23T16:55:00+10:00",
-   "last_updated": "2026-11-06T06:14:02+10:00",
-   "last_updated_text": "Fri 06 Nov 2026 06:14 AM AEST",
-   "provided_by": "Toowoomba Regional",
-   "source_link": "https://qldtraffic.qld.gov.au/",
-   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/836587",
-   "state": "QLD",
-   "distance_km": 4.8,
-   "days": [
-    "out1"
-   ],
-   "legs": [
-    "out"
-   ],
-   "nearest_day": "out1",
-   "leg_km": 53.0,
-   "marker": [
-    -27.83571,
-    151.44993
-   ],
-   "geometry": {
-    "points": [],
-    "lines": [
-     [
-      [
-       -27.81511,
-       151.45375
-      ],
-      [
-       -27.82958,
-       151.45074
-      ],
-      [
-       -27.83449,
-       151.44966
-      ],
-      [
-       -27.83454,
-       151.4496
-      ],
-      [
-       -27.83461,
-       151.44952
-      ],
-      [
-       -27.83468,
-       151.44944
-      ],
-      [
-       -27.83475,
-       151.44937
-      ],
-      [
-       -27.83482,
-       151.44932
-      ],
-      [
-       -27.83485,
-       151.4493
-      ],
-      [
-       -27.83489,
-       151.4493
-      ],
-      [
-       -27.83493,
-       151.44929
-      ],
-      [
-       -27.83498,
-       151.4493
-      ],
-      [
-       -27.83502,
-       151.4493
-      ],
-      [
-       -27.83505,
-       151.44931
-      ],
-      [
-       -27.8351,
-       151.44933
-      ],
-      [
-       -27.83514,
-       151.44936
-      ],
-      [
-       -27.83567,
-       151.44991
-      ],
-      [
-       -27.83571,
-       151.44993
-      ],
-      [
-       -27.83576,
-       151.44996
-      ],
-      [
-       -27.8358,
-       151.44998
-      ],
-      [
-       -27.83584,
-       151.44999
-      ],
-      [
-       -27.83591,
-       151.44999
-      ],
-      [
-       -27.83599,
-       151.45
-      ],
-      [
-       -27.83607,
-       151.45001
-      ],
-      [
-       -27.83717,
-       151.44986
-      ],
-      [
-       -27.83862,
-       151.44964
-      ],
-      [
-       -27.83871,
-       151.44963
-      ],
-      [
-       -27.83878,
-       151.45012
-      ]
-     ],
-     [
-      [
-       -27.83878,
-       151.45014
-      ],
-      [
-       -27.86253,
-       151.44641
-      ]
-     ]
-    ]
-   }
-  },
   {
    "id": 838487,
    "road": "Gore Highway",
