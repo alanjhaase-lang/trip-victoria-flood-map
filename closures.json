@@ -1,16 +1,18 @@
 {
- "generated_at": "2026-11-11T12:52:46+10:00",
- "generated_at_text": "Wed 11 Nov 2026 12:52 PM AEST",
+ "generated_at": "2026-11-11T19:57:55+10:00",
+ "generated_at_text": "Wed 11 Nov 2026 07:57 PM AEST",
  "stale": false,
  "sources": {
   "QLD": {
-   "used": "api",
-   "url": "https://api.qldtraffic.qld.gov.au/v2/events",
-   "feed_published": "2026-11-11T12:51:25+10:00",
-   "errors": [],
+   "used": "fallback",
+   "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
+   "feed_published": "2026-11-11T19:37:15+10:00",
+   "errors": [
+    "api: HTTP 429"
+   ],
    "ok": true,
    "stale": false,
-   "count": 1
+   "count": 6
   },
   "NSW": {
    "feeds": [
@@ -20,7 +22,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 132
+     "features": 118
     }
    ],
    "ok": true,
@@ -90,12 +92,12 @@
   {
    "id": "ret4",
    "name": "Return day 4: Byron Bay → Westbrook",
-   "count": 0,
-   "closed": 0,
-   "partial": 0
+   "count": 5,
+   "closed": 3,
+   "partial": 2
   }
  ],
- "count": 1,
+ "count": 6,
  "excluded": [],
  "closures": [
   {
@@ -139,6 +141,236 @@
      [
       -27.80876,
       151.36264
+     ]
+    ],
+    "lines": []
+   }
+  },
+  {
+   "id": 841064,
+   "road": "Bahrs Scrub Road",
+   "description": "Bahrs Scrub Road, Bahrs Scrub - FRSWS",
+   "locality": "Bahrs Scrub",
+   "lga": "Logan City",
+   "event_type": "Flooding",
+   "event_subtype": "Flash flooding",
+   "due_to": "Water over road",
+   "impact": "All lanes blocked",
+   "impact_type": "Lanes blocked",
+   "severity": "closed",
+   "direction": "Both directions",
+   "advice": "Do not drive in flood waters",
+   "information": null,
+   "status": "Published",
+   "start": "2026-11-11T16:47:00+10:00",
+   "last_updated": "2026-11-11T16:48:04+10:00",
+   "last_updated_text": "Wed 11 Nov 2026 04:48 PM AEST",
+   "provided_by": "Logan City Council",
+   "source_link": "https://qldtraffic.qld.gov.au/",
+   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841064",
+   "state": "QLD",
+   "distance_km": 3.7,
+   "days": [
+    "ret4"
+   ],
+   "legs": [
+    "ret"
+   ],
+   "nearest_day": "ret4",
+   "leg_km": 2324.0,
+   "marker": [
+    -27.74151,
+    153.1843
+   ],
+   "geometry": {
+    "points": [
+     [
+      -27.74151,
+      153.1843
+     ]
+    ],
+    "lines": []
+   }
+  },
+  {
+   "id": 841063,
+   "road": "Chambers Flat Road",
+   "description": "School Road, Logan Reserve - FRSWS",
+   "locality": "Logan Reserve",
+   "lga": "Logan City",
+   "event_type": "Flooding",
+   "event_subtype": "Flash flooding",
+   "due_to": "Water over road",
+   "impact": "All lanes blocked",
+   "impact_type": "Lanes blocked",
+   "severity": "closed",
+   "direction": "Both directions",
+   "advice": "Do not drive in flood waters",
+   "information": null,
+   "status": "Published",
+   "start": "2026-11-11T16:45:00+10:00",
+   "last_updated": "2026-11-11T16:48:02+10:00",
+   "last_updated_text": "Wed 11 Nov 2026 04:48 PM AEST",
+   "provided_by": "Logan City Council",
+   "source_link": "https://qldtraffic.qld.gov.au/",
+   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841063",
+   "state": "QLD",
+   "distance_km": 5.0,
+   "days": [
+    "ret4"
+   ],
+   "legs": [
+    "ret"
+   ],
+   "nearest_day": "ret4",
+   "leg_km": 2338.0,
+   "marker": [
+    -27.71131,
+    153.09638
+   ],
+   "geometry": {
+    "points": [
+     [
+      -27.71131,
+      153.09638
+     ]
+    ],
+    "lines": []
+   }
+  },
+  {
+   "id": 841119,
+   "road": "Rossmore Road",
+   "description": "Rossmore, Chambers Flat - FRSWS",
+   "locality": "Logan Reserve",
+   "lga": "Logan City",
+   "event_type": "Flooding",
+   "event_subtype": "Flash flooding",
+   "due_to": "Water over road",
+   "impact": "All lanes blocked",
+   "impact_type": "Lanes blocked",
+   "severity": "closed",
+   "direction": "Both directions",
+   "advice": "Do not drive in flood waters",
+   "information": null,
+   "status": "Published",
+   "start": "2026-11-11T18:52:00+10:00",
+   "last_updated": "2026-11-11T18:54:02+10:00",
+   "last_updated_text": "Wed 11 Nov 2026 06:54 PM AEST",
+   "provided_by": "Logan City Council",
+   "source_link": "https://qldtraffic.qld.gov.au/",
+   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841119",
+   "state": "QLD",
+   "distance_km": 8.2,
+   "days": [
+    "ret4"
+   ],
+   "legs": [
+    "ret"
+   ],
+   "nearest_day": "ret4",
+   "leg_km": 2338.0,
+   "marker": [
+    -27.73884,
+    153.0888
+   ],
+   "geometry": {
+    "points": [
+     [
+      -27.73884,
+      153.0888
+     ]
+    ],
+    "lines": []
+   }
+  },
+  {
+   "id": 841077,
+   "road": "Gateway Motorway",
+   "description": null,
+   "locality": "Eight Mile Plains",
+   "lga": "Brisbane City",
+   "event_type": "Flooding",
+   "event_subtype": "Flash flooding",
+   "due_to": "Heavy rain",
+   "impact": "All lanes affected",
+   "impact_type": "Lanes affected",
+   "severity": "partial",
+   "direction": "Southbound",
+   "advice": "Allow extra travel time",
+   "information": null,
+   "status": "Published",
+   "start": "2026-11-11T17:07:00+10:00",
+   "last_updated": "2026-11-11T17:08:14+10:00",
+   "last_updated_text": "Wed 11 Nov 2026 05:08 PM AEST",
+   "provided_by": "Transurban",
+   "source_link": "https://qldtraffic.qld.gov.au/",
+   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841077",
+   "state": "QLD",
+   "distance_km": 6.9,
+   "days": [
+    "ret4"
+   ],
+   "legs": [
+    "ret"
+   ],
+   "nearest_day": "ret4",
+   "leg_km": 2343.0,
+   "marker": [
+    -27.59245,
+    153.09495
+   ],
+   "geometry": {
+    "points": [
+     [
+      -27.59245,
+      153.09495
+     ]
+    ],
+    "lines": []
+   }
+  },
+  {
+   "id": 841093,
+   "road": "Miles Platting Road",
+   "description": null,
+   "locality": "Rochedale",
+   "lga": "Brisbane City",
+   "event_type": "Flooding",
+   "event_subtype": "Flash flooding",
+   "due_to": null,
+   "impact": "All lanes affected",
+   "impact_type": "Lanes affected",
+   "severity": "partial",
+   "direction": "Southbound",
+   "advice": "Proceed with caution",
+   "information": null,
+   "status": "Published",
+   "start": "2026-11-11T17:38:00+10:00",
+   "last_updated": "2026-11-11T17:39:30+10:00",
+   "last_updated_text": "Wed 11 Nov 2026 05:39 PM AEST",
+   "provided_by": "Department of Transport and Main Roads",
+   "source_link": "https://qldtraffic.qld.gov.au/",
+   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841093",
+   "state": "QLD",
+   "distance_km": 9.2,
+   "days": [
+    "ret4"
+   ],
+   "legs": [
+    "ret"
+   ],
+   "nearest_day": "ret4",
+   "leg_km": 2343.0,
+   "marker": [
+    -27.57462,
+    153.10674
+   ],
+   "geometry": {
+    "points": [
+     [
+      -27.57462,
+      153.10674
      ]
     ],
     "lines": []
