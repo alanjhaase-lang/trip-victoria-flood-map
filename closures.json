@@ -1,18 +1,18 @@
 {
- "generated_at": "2026-11-11T19:57:55+10:00",
- "generated_at_text": "Wed 11 Nov 2026 07:57 PM AEST",
+ "generated_at": "2026-11-12T03:42:58+10:00",
+ "generated_at_text": "Thu 12 Nov 2026 03:42 AM AEST",
  "stale": false,
  "sources": {
   "QLD": {
    "used": "fallback",
    "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
-   "feed_published": "2026-11-11T19:37:15+10:00",
+   "feed_published": "2026-11-12T03:34:44+10:00",
    "errors": [
     "api: HTTP 429"
    ],
    "ok": true,
    "stale": false,
-   "count": 6
+   "count": 5
   },
   "NSW": {
    "feeds": [
@@ -92,12 +92,12 @@
   {
    "id": "ret4",
    "name": "Return day 4: Byron Bay → Westbrook",
-   "count": 5,
+   "count": 4,
    "closed": 3,
-   "partial": 2
+   "partial": 1
   }
  ],
- "count": 6,
+ "count": 5,
  "excluded": [],
  "closures": [
   {
@@ -301,8 +301,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-11T17:07:00+10:00",
-   "last_updated": "2026-11-11T17:08:14+10:00",
-   "last_updated_text": "Wed 11 Nov 2026 05:08 PM AEST",
+   "last_updated": "2026-11-11T23:58:09+10:00",
+   "last_updated_text": "Wed 11 Nov 2026 11:58 PM AEST",
    "provided_by": "Transurban",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841077",
@@ -325,52 +325,6 @@
      [
       -27.59245,
       153.09495
-     ]
-    ],
-    "lines": []
-   }
-  },
-  {
-   "id": 841093,
-   "road": "Miles Platting Road",
-   "description": null,
-   "locality": "Rochedale",
-   "lga": "Brisbane City",
-   "event_type": "Flooding",
-   "event_subtype": "Flash flooding",
-   "due_to": null,
-   "impact": "All lanes affected",
-   "impact_type": "Lanes affected",
-   "severity": "partial",
-   "direction": "Southbound",
-   "advice": "Proceed with caution",
-   "information": null,
-   "status": "Published",
-   "start": "2026-11-11T17:38:00+10:00",
-   "last_updated": "2026-11-11T17:39:30+10:00",
-   "last_updated_text": "Wed 11 Nov 2026 05:39 PM AEST",
-   "provided_by": "Department of Transport and Main Roads",
-   "source_link": "https://qldtraffic.qld.gov.au/",
-   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841093",
-   "state": "QLD",
-   "distance_km": 9.2,
-   "days": [
-    "ret4"
-   ],
-   "legs": [
-    "ret"
-   ],
-   "nearest_day": "ret4",
-   "leg_km": 2343.0,
-   "marker": [
-    -27.57462,
-    153.10674
-   ],
-   "geometry": {
-    "points": [
-     [
-      -27.57462,
-      153.10674
      ]
     ],
     "lines": []
