@@ -1,16 +1,18 @@
 {
- "generated_at": "2026-11-12T14:15:45+10:00",
- "generated_at_text": "Thu 12 Nov 2026 02:15 PM AEST",
+ "generated_at": "2026-11-12T23:00:04+10:00",
+ "generated_at_text": "Thu 12 Nov 2026 11:00 PM AEST",
  "stale": false,
  "sources": {
   "QLD": {
-   "used": "api",
-   "url": "https://api.qldtraffic.qld.gov.au/v2/events",
-   "feed_published": "2026-11-12T14:14:05+10:00",
-   "errors": [],
+   "used": "fallback",
+   "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
+   "feed_published": "2026-11-12T22:42:52+10:00",
+   "errors": [
+    "api: HTTP 429"
+   ],
    "ok": true,
    "stale": false,
-   "count": 2
+   "count": 1
   },
   "NSW": {
    "feeds": [
@@ -20,7 +22,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 131
+     "features": 127
     }
    ],
    "ok": true,
@@ -90,12 +92,12 @@
   {
    "id": "ret4",
    "name": "Return day 4: Byron Bay → Westbrook",
-   "count": 1,
+   "count": 0,
    "closed": 0,
-   "partial": 1
+   "partial": 0
   }
  ],
- "count": 2,
+ "count": 1,
  "excluded": [],
  "closures": [
   {
@@ -139,52 +141,6 @@
      [
       -27.80876,
       151.36264
-     ]
-    ],
-    "lines": []
-   }
-  },
-  {
-   "id": 841077,
-   "road": "Gateway Motorway",
-   "description": null,
-   "locality": "Eight Mile Plains",
-   "lga": "Brisbane City",
-   "event_type": "Flooding",
-   "event_subtype": "Flash flooding",
-   "due_to": "Heavy rain",
-   "impact": "All lanes affected",
-   "impact_type": "Lanes affected",
-   "severity": "partial",
-   "direction": "Southbound",
-   "advice": "Allow extra travel time",
-   "information": null,
-   "status": "Published",
-   "start": "2026-11-11T17:07:00+10:00",
-   "last_updated": "2026-11-12T13:23:42+10:00",
-   "last_updated_text": "Thu 12 Nov 2026 01:23 PM AEST",
-   "provided_by": "Transurban",
-   "source_link": "https://qldtraffic.qld.gov.au/",
-   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841077",
-   "state": "QLD",
-   "distance_km": 6.9,
-   "days": [
-    "ret4"
-   ],
-   "legs": [
-    "ret"
-   ],
-   "nearest_day": "ret4",
-   "leg_km": 2343.0,
-   "marker": [
-    -27.59245,
-    153.09495
-   ],
-   "geometry": {
-    "points": [
-     [
-      -27.59245,
-      153.09495
      ]
     ],
     "lines": []
