@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-13T11:28:09+10:00",
- "generated_at_text": "Fri 13 Nov 2026 11:28 AM AEST",
+ "generated_at": "2026-11-13T18:28:23+10:00",
+ "generated_at_text": "Fri 13 Nov 2026 06:28 PM AEST",
  "stale": false,
  "sources": {
   "QLD": {
    "used": "api",
    "url": "https://api.qldtraffic.qld.gov.au/v2/events",
-   "feed_published": "2026-11-13T11:27:52+10:00",
+   "feed_published": "2026-11-13T18:23:05+10:00",
    "errors": [],
    "ok": true,
    "stale": false,
@@ -20,7 +20,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 113
+     "features": 125
     }
    ],
    "ok": true,
