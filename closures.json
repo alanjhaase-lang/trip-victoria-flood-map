@@ -1,18 +1,18 @@
 {
- "generated_at": "2026-11-14T02:39:51+10:00",
- "generated_at_text": "Sat 14 Nov 2026 02:39 AM AEST",
+ "generated_at": "2026-11-14T08:10:47+10:00",
+ "generated_at_text": "Sat 14 Nov 2026 08:10 AM AEST",
  "stale": false,
  "sources": {
   "QLD": {
    "used": "fallback",
    "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
-   "feed_published": "2026-11-14T02:38:16+10:00",
+   "feed_published": "2026-11-14T08:10:25+10:00",
    "errors": [
     "api: HTTP 429"
    ],
    "ok": true,
    "stale": false,
-   "count": 4
+   "count": 6
   },
   "NSW": {
    "feeds": [
@@ -22,7 +22,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 131
+     "features": 122
     }
    ],
    "ok": true,
@@ -92,20 +92,13 @@
   {
    "id": "ret4",
    "name": "Return day 4: Byron Bay → Westbrook",
-   "count": 3,
+   "count": 5,
    "closed": 2,
-   "partial": 1
+   "partial": 3
   }
  ],
- "count": 4,
+ "count": 6,
  "excluded": [
-  {
-   "id": 841613,
-   "road": "Allan Street / Adare Road / Woodlands Road",
-   "locality": "Blenheim / Gatton / Glen Cairn",
-   "lga": "Lockyer Valley Regional",
-   "reason": "ended 2026-05-19T12:28:00+10:00"
-  },
   {
    "id": 841638,
    "road": "Old Laidley Forest Hill Road",
@@ -132,8 +125,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-30T17:17:00+10:00",
-   "last_updated": "2026-11-12T07:49:10+10:00",
-   "last_updated_text": "Thu 12 Nov 2026 07:49 AM AEST",
+   "last_updated": "2026-11-14T07:49:09+10:00",
+   "last_updated_text": "Sat 14 Nov 2026 07:49 AM AEST",
    "provided_by": "Department of Transport and Main Roads",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/838487",
@@ -162,230 +155,6 @@
    }
   },
   {
-   "id": 841621,
-   "road": "Illaweena Street",
-   "description": "between Gowan Rd and Hashim Place at Karawatha Reserve",
-   "locality": "Drewvale / Stretton",
-   "lga": "Brisbane City",
-   "event_type": "Flooding",
-   "event_subtype": "Flash flooding",
-   "due_to": "Heavy rain",
-   "impact": "Road closed to through traffic",
-   "impact_type": "Closures",
-   "severity": "closed",
-   "direction": "Both directions",
-   "advice": "Do not drive in flood waters",
-   "information": null,
-   "status": "Published",
-   "start": "2026-11-13T22:43:00+10:00",
-   "last_updated": "2026-11-13T22:43:41+10:00",
-   "last_updated_text": "Fri 13 Nov 2026 10:43 PM AEST",
-   "provided_by": "Brisbane City Council",
-   "source_link": "https://qldtraffic.qld.gov.au/",
-   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841621",
-   "state": "QLD",
-   "distance_km": 0.3,
-   "days": [
-    "ret4"
-   ],
-   "legs": [
-    "ret"
-   ],
-   "nearest_day": "ret4",
-   "leg_km": 2342.0,
-   "marker": [
-    -27.64166,
-    153.06709
-   ],
-   "geometry": {
-    "points": [],
-    "lines": [
-     [
-      [
-       -27.64017,
-       153.05705
-      ],
-      [
-       -27.64018,
-       153.0571
-      ],
-      [
-       -27.64026,
-       153.05771
-      ],
-      [
-       -27.64047,
-       153.05897
-      ],
-      [
-       -27.64054,
-       153.05948
-      ],
-      [
-       -27.64057,
-       153.05968
-      ],
-      [
-       -27.64063,
-       153.06007
-      ],
-      [
-       -27.64066,
-       153.06028
-      ],
-      [
-       -27.64068,
-       153.06048
-      ],
-      [
-       -27.64074,
-       153.06088
-      ],
-      [
-       -27.64074,
-       153.06089
-      ],
-      [
-       -27.64077,
-       153.06109
-      ],
-      [
-       -27.64083,
-       153.06157
-      ],
-      [
-       -27.64095,
-       153.06228
-      ],
-      [
-       -27.64095,
-       153.06229
-      ],
-      [
-       -27.64098,
-       153.06245
-      ],
-      [
-       -27.64099,
-       153.06248
-      ],
-      [
-       -27.6411,
-       153.06329
-      ],
-      [
-       -27.64113,
-       153.06349
-      ],
-      [
-       -27.64166,
-       153.06709
-      ],
-      [
-       -27.64169,
-       153.06729
-      ],
-      [
-       -27.64194,
-       153.06901
-      ],
-      [
-       -27.64198,
-       153.06931
-      ],
-      [
-       -27.64202,
-       153.06954
-      ],
-      [
-       -27.64205,
-       153.06967
-      ],
-      [
-       -27.64207,
-       153.06974
-      ],
-      [
-       -27.64209,
-       153.06978
-      ],
-      [
-       -27.64212,
-       153.06981
-      ],
-      [
-       -27.64216,
-       153.06985
-      ],
-      [
-       -27.6422,
-       153.06989
-      ],
-      [
-       -27.64224,
-       153.06992
-      ],
-      [
-       -27.64227,
-       153.06994
-      ],
-      [
-       -27.64232,
-       153.06996
-      ],
-      [
-       -27.64236,
-       153.06998
-      ],
-      [
-       -27.64242,
-       153.06999
-      ],
-      [
-       -27.64252,
-       153.06999
-      ],
-      [
-       -27.64283,
-       153.06993
-      ],
-      [
-       -27.64294,
-       153.06991
-      ],
-      [
-       -27.64401,
-       153.06972
-      ],
-      [
-       -27.64419,
-       153.06969
-      ],
-      [
-       -27.64602,
-       153.06937
-      ],
-      [
-       -27.64618,
-       153.06935
-      ],
-      [
-       -27.64682,
-       153.06923
-      ],
-      [
-       -27.64859,
-       153.06891
-      ],
-      [
-       -27.64876,
-       153.06888
-      ]
-     ]
-    ]
-   }
-  },
-  {
    "id": 841639,
    "road": "Paradise Road",
    "description": "between Radius Dr and Gardens Dr",
@@ -402,8 +171,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-14T00:26:00+10:00",
-   "last_updated": "2026-11-14T00:27:20+10:00",
-   "last_updated_text": "Sat 14 Nov 2026 12:27 AM AEST",
+   "last_updated": "2026-11-14T06:50:18+10:00",
+   "last_updated_text": "Sat 14 Nov 2026 06:50 AM AEST",
    "provided_by": "Brisbane City Council",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841639",
@@ -830,6 +599,62 @@
    }
   },
   {
+   "id": 841665,
+   "road": "Whites Road / Edward Street",
+   "description": "Water Over Road",
+   "locality": "Laidley",
+   "lga": "Lockyer Valley Regional",
+   "event_type": "Flooding",
+   "event_subtype": "Flash flooding",
+   "due_to": "Heavy rain",
+   "impact": "All lanes affected",
+   "impact_type": "Lanes affected",
+   "severity": "partial",
+   "direction": "All directions",
+   "advice": "Observe signage",
+   "information": null,
+   "status": "Published",
+   "start": "2026-11-13T23:42:00+10:00",
+   "last_updated": "2026-11-14T07:28:02+10:00",
+   "last_updated_text": "Sat 14 Nov 2026 07:28 AM AEST",
+   "provided_by": "Lockyer Valley Regional Council",
+   "source_link": "https://qldtraffic.qld.gov.au/",
+   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841665",
+   "state": "QLD",
+   "distance_km": 8.1,
+   "days": [
+    "ret4"
+   ],
+   "legs": [
+    "ret"
+   ],
+   "nearest_day": "ret4",
+   "leg_km": 2412.0,
+   "marker": [
+    -27.63692,
+    152.39773
+   ],
+   "geometry": {
+    "points": [],
+    "lines": [
+     [
+      [
+       -27.6367,
+       152.39615
+      ],
+      [
+       -27.63692,
+       152.39773
+      ],
+      [
+       -27.63715,
+       152.39936
+      ]
+     ]
+    ]
+   }
+  },
+  {
    "id": 841618,
    "road": "Gatton Laidley Road",
    "description": "Near Van de Weyer road",
@@ -873,6 +698,176 @@
      ]
     ],
     "lines": []
+   }
+  },
+  {
+   "id": 841667,
+   "road": "Whiteway Road",
+   "description": "Water Over Road",
+   "locality": "Forest Hill",
+   "lga": "Lockyer Valley Regional",
+   "event_type": "Flooding",
+   "event_subtype": "Flash flooding",
+   "due_to": "Heavy rain",
+   "impact": "All lanes affected",
+   "impact_type": "Lanes affected",
+   "severity": "partial",
+   "direction": "All directions",
+   "advice": "Observe signage",
+   "information": null,
+   "status": "Published",
+   "start": "2026-11-13T23:25:00+10:00",
+   "last_updated": "2026-11-14T07:30:04+10:00",
+   "last_updated_text": "Sat 14 Nov 2026 07:30 AM AEST",
+   "provided_by": "Lockyer Valley Regional Council",
+   "source_link": "https://qldtraffic.qld.gov.au/",
+   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841667",
+   "state": "QLD",
+   "distance_km": 5.3,
+   "days": [
+    "ret4"
+   ],
+   "legs": [
+    "ret"
+   ],
+   "nearest_day": "ret4",
+   "leg_km": 2421.0,
+   "marker": [
+    -27.59578,
+    152.34165
+   ],
+   "geometry": {
+    "points": [],
+    "lines": [
+     [
+      [
+       -27.59578,
+       152.34165
+      ],
+      [
+       -27.59638,
+       152.34559
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "id": 841668,
+   "road": "Turner Street",
+   "description": "Water over Road",
+   "locality": "Helidon",
+   "lga": "Lockyer Valley Regional",
+   "event_type": "Flooding",
+   "event_subtype": "Flash flooding",
+   "due_to": "Heavy rain",
+   "impact": "Road closed to all traffic",
+   "impact_type": "Closures",
+   "severity": "closed",
+   "direction": "All directions",
+   "advice": "Use alternative route",
+   "information": null,
+   "status": "Published",
+   "start": "2026-11-14T07:29:00+10:00",
+   "last_updated": "2026-11-14T07:34:04+10:00",
+   "last_updated_text": "Sat 14 Nov 2026 07:34 AM AEST",
+   "provided_by": "Lockyer Valley Regional Council",
+   "source_link": "https://qldtraffic.qld.gov.au/",
+   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841668",
+   "state": "QLD",
+   "distance_km": 0.1,
+   "days": [
+    "ret4"
+   ],
+   "legs": [
+    "ret"
+   ],
+   "nearest_day": "ret4",
+   "leg_km": 2442.0,
+   "marker": [
+    -27.54881,
+    152.12208
+   ],
+   "geometry": {
+    "points": [],
+    "lines": [
+     [
+      [
+       -27.54881,
+       152.12208
+      ],
+      [
+       -27.54875,
+       152.12212
+      ],
+      [
+       -27.54871,
+       152.12215
+      ],
+      [
+       -27.54867,
+       152.12221
+      ],
+      [
+       -27.54865,
+       152.12225
+      ],
+      [
+       -27.5486,
+       152.12238
+      ],
+      [
+       -27.54858,
+       152.12246
+      ],
+      [
+       -27.54856,
+       152.12254
+      ],
+      [
+       -27.54855,
+       152.12263
+      ],
+      [
+       -27.54854,
+       152.12271
+      ],
+      [
+       -27.54854,
+       152.12272
+      ]
+     ],
+     [
+      [
+       -27.55078,
+       152.12132
+      ],
+      [
+       -27.55085,
+       152.12131
+      ],
+      [
+       -27.55095,
+       152.1213
+      ],
+      [
+       -27.55103,
+       152.12128
+      ],
+      [
+       -27.55109,
+       152.12126
+      ],
+      [
+       -27.55116,
+       152.12123
+      ],
+      [
+       -27.55117,
+       152.12122
+      ]
+     ]
+    ]
    }
   }
  ]
