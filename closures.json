@@ -1,15 +1,13 @@
 {
- "generated_at": "2026-11-16T08:14:10+10:00",
- "generated_at_text": "Mon 16 Nov 2026 08:14 AM AEST",
+ "generated_at": "2026-11-16T12:06:47+10:00",
+ "generated_at_text": "Mon 16 Nov 2026 12:06 PM AEST",
  "stale": false,
  "sources": {
   "QLD": {
-   "used": "fallback",
-   "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
-   "feed_published": "2026-11-16T08:14:04+10:00",
-   "errors": [
-    "api: HTTP 429"
-   ],
+   "used": "api",
+   "url": "https://api.qldtraffic.qld.gov.au/v2/events",
+   "feed_published": "2026-11-16T12:05:21+10:00",
+   "errors": [],
    "ok": true,
    "stale": false,
    "count": 10
@@ -22,7 +20,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 103
+     "features": 116
     }
    ],
    "ok": true,
@@ -50,8 +48,8 @@
   {
    "id": "out1",
    "name": "Out day 1: Westbrook → Dubbo",
-   "count": 3,
-   "closed": 2,
+   "count": 4,
+   "closed": 3,
    "partial": 1
   },
   {
@@ -92,9 +90,9 @@
   {
    "id": "ret4",
    "name": "Return day 4: Byron Bay → Westbrook",
-   "count": 7,
+   "count": 6,
    "closed": 1,
-   "partial": 6
+   "partial": 5
   }
  ],
  "count": 10,
@@ -117,8 +115,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-15T13:30:00+10:00",
-   "last_updated": "2026-11-15T13:26:02+10:00",
-   "last_updated_text": "Sun 15 Nov 2026 01:26 PM AEST",
+   "last_updated": "2026-11-16T09:04:19+10:00",
+   "last_updated_text": "Mon 16 Nov 2026 09:04 AM AEST",
    "provided_by": "Toowoomba Regional",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841880",
@@ -225,8 +223,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-14T16:00:00+10:00",
-   "last_updated": "2026-11-15T16:52:01+10:00",
-   "last_updated_text": "Sun 15 Nov 2026 04:52 PM AEST",
+   "last_updated": "2026-11-16T09:06:07+10:00",
+   "last_updated_text": "Mon 16 Nov 2026 09:06 AM AEST",
    "provided_by": "Toowoomba Regional",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841774",
@@ -377,8 +375,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-30T17:17:00+10:00",
-   "last_updated": "2026-11-14T08:41:18+10:00",
-   "last_updated_text": "Sat 14 Nov 2026 08:41 AM AEST",
+   "last_updated": "2026-11-16T09:00:35+10:00",
+   "last_updated_text": "Mon 16 Nov 2026 09:00 AM AEST",
    "provided_by": "Department of Transport and Main Roads",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/838487",
@@ -407,6 +405,70 @@
    }
   },
   {
+   "id": 842047,
+   "road": "Bostock Road / Lemontree Road",
+   "description": "Between Gore Highway and Bostock Road",
+   "locality": "Condamine Plains / Yandilla",
+   "lga": "Toowoomba Regional",
+   "event_type": "Flooding",
+   "event_subtype": "Flash flooding",
+   "due_to": "Heavy rain",
+   "impact": "Road closed to all traffic",
+   "impact_type": "Closures",
+   "severity": "closed",
+   "direction": "All directions",
+   "advice": "Do not drive in flood waters",
+   "information": null,
+   "status": "Published",
+   "start": "2026-11-16T09:02:00+10:00",
+   "last_updated": "2026-11-16T09:04:22+10:00",
+   "last_updated_text": "Mon 16 Nov 2026 09:04 AM AEST",
+   "provided_by": "Toowoomba Regional",
+   "source_link": "https://qldtraffic.qld.gov.au/",
+   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/842047",
+   "state": "QLD",
+   "distance_km": 0.9,
+   "days": [
+    "out1"
+   ],
+   "legs": [
+    "out"
+   ],
+   "nearest_day": "out1",
+   "leg_km": 60.0,
+   "marker": [
+    -27.80384,
+    151.33608
+   ],
+   "geometry": {
+    "points": [],
+    "lines": [
+     [
+      [
+       -27.78251,
+       151.30634
+      ],
+      [
+       -27.78757,
+       151.31068
+      ],
+      [
+       -27.80384,
+       151.33608
+      ],
+      [
+       -27.805,
+       151.34054
+      ],
+      [
+       -27.81173,
+       151.34985
+      ]
+     ]
+    ]
+   }
+  },
+  {
    "id": 841998,
    "road": "Bahrs Scrub Road",
    "description": "Bahrs Scrub Road, Bahrs Scrub - FRSWS",
@@ -423,8 +485,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-16T07:12:00+10:00",
-   "last_updated": "2026-11-16T07:14:02+10:00",
-   "last_updated_text": "Mon 16 Nov 2026 07:14 AM AEST",
+   "last_updated": "2026-11-16T11:34:01+10:00",
+   "last_updated_text": "Mon 16 Nov 2026 11:34 AM AEST",
    "provided_by": "Logan City Council",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841998",
@@ -525,8 +587,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-14T09:15:00+10:00",
-   "last_updated": "2026-11-15T07:56:12+10:00",
-   "last_updated_text": "Sun 15 Nov 2026 07:56 AM AEST",
+   "last_updated": "2026-11-16T09:04:14+10:00",
+   "last_updated_text": "Mon 16 Nov 2026 09:04 AM AEST",
    "provided_by": "Lockyer Valley Regional Council",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841693",
@@ -653,52 +715,6 @@
    }
   },
   {
-   "id": 841698,
-   "road": "Forest Hill Fernvale Road",
-   "description": "At the Billagbong",
-   "locality": "Glenore Grove",
-   "lga": "Lockyer Valley Regional",
-   "event_type": "Flooding",
-   "event_subtype": "Flash flooding",
-   "due_to": "Water over road",
-   "impact": "Lane or lanes reduced",
-   "impact_type": "Lanes affected",
-   "severity": "partial",
-   "direction": "All directions",
-   "advice": "Do not drive in flood waters",
-   "information": null,
-   "status": "Published",
-   "start": "2026-11-14T09:29:00+10:00",
-   "last_updated": "2026-11-16T07:33:10+10:00",
-   "last_updated_text": "Mon 16 Nov 2026 07:33 AM AEST",
-   "provided_by": "Department of Transport and Main Roads",
-   "source_link": "https://qldtraffic.qld.gov.au/",
-   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841698",
-   "state": "QLD",
-   "distance_km": 3.5,
-   "days": [
-    "ret4"
-   ],
-   "legs": [
-    "ret"
-   ],
-   "nearest_day": "ret4",
-   "leg_km": 2414.0,
-   "marker": [
-    -27.52576,
-    152.4081
-   ],
-   "geometry": {
-    "points": [
-     [
-      -27.52576,
-      152.4081
-     ]
-    ],
-    "lines": []
-   }
-  },
-  {
    "id": 841667,
    "road": "Whiteway Road",
    "description": "Water Over Road",
@@ -753,7 +769,7 @@
   {
    "id": 841708,
    "road": "Mount Sylvia Road",
-   "description": "Chainage 0 - 23.5",
+   "description": "Between Gatton Clifton Road and E Haldon Road",
    "locality": "Junction View / Winwill / Woodbine",
    "lga": "Lockyer Valley Regional",
    "event_type": "Flooding",
@@ -767,8 +783,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-14T11:03:00+10:00",
-   "last_updated": "2026-11-16T04:39:02+10:00",
-   "last_updated_text": "Mon 16 Nov 2026 04:39 AM AEST",
+   "last_updated": "2026-11-16T09:22:37+10:00",
+   "last_updated_text": "Mon 16 Nov 2026 09:22 AM AEST",
    "provided_by": "Department of Transport and Main Roads",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841708",
@@ -3745,8 +3761,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-14T07:29:00+10:00",
-   "last_updated": "2026-11-15T07:56:09+10:00",
-   "last_updated_text": "Sun 15 Nov 2026 07:56 AM AEST",
+   "last_updated": "2026-11-16T09:06:03+10:00",
+   "last_updated_text": "Mon 16 Nov 2026 09:06 AM AEST",
    "provided_by": "Lockyer Valley Regional Council",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841668",
@@ -3767,6 +3783,36 @@
    "geometry": {
     "points": [],
     "lines": [
+     [
+      [
+       -27.55078,
+       152.12132
+      ],
+      [
+       -27.55085,
+       152.12131
+      ],
+      [
+       -27.55095,
+       152.1213
+      ],
+      [
+       -27.55103,
+       152.12128
+      ],
+      [
+       -27.55109,
+       152.12126
+      ],
+      [
+       -27.55116,
+       152.12123
+      ],
+      [
+       -27.55117,
+       152.12122
+      ]
+     ],
      [
       [
        -27.54881,
@@ -3811,36 +3857,6 @@
       [
        -27.54854,
        152.12272
-      ]
-     ],
-     [
-      [
-       -27.55078,
-       152.12132
-      ],
-      [
-       -27.55085,
-       152.12131
-      ],
-      [
-       -27.55095,
-       152.1213
-      ],
-      [
-       -27.55103,
-       152.12128
-      ],
-      [
-       -27.55109,
-       152.12126
-      ],
-      [
-       -27.55116,
-       152.12123
-      ],
-      [
-       -27.55117,
-       152.12122
       ]
      ]
     ]
