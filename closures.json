@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-17T21:08:34+10:00",
- "generated_at_text": "Tue 17 Nov 2026 09:08 PM AEST",
+ "generated_at": "2026-11-18T05:48:52+10:00",
+ "generated_at_text": "Wed 18 Nov 2026 05:48 AM AEST",
  "stale": false,
  "sources": {
   "QLD": {
    "used": "fallback",
    "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
-   "feed_published": "2026-11-17T19:59:32+10:00",
+   "feed_published": "2026-11-18T05:45:36+10:00",
    "errors": [
     "api: HTTP 429"
    ],
@@ -22,7 +22,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 129
+     "features": 137
     }
    ],
    "ok": true,
@@ -469,8 +469,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-14T11:03:00+10:00",
-   "last_updated": "2026-11-17T18:58:05+10:00",
-   "last_updated_text": "Tue 17 Nov 2026 06:58 PM AEST",
+   "last_updated": "2026-11-18T04:00:14+10:00",
+   "last_updated_text": "Wed 18 Nov 2026 04:00 AM AEST",
    "provided_by": "Department of Transport and Main Roads",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841708",
