@@ -1,16 +1,18 @@
 {
- "generated_at": "2026-11-17T12:41:50+10:00",
- "generated_at_text": "Tue 17 Nov 2026 12:41 PM AEST",
+ "generated_at": "2026-11-17T21:08:34+10:00",
+ "generated_at_text": "Tue 17 Nov 2026 09:08 PM AEST",
  "stale": false,
  "sources": {
   "QLD": {
-   "used": "api",
-   "url": "https://api.qldtraffic.qld.gov.au/v2/events",
-   "feed_published": "2026-11-17T12:41:04+10:00",
-   "errors": [],
+   "used": "fallback",
+   "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
+   "feed_published": "2026-11-17T19:59:32+10:00",
+   "errors": [
+    "api: HTTP 429"
+   ],
    "ok": true,
    "stale": false,
-   "count": 8
+   "count": 6
   },
   "NSW": {
    "feeds": [
@@ -20,7 +22,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 128
+     "features": 129
     }
    ],
    "ok": true,
@@ -48,8 +50,8 @@
   {
    "id": "out1",
    "name": "Out day 1: Westbrook → Dubbo",
-   "count": 4,
-   "closed": 3,
+   "count": 3,
+   "closed": 2,
    "partial": 1
   },
   {
@@ -90,12 +92,12 @@
   {
    "id": "ret4",
    "name": "Return day 4: Byron Bay → Westbrook",
-   "count": 4,
-   "closed": 2,
+   "count": 3,
+   "closed": 1,
    "partial": 2
   }
  ],
- "count": 8,
+ "count": 6,
  "excluded": [],
  "closures": [
   {
@@ -405,214 +407,6 @@
    }
   },
   {
-   "id": 842047,
-   "road": "Bostock Road / Lemontree Road",
-   "description": "Between Gore Highway and Bostock Road",
-   "locality": "Condamine Plains / Yandilla",
-   "lga": "Toowoomba Regional",
-   "event_type": "Flooding",
-   "event_subtype": "Flash flooding",
-   "due_to": "Heavy rain",
-   "impact": "Road closed to all traffic",
-   "impact_type": "Closures",
-   "severity": "closed",
-   "direction": "All directions",
-   "advice": "Do not drive in flood waters",
-   "information": null,
-   "status": "Published",
-   "start": "2026-11-16T09:02:00+10:00",
-   "last_updated": "2026-11-17T06:40:09+10:00",
-   "last_updated_text": "Tue 17 Nov 2026 06:40 AM AEST",
-   "provided_by": "Toowoomba Regional",
-   "source_link": "https://qldtraffic.qld.gov.au/",
-   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/842047",
-   "state": "QLD",
-   "distance_km": 0.9,
-   "days": [
-    "out1"
-   ],
-   "legs": [
-    "out"
-   ],
-   "nearest_day": "out1",
-   "leg_km": 60.0,
-   "marker": [
-    -27.80384,
-    151.33608
-   ],
-   "geometry": {
-    "points": [],
-    "lines": [
-     [
-      [
-       -27.78251,
-       151.30634
-      ],
-      [
-       -27.78757,
-       151.31068
-      ],
-      [
-       -27.80384,
-       151.33608
-      ],
-      [
-       -27.805,
-       151.34054
-      ],
-      [
-       -27.81173,
-       151.34985
-      ]
-     ]
-    ]
-   }
-  },
-  {
-   "id": 841693,
-   "road": "Harm Drive",
-   "description": "Water Over Road - Road Closed",
-   "locality": "Glenore Grove",
-   "lga": "Lockyer Valley Regional",
-   "event_type": "Flooding",
-   "event_subtype": "Flash flooding",
-   "due_to": "Heavy rain",
-   "impact": "Road closed to all traffic",
-   "impact_type": "Closures",
-   "severity": "closed",
-   "direction": "All directions",
-   "advice": "Do not drive in flood waters",
-   "information": null,
-   "status": "Published",
-   "start": "2026-11-14T09:15:00+10:00",
-   "last_updated": "2026-11-16T09:04:14+10:00",
-   "last_updated_text": "Mon 16 Nov 2026 09:04 AM AEST",
-   "provided_by": "Lockyer Valley Regional Council",
-   "source_link": "https://qldtraffic.qld.gov.au/",
-   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841693",
-   "state": "QLD",
-   "distance_km": 2.0,
-   "days": [
-    "ret4"
-   ],
-   "legs": [
-    "ret"
-   ],
-   "nearest_day": "ret4",
-   "leg_km": 2414.0,
-   "marker": [
-    -27.53603,
-    152.39992
-   ],
-   "geometry": {
-    "points": [],
-    "lines": [
-     [
-      [
-       -27.5362,
-       152.39838
-      ],
-      [
-       -27.53602,
-       152.39894
-      ],
-      [
-       -27.53593,
-       152.39922
-      ],
-      [
-       -27.5359,
-       152.39932
-      ],
-      [
-       -27.53589,
-       152.39939
-      ],
-      [
-       -27.53588,
-       152.39946
-      ],
-      [
-       -27.53588,
-       152.39954
-      ],
-      [
-       -27.53589,
-       152.39961
-      ],
-      [
-       -27.53589,
-       152.39962
-      ],
-      [
-       -27.53591,
-       152.39967
-      ],
-      [
-       -27.53593,
-       152.39973
-      ],
-      [
-       -27.53596,
-       152.3998
-      ],
-      [
-       -27.53603,
-       152.39992
-      ],
-      [
-       -27.53617,
-       152.40014
-      ],
-      [
-       -27.53619,
-       152.40019
-      ],
-      [
-       -27.53624,
-       152.40026
-      ],
-      [
-       -27.53629,
-       152.40032
-      ],
-      [
-       -27.53633,
-       152.40036
-      ],
-      [
-       -27.53638,
-       152.40041
-      ],
-      [
-       -27.53644,
-       152.40046
-      ],
-      [
-       -27.53648,
-       152.40049
-      ],
-      [
-       -27.53653,
-       152.40052
-      ],
-      [
-       -27.53659,
-       152.40054
-      ],
-      [
-       -27.53675,
-       152.4006
-      ],
-      [
-       -27.5369,
-       152.40063
-      ]
-     ]
-    ]
-   }
-  },
-  {
    "id": 842334,
    "road": "Lake Clarendon Road",
    "description": "Road Closed - Water Over Road - Do not Drive in Flood Waters",
@@ -675,8 +469,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-14T11:03:00+10:00",
-   "last_updated": "2026-11-17T10:38:55+10:00",
-   "last_updated_text": "Tue 17 Nov 2026 10:38 AM AEST",
+   "last_updated": "2026-11-17T18:58:05+10:00",
+   "last_updated_text": "Tue 17 Nov 2026 06:58 PM AEST",
    "provided_by": "Department of Transport and Main Roads",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841708",
@@ -3653,8 +3447,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-14T07:29:00+10:00",
-   "last_updated": "2026-11-16T09:06:03+10:00",
-   "last_updated_text": "Mon 16 Nov 2026 09:06 AM AEST",
+   "last_updated": "2026-11-17T14:18:05+10:00",
+   "last_updated_text": "Tue 17 Nov 2026 02:18 PM AEST",
    "provided_by": "Lockyer Valley Regional Council",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841668",
