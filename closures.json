@@ -1,18 +1,18 @@
 {
- "generated_at": "2026-11-23T02:45:51+10:00",
- "generated_at_text": "Mon 23 Nov 2026 02:45 AM AEST",
+ "generated_at": "2026-11-23T08:12:59+10:00",
+ "generated_at_text": "Mon 23 Nov 2026 08:12 AM AEST",
  "stale": false,
  "sources": {
   "QLD": {
    "used": "fallback",
    "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
-   "feed_published": "2026-11-23T02:03:41+10:00",
+   "feed_published": "2026-11-23T08:11:05+10:00",
    "errors": [
     "api: HTTP 429"
    ],
    "ok": true,
    "stale": false,
-   "count": 7
+   "count": 6
   },
   "NSW": {
    "feeds": [
@@ -22,7 +22,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 115
+     "features": 127
     }
    ],
    "ok": true,
@@ -92,12 +92,12 @@
   {
    "id": "ret4",
    "name": "Return day 4: Byron Bay → Westbrook",
-   "count": 3,
+   "count": 2,
    "closed": 0,
-   "partial": 3
+   "partial": 2
   }
  ],
- "count": 7,
+ "count": 6,
  "excluded": [],
  "closures": [
   {
@@ -469,8 +469,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-17T08:00:00+10:00",
-   "last_updated": "2026-11-20T11:40:01+10:00",
-   "last_updated_text": "Fri 20 Nov 2026 11:40 AM AEST",
+   "last_updated": "2026-11-23T06:24:08+10:00",
+   "last_updated_text": "Mon 23 Nov 2026 06:24 AM AEST",
    "provided_by": "Lockyer Valley Regional Council",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/842334",
@@ -499,58 +499,6 @@
    }
   },
   {
-   "id": 842698,
-   "road": "Dodt Road",
-   "description": "Water over road - Observe Signage",
-   "locality": "Forest Hill",
-   "lga": "Lockyer Valley Regional",
-   "event_type": "Flooding",
-   "event_subtype": "Flash flooding",
-   "due_to": "Heavy rain",
-   "impact": "All lanes affected",
-   "impact_type": "Lanes affected",
-   "severity": "partial",
-   "direction": "All directions",
-   "advice": "Observe signage",
-   "information": null,
-   "status": "Published",
-   "start": "2026-11-18T12:15:00+10:00",
-   "last_updated": "2026-11-20T14:08:07+10:00",
-   "last_updated_text": "Fri 20 Nov 2026 02:08 PM AEST",
-   "provided_by": "Lockyer Valley Regional Council",
-   "source_link": "https://qldtraffic.qld.gov.au/",
-   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/842698",
-   "state": "QLD",
-   "distance_km": 2.8,
-   "days": [
-    "ret4"
-   ],
-   "legs": [
-    "ret"
-   ],
-   "nearest_day": "ret4",
-   "leg_km": 2420.0,
-   "marker": [
-    -27.57878,
-    152.34247
-   ],
-   "geometry": {
-    "points": [],
-    "lines": [
-     [
-      [
-       -27.57878,
-       152.34247
-      ],
-      [
-       -27.57424,
-       152.3361
-      ]
-     ]
-    ]
-   }
-  },
-  {
    "id": 841668,
    "road": "Turner Street",
    "description": "Water over Road",
@@ -567,8 +515,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-14T07:29:00+10:00",
-   "last_updated": "2026-11-20T11:40:03+10:00",
-   "last_updated_text": "Fri 20 Nov 2026 11:40 AM AEST",
+   "last_updated": "2026-11-23T06:22:16+10:00",
+   "last_updated_text": "Mon 23 Nov 2026 06:22 AM AEST",
    "provided_by": "Lockyer Valley Regional Council",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841668",
@@ -589,6 +537,36 @@
    "geometry": {
     "points": [],
     "lines": [
+     [
+      [
+       -27.55078,
+       152.12132
+      ],
+      [
+       -27.55085,
+       152.12131
+      ],
+      [
+       -27.55095,
+       152.1213
+      ],
+      [
+       -27.55103,
+       152.12128
+      ],
+      [
+       -27.55109,
+       152.12126
+      ],
+      [
+       -27.55116,
+       152.12123
+      ],
+      [
+       -27.55117,
+       152.12122
+      ]
+     ],
      [
       [
        -27.54881,
@@ -633,36 +611,6 @@
       [
        -27.54854,
        152.12272
-      ]
-     ],
-     [
-      [
-       -27.55078,
-       152.12132
-      ],
-      [
-       -27.55085,
-       152.12131
-      ],
-      [
-       -27.55095,
-       152.1213
-      ],
-      [
-       -27.55103,
-       152.12128
-      ],
-      [
-       -27.55109,
-       152.12126
-      ],
-      [
-       -27.55116,
-       152.12123
-      ],
-      [
-       -27.55117,
-       152.12122
       ]
      ]
     ]
