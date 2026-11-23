@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-23T21:17:26+10:00",
- "generated_at_text": "Mon 23 Nov 2026 09:17 PM AEST",
+ "generated_at": "2026-11-24T08:47:01+10:00",
+ "generated_at_text": "Tue 24 Nov 2026 08:47 AM AEST",
  "stale": false,
  "sources": {
   "QLD": {
    "used": "fallback",
    "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
-   "feed_published": "2026-11-23T21:14:08+10:00",
+   "feed_published": "2026-11-24T08:45:52+10:00",
    "errors": [
     "api: HTTP 429"
    ],
@@ -22,7 +22,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 135
+     "features": 128
     }
    ],
    "ok": true,
@@ -117,8 +117,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-19T07:37:00+10:00",
-   "last_updated": "2026-11-19T07:38:02+10:00",
-   "last_updated_text": "Thu 19 Nov 2026 07:38 AM AEST",
+   "last_updated": "2026-11-24T06:40:25+10:00",
+   "last_updated_text": "Tue 24 Nov 2026 06:40 AM AEST",
    "provided_by": "Toowoomba Regional",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/842919",
@@ -163,8 +163,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-15T13:30:00+10:00",
-   "last_updated": "2026-11-19T05:58:07+10:00",
-   "last_updated_text": "Thu 19 Nov 2026 05:58 AM AEST",
+   "last_updated": "2026-11-24T06:40:19+10:00",
+   "last_updated_text": "Tue 24 Nov 2026 06:40 AM AEST",
    "provided_by": "Toowoomba Regional",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841880",
@@ -317,8 +317,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-17T08:00:00+10:00",
-   "last_updated": "2026-11-23T06:24:08+10:00",
-   "last_updated_text": "Mon 23 Nov 2026 06:24 AM AEST",
+   "last_updated": "2026-11-24T06:58:03+10:00",
+   "last_updated_text": "Tue 24 Nov 2026 06:58 AM AEST",
    "provided_by": "Lockyer Valley Regional Council",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/842334",
@@ -363,8 +363,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-14T07:29:00+10:00",
-   "last_updated": "2026-11-23T06:22:16+10:00",
-   "last_updated_text": "Mon 23 Nov 2026 06:22 AM AEST",
+   "last_updated": "2026-11-24T06:58:05+10:00",
+   "last_updated_text": "Tue 24 Nov 2026 06:58 AM AEST",
    "provided_by": "Lockyer Valley Regional Council",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841668",
