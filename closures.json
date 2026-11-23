@@ -1,16 +1,18 @@
 {
- "generated_at": "2026-11-23T12:43:29+10:00",
- "generated_at_text": "Mon 23 Nov 2026 12:43 PM AEST",
+ "generated_at": "2026-11-23T21:17:26+10:00",
+ "generated_at_text": "Mon 23 Nov 2026 09:17 PM AEST",
  "stale": false,
  "sources": {
   "QLD": {
-   "used": "api",
-   "url": "https://api.qldtraffic.qld.gov.au/v2/events",
-   "feed_published": "2026-11-23T12:42:47+10:00",
-   "errors": [],
+   "used": "fallback",
+   "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
+   "feed_published": "2026-11-23T21:14:08+10:00",
+   "errors": [
+    "api: HTTP 429"
+   ],
    "ok": true,
    "stale": false,
-   "count": 6
+   "count": 5
   },
   "NSW": {
    "feeds": [
@@ -20,7 +22,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 124
+     "features": 135
     }
    ],
    "ok": true,
@@ -48,8 +50,8 @@
   {
    "id": "out1",
    "name": "Out day 1: Westbrook → Dubbo",
-   "count": 4,
-   "closed": 2,
+   "count": 3,
+   "closed": 1,
    "partial": 2
   },
   {
@@ -95,7 +97,7 @@
    "partial": 2
   }
  ],
- "count": 6,
+ "count": 5,
  "excluded": [],
  "closures": [
   {
@@ -253,158 +255,6 @@
    }
   },
   {
-   "id": 841774,
-   "road": "Yarramalong Road",
-   "description": "Yarramalong Weir",
-   "locality": "Tummaville",
-   "lga": "Toowoomba Regional",
-   "event_type": "Flooding",
-   "event_subtype": "Long-term flooding",
-   "due_to": "Flooding of river",
-   "impact": "Road closed to all traffic",
-   "impact_type": "Closures",
-   "severity": "closed",
-   "direction": "All directions",
-   "advice": "Do not drive in flood waters",
-   "information": null,
-   "status": "Published",
-   "start": "2026-11-14T16:00:00+10:00",
-   "last_updated": "2026-11-19T06:00:07+10:00",
-   "last_updated_text": "Thu 19 Nov 2026 06:00 AM AEST",
-   "provided_by": "Toowoomba Regional",
-   "source_link": "https://qldtraffic.qld.gov.au/",
-   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/841774",
-   "state": "QLD",
-   "distance_km": 6.1,
-   "days": [
-    "out1"
-   ],
-   "legs": [
-    "out"
-   ],
-   "nearest_day": "out1",
-   "leg_km": 53.0,
-   "marker": [
-    -27.8352,
-    151.44942
-   ],
-   "geometry": {
-    "points": [],
-    "lines": [
-     [
-      [
-       -27.83426,
-       151.44987
-      ],
-      [
-       -27.83429,
-       151.44985
-      ],
-      [
-       -27.83445,
-       151.44971
-      ],
-      [
-       -27.83454,
-       151.4496
-      ],
-      [
-       -27.83461,
-       151.44952
-      ],
-      [
-       -27.83468,
-       151.44944
-      ],
-      [
-       -27.83475,
-       151.44937
-      ],
-      [
-       -27.83479,
-       151.44934
-      ],
-      [
-       -27.83482,
-       151.44932
-      ],
-      [
-       -27.83485,
-       151.4493
-      ],
-      [
-       -27.83489,
-       151.4493
-      ],
-      [
-       -27.83493,
-       151.44929
-      ],
-      [
-       -27.83498,
-       151.4493
-      ],
-      [
-       -27.83502,
-       151.4493
-      ],
-      [
-       -27.83505,
-       151.44931
-      ],
-      [
-       -27.8351,
-       151.44933
-      ],
-      [
-       -27.83514,
-       151.44936
-      ],
-      [
-       -27.8352,
-       151.44942
-      ],
-      [
-       -27.83567,
-       151.44991
-      ],
-      [
-       -27.83571,
-       151.44993
-      ],
-      [
-       -27.83576,
-       151.44996
-      ],
-      [
-       -27.8358,
-       151.44998
-      ],
-      [
-       -27.83584,
-       151.44999
-      ],
-      [
-       -27.83591,
-       151.44999
-      ],
-      [
-       -27.83599,
-       151.45
-      ],
-      [
-       -27.83607,
-       151.45001
-      ],
-      [
-       -27.83681,
-       151.44991
-      ]
-     ]
-    ]
-   }
-  },
-  {
    "id": 838487,
    "road": "Gore Highway",
    "description": "Condamine River Bridge",
@@ -537,6 +387,36 @@
     "lines": [
      [
       [
+       -27.55078,
+       152.12132
+      ],
+      [
+       -27.55085,
+       152.12131
+      ],
+      [
+       -27.55095,
+       152.1213
+      ],
+      [
+       -27.55103,
+       152.12128
+      ],
+      [
+       -27.55109,
+       152.12126
+      ],
+      [
+       -27.55116,
+       152.12123
+      ],
+      [
+       -27.55117,
+       152.12122
+      ]
+     ],
+     [
+      [
        -27.54881,
        152.12208
       ],
@@ -579,36 +459,6 @@
       [
        -27.54854,
        152.12272
-      ]
-     ],
-     [
-      [
-       -27.55078,
-       152.12132
-      ],
-      [
-       -27.55085,
-       152.12131
-      ],
-      [
-       -27.55095,
-       152.1213
-      ],
-      [
-       -27.55103,
-       152.12128
-      ],
-      [
-       -27.55109,
-       152.12126
-      ],
-      [
-       -27.55116,
-       152.12123
-      ],
-      [
-       -27.55117,
-       152.12122
       ]
      ]
     ]
