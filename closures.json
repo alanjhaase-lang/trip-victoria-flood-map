@@ -1,15 +1,13 @@
 {
- "generated_at": "2026-11-24T08:47:01+10:00",
- "generated_at_text": "Tue 24 Nov 2026 08:47 AM AEST",
+ "generated_at": "2026-11-24T16:34:38+10:00",
+ "generated_at_text": "Tue 24 Nov 2026 04:34 PM AEST",
  "stale": false,
  "sources": {
   "QLD": {
-   "used": "fallback",
-   "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
-   "feed_published": "2026-11-24T08:45:52+10:00",
-   "errors": [
-    "api: HTTP 429"
-   ],
+   "used": "api",
+   "url": "https://api.qldtraffic.qld.gov.au/v2/events",
+   "feed_published": "2026-11-24T16:32:54+10:00",
+   "errors": [],
    "ok": true,
    "stale": false,
    "count": 5
@@ -22,7 +20,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 128
+     "features": 131
     }
    ],
    "ok": true,
@@ -271,8 +269,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-10-30T17:17:00+10:00",
-   "last_updated": "2026-11-22T09:09:31+10:00",
-   "last_updated_text": "Sun 22 Nov 2026 09:09 AM AEST",
+   "last_updated": "2026-11-24T10:24:56+10:00",
+   "last_updated_text": "Tue 24 Nov 2026 10:24 AM AEST",
    "provided_by": "Department of Transport and Main Roads",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/838487",
@@ -387,36 +385,6 @@
     "lines": [
      [
       [
-       -27.55078,
-       152.12132
-      ],
-      [
-       -27.55085,
-       152.12131
-      ],
-      [
-       -27.55095,
-       152.1213
-      ],
-      [
-       -27.55103,
-       152.12128
-      ],
-      [
-       -27.55109,
-       152.12126
-      ],
-      [
-       -27.55116,
-       152.12123
-      ],
-      [
-       -27.55117,
-       152.12122
-      ]
-     ],
-     [
-      [
        -27.54881,
        152.12208
       ],
@@ -459,6 +427,36 @@
       [
        -27.54854,
        152.12272
+      ]
+     ],
+     [
+      [
+       -27.55078,
+       152.12132
+      ],
+      [
+       -27.55085,
+       152.12131
+      ],
+      [
+       -27.55095,
+       152.1213
+      ],
+      [
+       -27.55103,
+       152.12128
+      ],
+      [
+       -27.55109,
+       152.12126
+      ],
+      [
+       -27.55116,
+       152.12123
+      ],
+      [
+       -27.55117,
+       152.12122
       ]
      ]
     ]

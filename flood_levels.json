@@ -1322,7 +1322,7 @@
    "datum": "AHD",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540111.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-24"
   },
   "540113": {
    "minor": 29.0,
@@ -2591,7 +2591,7 @@
    "datum": "AHD",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540478.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-24"
   },
   "540483": {
    "minor": null,
@@ -2987,7 +2987,7 @@
    "datum": "AHD",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540636.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-24"
   },
   "540640": {
    "minor": 1.6,
@@ -3671,7 +3671,7 @@
    "datum": null,
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65396/IDQ65396.541058.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-24"
   },
   "541070": {
    "minor": 3.3,
@@ -3792,7 +3792,7 @@
    "datum": null,
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65396/IDQ65396.541146.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-24"
   },
   "541147": {
    "minor": null,
@@ -3801,7 +3801,7 @@
    "datum": null,
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65396/IDQ65396.541147.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-24"
   },
   "541148": {
    "minor": null,
@@ -3810,7 +3810,7 @@
    "datum": null,
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65396/IDQ65396.541148.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-24"
   },
   "541160": {
    "minor": null,
@@ -3819,7 +3819,7 @@
    "datum": null,
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65396/IDQ65396.541160.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-24"
   },
   "541170": {
    "minor": 1.0,
