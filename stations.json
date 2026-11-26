@@ -1343,6 +1343,17 @@
    "geocoded": true
   },
   {
+   "station_no": "041564",
+   "name": "Spring Creek at Killarney Wtp",
+   "bom_name": "Spring Creek at Killarney Wtp",
+   "awrc": null,
+   "lat": -28.3525,
+   "lon": 152.3373,
+   "source": "bom_regional_map",
+   "source_url": "https://www.bom.gov.au/nsw/flood/northcoast.shtml",
+   "geocoded": false
+  },
+  {
    "station_no": "042049",
    "name": "Dogwood Creek at Miles",
    "bom_name": "Miles (Dogwood Creek)",
@@ -1800,6 +1811,17 @@
    "lat": -28.9083,
    "lon": 147.6917,
    "source": "bom_nfgn",
+   "geocoded": false
+  },
+  {
+   "station_no": "044238",
+   "name": "Neabul Creek",
+   "bom_name": "Neabul Creek",
+   "awrc": null,
+   "lat": -27.5955,
+   "lon": 147.7925,
+   "source": "bom_regional_map",
+   "source_url": "https://www.bom.gov.au/nsw/flood/northwest.shtml",
    "geocoded": false
   },
   {
@@ -3655,6 +3677,17 @@
    "geocoded": false
   },
   {
+   "station_no": "140023",
+   "name": "Emu Creek at Pierces Creek Road",
+   "bom_name": "Emu Creek at Pierces Creek Road",
+   "awrc": null,
+   "lat": -27.0644,
+   "lon": 152.0046,
+   "source": "bom_regional_map",
+   "source_url": "https://www.bom.gov.au/nsw/flood/northwest.shtml",
+   "geocoded": false
+  },
+  {
    "station_no": "140024",
    "name": "Warrill Creek at Willowbank",
    "bom_name": null,
@@ -3663,6 +3696,36 @@
    "lon": 152.67465,
    "source": "geocoded_nominatim: 'Willowbank' -> Willowbank, Brisbane, Queensland, Australia",
    "geocoded": true
+  },
+  {
+   "station_no": "140843",
+   "name": "Mount Stanley",
+   "lat": null,
+   "lon": null,
+   "source": "not_found",
+   "checked": "2026-11-26"
+  },
+  {
+   "station_no": "140845",
+   "name": "Purga Creek at Washpool Road",
+   "bom_name": "Purga Creek at Washpool Road",
+   "awrc": null,
+   "lat": -27.8182,
+   "lon": 152.7547,
+   "source": "bom_regional_map",
+   "source_url": "https://www.bom.gov.au/nsw/flood/northcoast.shtml",
+   "geocoded": false
+  },
+  {
+   "station_no": "140846",
+   "name": "Running Creek at Bells Bridge",
+   "bom_name": "Running Creek at Bells Bridge",
+   "awrc": null,
+   "lat": -28.3183,
+   "lon": 152.9216,
+   "source": "bom_regional_map",
+   "source_url": "https://www.bom.gov.au/nsw/flood/northcoast.shtml",
+   "geocoded": false
   },
   {
    "station_no": "539035",
@@ -8121,6 +8184,49 @@
    "lon": 153.4998,
    "source": "bom_nfgn",
    "geocoded": false
+  },
+  {
+   "station_no": "540855",
+   "name": "Laidley Creek at Alexander St Overflow",
+   "lat": null,
+   "lon": null,
+   "source": "not_found",
+   "checked": "2026-11-26"
+  },
+  {
+   "station_no": "540856",
+   "name": "Laidley Creek at Alexander St",
+   "lat": null,
+   "lon": null,
+   "source": "not_found",
+   "checked": "2026-11-26"
+  },
+  {
+   "station_no": "540857",
+   "name": "Laidley Creek at Mulgowrie West Bank Overflow",
+   "bom_name": "Laidley Creek at Mulgowrie West Bank Overflow",
+   "awrc": null,
+   "lat": -27.7248,
+   "lon": 152.3552,
+   "source": "bom_regional_map",
+   "source_url": "https://www.bom.gov.au/nsw/flood/northcoast.shtml",
+   "geocoded": false
+  },
+  {
+   "station_no": "540858",
+   "name": "Laidley Creek at Pike St Lagoon Creek",
+   "lat": null,
+   "lon": null,
+   "source": "not_found",
+   "checked": "2026-11-26"
+  },
+  {
+   "station_no": "540859",
+   "name": "Laidley Creek at Glenore Grove Billabong",
+   "lat": null,
+   "lon": null,
+   "source": "not_found",
+   "checked": "2026-11-26"
   },
   {
    "station_no": "541027",
@@ -13864,6 +13970,30 @@
    "geocoded": false
   },
   {
+   "station_no": "561186",
+   "name": "Swamp Creek at Cessnock Road",
+   "lat": null,
+   "lon": null,
+   "source": "not_found",
+   "checked": "2026-11-26"
+  },
+  {
+   "station_no": "561187",
+   "name": "Wallis Creek at Whitebridge Road",
+   "lat": null,
+   "lon": null,
+   "source": "not_found",
+   "checked": "2026-11-26"
+  },
+  {
+   "station_no": "561190",
+   "name": "Widden (Widden Valley Rd) (Widden Brook)",
+   "lat": null,
+   "lon": null,
+   "source": "not_found",
+   "checked": "2026-11-26"
+  },
+  {
    "station_no": "562000",
    "name": "Macquarie River at Burrendong Dam DS",
    "bom_name": "Burrendong Dam DS (Macquarie River)",
@@ -13952,6 +14082,22 @@
    "lon": 150.1013,
    "source": "bom_nfgn",
    "geocoded": false
+  },
+  {
+   "station_no": "562015",
+   "name": "Lawsons Creek at Lue Road",
+   "lat": null,
+   "lon": null,
+   "source": "not_found",
+   "checked": "2026-11-26"
+  },
+  {
+   "station_no": "562016",
+   "name": "Cudgegong River at Mudgee",
+   "lat": null,
+   "lon": null,
+   "source": "not_found",
+   "checked": "2026-11-26"
   },
   {
    "station_no": "563000",
@@ -14964,6 +15110,14 @@
    "geocoded": false
   },
   {
+   "station_no": "568101",
+   "name": "Maguires Crossing",
+   "lat": null,
+   "lon": null,
+   "source": "not_found",
+   "checked": "2026-11-26"
+  },
+  {
    "station_no": "568140",
    "name": "Nattai River at The Causeway",
    "bom_name": "The Causeway (Nattai River)",
@@ -15761,6 +15915,14 @@
    "lon": 149.375,
    "source": "bom_nfgn",
    "geocoded": false
+  },
+  {
+   "station_no": "570998",
+   "name": "Cooma Back Creek at Maffra Rd",
+   "lat": null,
+   "lon": null,
+   "source": "not_found",
+   "checked": "2026-11-26"
   },
   {
    "station_no": "572000",
@@ -18649,6 +18811,28 @@
    "geocoded": false
   },
   {
+   "station_no": "587104",
+   "name": "Werribee River at Stone Hut Lane Bunding",
+   "bom_name": "Werribee River at Stone Hut Lane Bunding",
+   "awrc": null,
+   "lat": -37.5517,
+   "lon": 144.1979,
+   "source": "bom_regional_map",
+   "source_url": "https://www.bom.gov.au/vic/flood/north_central.shtml",
+   "geocoded": false
+  },
+  {
+   "station_no": "587105",
+   "name": "Kororoit Creek at Cannon Street Sunshine",
+   "bom_name": "Kororoit Creek at Cannon Street Sunshine",
+   "awrc": null,
+   "lat": -37.7988,
+   "lon": 144.8274,
+   "source": "bom_regional_map",
+   "source_url": "https://www.bom.gov.au/vic/flood/goulburn_broken.shtml",
+   "geocoded": false
+  },
+  {
    "station_no": "587116",
    "name": "Jacksons Creek at Sunbury",
    "bom_name": "Sunbury (Jacksons Creek)",
@@ -18748,6 +18932,14 @@
    "lon": 145.8181,
    "source": "bom_nfgn",
    "geocoded": false
+  },
+  {
+   "station_no": "588019",
+   "name": "Goulburn River at Molesworth",
+   "lat": null,
+   "lon": null,
+   "source": "not_found",
+   "checked": "2026-11-26"
   },
   {
    "station_no": "588020",
