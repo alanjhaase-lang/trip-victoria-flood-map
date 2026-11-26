@@ -1547,7 +1547,7 @@
    "datum": null,
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540177.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-27"
   },
   "540178": {
    "minor": null,
@@ -1556,7 +1556,7 @@
    "datum": null,
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540178.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-27"
   },
   "540180": {
    "minor": 4.0,
@@ -1880,7 +1880,7 @@
    "datum": "AHD",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540279.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-27"
   },
   "540286": {
    "minor": 1.7,
@@ -1889,7 +1889,7 @@
    "datum": "AHD",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540286.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-27"
   },
   "540290": {
    "minor": 5.0,
@@ -2375,7 +2375,7 @@
    "datum": "LGH",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540416.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-27"
   },
   "540417": {
    "minor": 2.5,
@@ -2699,7 +2699,7 @@
    "datum": null,
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540527.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-27"
   },
   "540529": {
    "minor": 4.5,
@@ -2807,7 +2807,7 @@
    "datum": "LGH",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540566.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-27"
   },
   "540567": {
    "minor": 2.0,
@@ -3347,7 +3347,7 @@
    "datum": null,
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540739.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-27"
   },
   "540741": {
    "minor": null,
