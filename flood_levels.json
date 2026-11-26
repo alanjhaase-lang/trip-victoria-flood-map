@@ -1142,7 +1142,7 @@
    "datum": "AHD",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540061.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-26"
   },
   "540062": {
    "minor": 5.0,
@@ -1313,7 +1313,7 @@
    "datum": null,
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540107.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-26"
   },
   "540111": {
    "minor": 33.5,
@@ -1394,7 +1394,7 @@
    "datum": "AHD",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540126.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-26"
   },
   "540127": {
    "minor": 22.0,
@@ -1403,7 +1403,7 @@
    "datum": "AHD",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540127.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-26"
   },
   "540128": {
    "minor": 5.9,
@@ -1412,7 +1412,7 @@
    "datum": "AHD",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540128.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-26"
   },
   "540129": {
    "minor": 1.8,
@@ -1421,7 +1421,7 @@
    "datum": "AHD",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540129.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-26"
   },
   "540130": {
    "minor": 2.3,
@@ -1952,7 +1952,7 @@
    "datum": "AHD",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540296.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-26"
   },
   "540298": {
    "minor": null,
@@ -2933,7 +2933,7 @@
    "datum": null,
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540609.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-26"
   },
   "540610": {
    "minor": 98.1,
