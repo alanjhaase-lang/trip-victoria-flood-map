@@ -1,15 +1,13 @@
 {
- "generated_at": "2026-11-27T07:46:09+10:00",
- "generated_at_text": "Fri 27 Nov 2026 07:46 AM AEST",
+ "generated_at": "2026-11-27T13:51:29+10:00",
+ "generated_at_text": "Fri 27 Nov 2026 01:51 PM AEST",
  "stale": false,
  "sources": {
   "QLD": {
-   "used": "fallback",
-   "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
-   "feed_published": "2026-11-27T07:45:47+10:00",
-   "errors": [
-    "api: HTTP 429"
-   ],
+   "used": "api",
+   "url": "https://api.qldtraffic.qld.gov.au/v2/events",
+   "feed_published": "2026-11-27T13:49:27+10:00",
+   "errors": [],
    "ok": true,
    "stale": false,
    "count": 2
@@ -18,11 +16,11 @@
    "feeds": [
     {
      "url": "https://www.livetraffic.com/traffic/hazards/flood.json",
-     "features": 0
+     "features": 2
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 119
+     "features": 129
     }
    ],
    "ok": true,
