@@ -1,16 +1,18 @@
 {
- "generated_at": "2026-11-28T13:53:01+10:00",
- "generated_at_text": "Sat 28 Nov 2026 01:53 PM AEST",
+ "generated_at": "2026-11-28T22:32:23+10:00",
+ "generated_at_text": "Sat 28 Nov 2026 10:32 PM AEST",
  "stale": false,
  "sources": {
   "QLD": {
-   "used": "api",
-   "url": "https://api.qldtraffic.qld.gov.au/v2/events",
-   "feed_published": "2026-11-28T13:47:22+10:00",
-   "errors": [],
+   "used": "fallback",
+   "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
+   "feed_published": "2026-11-28T22:32:17+10:00",
+   "errors": [
+    "api: HTTP 429"
+   ],
    "ok": true,
    "stale": false,
-   "count": 7
+   "count": 5
   },
   "NSW": {
    "feeds": [
@@ -20,7 +22,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 137
+     "features": 143
     }
    ],
    "ok": true,
@@ -90,12 +92,12 @@
   {
    "id": "ret4",
    "name": "Return day 4: Byron Bay → Westbrook",
-   "count": 5,
-   "closed": 3,
-   "partial": 2
+   "count": 3,
+   "closed": 2,
+   "partial": 1
   }
  ],
- "count": 7,
+ "count": 5,
  "excluded": [],
  "closures": [
   {
@@ -188,198 +190,6 @@
      ]
     ],
     "lines": []
-   }
-  },
-  {
-   "id": 845057,
-   "road": "State Route 90 / Clagiraba Road",
-   "description": null,
-   "locality": "Clagiraba",
-   "lga": "Gold Coast City",
-   "event_type": "Flooding",
-   "event_subtype": "Flash flooding",
-   "due_to": "Heavy rain",
-   "impact": "All lanes affected",
-   "impact_type": "Lanes affected",
-   "severity": "partial",
-   "direction": "Both directions",
-   "advice": "Do not drive in flood waters",
-   "information": null,
-   "status": "Published",
-   "start": "2026-11-28T12:21:00+10:00",
-   "last_updated": "2026-11-28T12:24:03+10:00",
-   "last_updated_text": "Sat 28 Nov 2026 12:24 PM AEST",
-   "provided_by": "City of Gold Coast LDCC",
-   "source_link": "https://qldtraffic.qld.gov.au/",
-   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/845057",
-   "state": "QLD",
-   "distance_km": 9.3,
-   "days": [
-    "ret4"
-   ],
-   "legs": [
-    "ret"
-   ],
-   "nearest_day": "ret4",
-   "leg_km": 2289.0,
-   "marker": [
-    -27.98886,
-    153.24431
-   ],
-   "geometry": {
-    "points": [],
-    "lines": [
-     [
-      [
-       -27.98865,
-       153.24322
-      ],
-      [
-       -27.98866,
-       153.24325
-      ],
-      [
-       -27.98869,
-       153.24339
-      ],
-      [
-       -27.98871,
-       153.24365
-      ],
-      [
-       -27.98872,
-       153.24372
-      ],
-      [
-       -27.98873,
-       153.24381
-      ],
-      [
-       -27.98877,
-       153.24396
-      ],
-      [
-       -27.9888,
-       153.24405
-      ],
-      [
-       -27.98886,
-       153.24431
-      ],
-      [
-       -27.98923,
-       153.2449
-      ],
-      [
-       -27.98929,
-       153.24501
-      ],
-      [
-       -27.98946,
-       153.24531
-      ],
-      [
-       -27.98974,
-       153.24565
-      ],
-      [
-       -27.98989,
-       153.2458
-      ],
-      [
-       -27.99028,
-       153.2462
-      ]
-     ]
-    ]
-   }
-  },
-  {
-   "id": 845066,
-   "road": "Clagiraba Road",
-   "description": null,
-   "locality": "Clagiraba / Mount Nathan",
-   "lga": "Gold Coast City",
-   "event_type": "Flooding",
-   "event_subtype": "Flash flooding",
-   "due_to": "Heavy rain",
-   "impact": "Road closed to all traffic",
-   "impact_type": "Closures",
-   "severity": "closed",
-   "direction": "Both directions",
-   "advice": "Do not drive in flood waters",
-   "information": null,
-   "status": "Published",
-   "start": "2026-11-28T13:14:00+10:00",
-   "last_updated": "2026-11-28T13:16:03+10:00",
-   "last_updated_text": "Sat 28 Nov 2026 01:16 PM AEST",
-   "provided_by": "City of Gold Coast LDCC",
-   "source_link": "https://qldtraffic.qld.gov.au/",
-   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/845066",
-   "state": "QLD",
-   "distance_km": 7.8,
-   "days": [
-    "ret4"
-   ],
-   "legs": [
-    "ret"
-   ],
-   "nearest_day": "ret4",
-   "leg_km": 2289.0,
-   "marker": [
-    -27.99734,
-    153.25966
-   ],
-   "geometry": {
-    "points": [],
-    "lines": [
-     [
-      [
-       -27.99682,
-       153.25885
-      ],
-      [
-       -27.99713,
-       153.25923
-      ],
-      [
-       -27.99721,
-       153.25935
-      ],
-      [
-       -27.99731,
-       153.2596
-      ],
-      [
-       -27.99734,
-       153.25966
-      ],
-      [
-       -27.9974,
-       153.25985
-      ],
-      [
-       -27.99744,
-       153.25995
-      ],
-      [
-       -27.99748,
-       153.26007
-      ],
-      [
-       -27.99752,
-       153.26015
-      ],
-      [
-       -27.99757,
-       153.26024
-      ],
-      [
-       -27.99759,
-       153.26027
-      ]
-     ]
-    ]
    }
   },
   {
