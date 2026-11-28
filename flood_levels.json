@@ -161,7 +161,7 @@
    "datum": "LGH",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.040816.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-29"
   },
   "040817": {
    "minor": 10.5,
@@ -197,7 +197,7 @@
    "datum": "AHD",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.040836.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-29"
   },
   "040838": {
    "minor": 14.0,
@@ -1106,7 +1106,7 @@
    "datum": null,
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.140024.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-29"
   },
   "540001": {
    "minor": null,
@@ -1151,7 +1151,7 @@
    "datum": "LGH",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540062.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-29"
   },
   "540063": {
    "minor": null,
@@ -1178,7 +1178,7 @@
    "datum": "LGH",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540065.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-29"
   },
   "540070": {
    "minor": 2.4,
@@ -1565,7 +1565,7 @@
    "datum": "LGH",
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540180.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-29"
   },
   "540182": {
    "minor": 8.6,
@@ -1673,7 +1673,7 @@
    "datum": null,
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540216.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-29"
   },
   "540218": {
    "minor": 4.05,
@@ -3482,7 +3482,7 @@
    "datum": null,
    "source": "bom_station_plot_page",
    "source_url": "https://www.bom.gov.au/fwo/IDQ65389/IDQ65389.540795.plt.shtml",
-   "checked": "2026-10-24"
+   "checked": "2026-11-29"
   },
   "540799": {
    "minor": 15.0,

@@ -1,18 +1,18 @@
 {
- "generated_at": "2026-11-28T22:32:23+10:00",
- "generated_at_text": "Sat 28 Nov 2026 10:32 PM AEST",
+ "generated_at": "2026-11-29T06:33:28+10:00",
+ "generated_at_text": "Sun 29 Nov 2026 06:33 AM AEST",
  "stale": false,
  "sources": {
   "QLD": {
    "used": "fallback",
    "url": "https://data.qldtraffic.qld.gov.au/events_v2.geojson",
-   "feed_published": "2026-11-28T22:32:17+10:00",
+   "feed_published": "2026-11-29T06:30:06+10:00",
    "errors": [
     "api: HTTP 429"
    ],
    "ok": true,
    "stale": false,
-   "count": 5
+   "count": 10
   },
   "NSW": {
    "feeds": [
@@ -22,7 +22,7 @@
     },
     {
      "url": "https://www.livetraffic.com/traffic/hazards/incident.json",
-     "features": 143
+     "features": 125
     }
    ],
    "ok": true,
@@ -92,12 +92,12 @@
   {
    "id": "ret4",
    "name": "Return day 4: Byron Bay → Westbrook",
-   "count": 3,
+   "count": 8,
    "closed": 2,
-   "partial": 1
+   "partial": 6
   }
  ],
- "count": 5,
+ "count": 10,
  "excluded": [],
  "closures": [
   {
@@ -193,6 +193,294 @@
    }
   },
   {
+   "id": 845169,
+   "road": "Hardys Road",
+   "description": "Between Bonogin Road and Glenmore Drive",
+   "locality": "Bonogin / Mudgeeraba",
+   "lga": "Gold Coast City",
+   "event_type": "Flooding",
+   "event_subtype": "Long-term flooding",
+   "due_to": "Heavy rain",
+   "impact": "All lanes affected",
+   "impact_type": "Lanes affected",
+   "severity": "partial",
+   "direction": "Both directions",
+   "advice": "Do not drive in flood waters",
+   "information": null,
+   "status": "Published",
+   "start": "2026-11-29T05:59:00+10:00",
+   "last_updated": "2026-11-29T06:00:35+10:00",
+   "last_updated_text": "Sun 29 Nov 2026 06:00 AM AEST",
+   "provided_by": "Department of Transport and Main Roads",
+   "source_link": "https://qldtraffic.qld.gov.au/",
+   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/845169",
+   "state": "QLD",
+   "distance_km": 3.5,
+   "days": [
+    "ret4"
+   ],
+   "legs": [
+    "ret"
+   ],
+   "nearest_day": "ret4",
+   "leg_km": 2278.0,
+   "marker": [
+    -28.11266,
+    153.36359
+   ],
+   "geometry": {
+    "points": [],
+    "lines": [
+     [
+      [
+       -28.11324,
+       153.36368
+      ],
+      [
+       -28.1132,
+       153.36367
+      ],
+      [
+       -28.11317,
+       153.36365
+      ],
+      [
+       -28.11314,
+       153.36364
+      ],
+      [
+       -28.11311,
+       153.36363
+      ],
+      [
+       -28.11306,
+       153.36362
+      ],
+      [
+       -28.11294,
+       153.36361
+      ],
+      [
+       -28.11284,
+       153.3636
+      ],
+      [
+       -28.11266,
+       153.36359
+      ],
+      [
+       -28.11265,
+       153.36359
+      ],
+      [
+       -28.11248,
+       153.36358
+      ],
+      [
+       -28.11229,
+       153.36356
+      ],
+      [
+       -28.11212,
+       153.36356
+      ],
+      [
+       -28.11206,
+       153.36355
+      ],
+      [
+       -28.11189,
+       153.36357
+      ],
+      [
+       -28.11184,
+       153.36358
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "id": 845170,
+   "road": "Highfield Drive",
+   "description": "Between Breakwater Road and All Saints School",
+   "locality": "Merrimac / Robina",
+   "lga": "Gold Coast City",
+   "event_type": "Flooding",
+   "event_subtype": "Flash flooding",
+   "due_to": "Heavy rain",
+   "impact": "All lanes affected",
+   "impact_type": "Lanes affected",
+   "severity": "partial",
+   "direction": "Both directions",
+   "advice": "Do not drive in flood waters",
+   "information": null,
+   "status": "Published",
+   "start": "2026-11-29T06:02:00+10:00",
+   "last_updated": "2026-11-29T06:03:00+10:00",
+   "last_updated_text": "Sun 29 Nov 2026 06:03 AM AEST",
+   "provided_by": "Department of Transport and Main Roads",
+   "source_link": "https://qldtraffic.qld.gov.au/",
+   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/845170",
+   "state": "QLD",
+   "distance_km": 0.0,
+   "days": [
+    "ret4"
+   ],
+   "legs": [
+    "ret"
+   ],
+   "nearest_day": "ret4",
+   "leg_km": 2281.0,
+   "marker": [
+    -28.06635,
+    153.36198
+   ],
+   "geometry": {
+    "points": [],
+    "lines": [
+     [
+      [
+       -28.06428,
+       153.36124
+      ],
+      [
+       -28.06477,
+       153.36141
+      ],
+      [
+       -28.06496,
+       153.36148
+      ],
+      [
+       -28.06558,
+       153.3617
+      ],
+      [
+       -28.06635,
+       153.36198
+      ],
+      [
+       -28.06729,
+       153.36232
+      ],
+      [
+       -28.06754,
+       153.36241
+      ],
+      [
+       -28.06793,
+       153.36256
+      ],
+      [
+       -28.06795,
+       153.36257
+      ],
+      [
+       -28.06809,
+       153.36264
+      ],
+      [
+       -28.06813,
+       153.36267
+      ],
+      [
+       -28.06826,
+       153.36276
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "id": 845173,
+   "road": "Vince Hinde Drive",
+   "description": "Between Charles Kurz Drive and Harry Mills Drive",
+   "locality": "Worongary",
+   "lga": "Gold Coast City",
+   "event_type": "Flooding",
+   "event_subtype": "Flash flooding",
+   "due_to": "Heavy rain",
+   "impact": "All lanes affected",
+   "impact_type": "Lanes affected",
+   "severity": "partial",
+   "direction": "Both directions",
+   "advice": "Do not drive in flood waters",
+   "information": null,
+   "status": "Published",
+   "start": "2026-11-29T06:07:00+10:00",
+   "last_updated": "2026-11-29T06:07:54+10:00",
+   "last_updated_text": "Sun 29 Nov 2026 06:07 AM AEST",
+   "provided_by": "Department of Transport and Main Roads",
+   "source_link": "https://qldtraffic.qld.gov.au/",
+   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/845173",
+   "state": "QLD",
+   "distance_km": 1.8,
+   "days": [
+    "ret4"
+   ],
+   "legs": [
+    "ret"
+   ],
+   "nearest_day": "ret4",
+   "leg_km": 2283.0,
+   "marker": [
+    -28.05218,
+    153.33668
+   ],
+   "geometry": {
+    "points": [],
+    "lines": [
+     [
+      [
+       -28.05325,
+       153.3361
+      ],
+      [
+       -28.0528,
+       153.33635
+      ],
+      [
+       -28.05246,
+       153.33653
+      ],
+      [
+       -28.05228,
+       153.33662
+      ],
+      [
+       -28.05218,
+       153.33668
+      ],
+      [
+       -28.05201,
+       153.33676
+      ],
+      [
+       -28.05199,
+       153.33677
+      ],
+      [
+       -28.05172,
+       153.33687
+      ],
+      [
+       -28.05154,
+       153.33694
+      ],
+      [
+       -28.05144,
+       153.33696
+      ],
+      [
+       -28.05137,
+       153.33699
+      ]
+     ]
+    ]
+   }
+  },
+  {
    "id": 845035,
    "road": "Maudsland Road",
    "description": "Just North of Birds Road",
@@ -209,8 +497,8 @@
    "information": null,
    "status": "Published",
    "start": "2026-11-28T10:35:00+10:00",
-   "last_updated": "2026-11-28T11:21:53+10:00",
-   "last_updated_text": "Sat 28 Nov 2026 11:21 AM AEST",
+   "last_updated": "2026-11-28T22:34:59+10:00",
+   "last_updated_text": "Sat 28 Nov 2026 10:34 PM AEST",
    "provided_by": "Department of Transport and Main Roads",
    "source_link": "https://qldtraffic.qld.gov.au/",
    "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/845035",
@@ -357,6 +645,122 @@
    }
   },
   {
+   "id": 845166,
+   "road": "Billiau Road",
+   "description": null,
+   "locality": "Guanaba",
+   "lga": "Gold Coast City",
+   "event_type": "Flooding",
+   "event_subtype": "Flash flooding",
+   "due_to": "Heavy rain",
+   "impact": "All lanes affected",
+   "impact_type": "Lanes affected",
+   "severity": "partial",
+   "direction": "Both directions",
+   "advice": "Do not drive in flood waters",
+   "information": null,
+   "status": "Published",
+   "start": "2026-11-29T05:11:00+10:00",
+   "last_updated": "2026-11-29T05:18:03+10:00",
+   "last_updated_text": "Sun 29 Nov 2026 05:18 AM AEST",
+   "provided_by": "City of Gold Coast LDCC",
+   "source_link": "https://qldtraffic.qld.gov.au/",
+   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/845166",
+   "state": "QLD",
+   "distance_km": 8.2,
+   "days": [
+    "ret4"
+   ],
+   "legs": [
+    "ret"
+   ],
+   "nearest_day": "ret4",
+   "leg_km": 2299.0,
+   "marker": [
+    -27.93696,
+    153.23964
+   ],
+   "geometry": {
+    "points": [],
+    "lines": [
+     [
+      [
+       -27.9367,
+       153.23904
+      ],
+      [
+       -27.93674,
+       153.23908
+      ],
+      [
+       -27.93676,
+       153.23911
+      ],
+      [
+       -27.9368,
+       153.23917
+      ],
+      [
+       -27.93681,
+       153.2392
+      ],
+      [
+       -27.93685,
+       153.23929
+      ],
+      [
+       -27.93691,
+       153.23944
+      ],
+      [
+       -27.93692,
+       153.23951
+      ],
+      [
+       -27.93696,
+       153.23964
+      ],
+      [
+       -27.93697,
+       153.23972
+      ],
+      [
+       -27.93699,
+       153.23984
+      ],
+      [
+       -27.93701,
+       153.23996
+      ],
+      [
+       -27.93703,
+       153.24004
+      ],
+      [
+       -27.93704,
+       153.24008
+      ],
+      [
+       -27.93705,
+       153.24012
+      ],
+      [
+       -27.93707,
+       153.24017
+      ],
+      [
+       -27.93709,
+       153.24021
+      ],
+      [
+       -27.93709,
+       153.24022
+      ]
+     ]
+    ]
+   }
+  },
+  {
    "id": 845056,
    "road": "Siganto Drive",
    "description": null,
@@ -427,6 +831,114 @@
       [
        -27.9047,
        153.31708
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "id": 845174,
+   "road": "Hotham Creek Road",
+   "description": "between Fern Hill Drive and Rosemount Drive",
+   "locality": "Willow Vale",
+   "lga": "Gold Coast City",
+   "event_type": "Flooding",
+   "event_subtype": "Flash flooding",
+   "due_to": "Heavy rain",
+   "impact": "All lanes affected",
+   "impact_type": "Lanes affected",
+   "severity": "partial",
+   "direction": "Both directions",
+   "advice": "Do not drive in flood waters",
+   "information": null,
+   "status": "Published",
+   "start": "2026-11-29T06:27:00+10:00",
+   "last_updated": "2026-11-29T06:29:55+10:00",
+   "last_updated_text": "Sun 29 Nov 2026 06:29 AM AEST",
+   "provided_by": "Department of Transport and Main Roads",
+   "source_link": "https://qldtraffic.qld.gov.au/",
+   "api_url": "https://api.qldtraffic.qld.gov.au/v2/events/845174",
+   "state": "QLD",
+   "distance_km": 1.1,
+   "days": [
+    "ret4"
+   ],
+   "legs": [
+    "ret"
+   ],
+   "nearest_day": "ret4",
+   "leg_km": 2311.0,
+   "marker": [
+    -27.82672,
+    153.27618
+   ],
+   "geometry": {
+    "points": [],
+    "lines": [
+     [
+      [
+       -27.82644,
+       153.27657
+      ],
+      [
+       -27.82655,
+       153.2765
+      ],
+      [
+       -27.82657,
+       153.27648
+      ],
+      [
+       -27.82662,
+       153.27643
+      ],
+      [
+       -27.82665,
+       153.27639
+      ],
+      [
+       -27.82667,
+       153.27635
+      ],
+      [
+       -27.82668,
+       153.27632
+      ],
+      [
+       -27.82671,
+       153.27625
+      ],
+      [
+       -27.82672,
+       153.27619
+      ],
+      [
+       -27.82672,
+       153.27618
+      ],
+      [
+       -27.82673,
+       153.27616
+      ],
+      [
+       -27.82674,
+       153.27599
+      ],
+      [
+       -27.82674,
+       153.27598
+      ],
+      [
+       -27.82675,
+       153.27596
+      ],
+      [
+       -27.82678,
+       153.27559
+      ],
+      [
+       -27.82678,
+       153.27556
       ]
      ]
     ]
